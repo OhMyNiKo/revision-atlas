@@ -45,6 +45,17 @@
     }
 
     * { box-sizing: border-box; }
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
     html { scroll-behavior: smooth; scroll-padding-top: 112px; }
     body {
       margin: 0;
@@ -919,6 +930,125 @@
       font-weight: 700;
     }
     .owh-file span { display: block; margin-top: 2px; color: #77889a; font-size: .72rem; font-weight: 500; }
+    .owh-locator {
+      position: sticky;
+      top: 72px;
+      z-index: 18;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 9px 12px;
+      align-items: center;
+      margin: 24px 0 4px;
+      padding: 14px 16px;
+      border: 1px solid #d9cba9;
+      border-radius: 15px;
+      background: rgba(255, 252, 245, .94);
+      box-shadow: 0 12px 30px rgba(87, 66, 30, .08);
+      backdrop-filter: blur(14px);
+    }
+    .owh-locator__field {
+      position: relative;
+      min-width: 0;
+    }
+    .owh-locator__icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      width: 17px;
+      height: 17px;
+      color: #927549;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .owh-locator input {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 42px 9px 40px;
+      border: 1px solid #d8c8a7;
+      border-radius: 10px;
+      color: #25374a;
+      background: rgba(255,255,255,.9);
+      font: 650 .88rem/1.35 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      outline: 0;
+    }
+    .owh-locator input::placeholder { color: #8d8a82; font-weight: 500; }
+    .owh-locator input:focus { border-color: #b68a42; box-shadow: 0 0 0 3px rgba(182,138,66,.16); }
+    .owh-locator__clear {
+      position: absolute;
+      right: 7px;
+      top: 50%;
+      width: 29px;
+      height: 29px;
+      border: 0;
+      border-radius: 50%;
+      color: #796c5a;
+      background: #eee6d7;
+      font-size: 1rem;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+    .owh-locator__status {
+      min-width: 165px;
+      color: #725d3b;
+      font-size: .73rem;
+      font-weight: 750;
+      text-align: right;
+    }
+    #subject-owh .section { scroll-margin-top: 132px; }
+    #subject-owh .section-heading { margin-bottom: 18px; }
+    #subject-owh .section-kicker { color: #87662f; }
+    #subject-owh .syllabus-wording {
+      font-family: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.14rem;
+      font-weight: 700;
+      letter-spacing: -.012em;
+    }
+    #subject-owh .owh-definition {
+      max-width: 76ch;
+      margin-top: 9px;
+      padding-left: 13px;
+      border-left: 2px solid #dfbd7c;
+      font-size: .94rem;
+      line-height: 1.62;
+    }
+    #subject-owh .owh-definition::before {
+      content: "Definition";
+      display: block;
+      width: max-content;
+      margin: 0 0 4px;
+      padding: 2px 6px;
+      border: 1px solid #e3d5b7;
+      border-radius: 4px;
+      color: #86662e;
+      background: #fff9ec;
+      font-size: .59rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      vertical-align: .12em;
+    }
+    #subject-owh .answer__inner { font-size: .94rem; }
+    #subject-owh .answer-block__title span {
+      color: #82551f;
+      background: #fff5e3;
+    }
+    #subject-owh .mark-points li { line-height: 1.68; }
+    #subject-owh .mark-points strong,
+    #subject-owh td strong {
+      color: #184f7e;
+      font-weight: 850;
+      background: linear-gradient(transparent 64%, rgba(243, 193, 74, .28) 0);
+    }
+    #subject-owh tbody td:first-child {
+      color: #263f57;
+      font-weight: 760;
+    }
+    #subject-owh th { color: #42546a; background: #f6f1e7; }
+    #subject-owh tbody tr:nth-child(even) td { background: rgba(248,244,235,.58); }
+    #subject-owh .syllabus-card.is-search-match {
+      border-color: #d2a555;
+      box-shadow: 0 9px 30px rgba(154, 108, 36, .11);
+    }
     footer {
       margin-top: 26px;
       color: #8a97a7;
@@ -1077,6 +1207,32 @@
       background: rgba(16,39,58,.88);
     }
     html[data-theme="dark"] .owh-file span { color: #97aabd; }
+    html[data-theme="dark"] .owh-locator {
+      border-color: #5d5138;
+      background: rgba(16, 36, 56, .94);
+      box-shadow: 0 14px 34px rgba(0,0,0,.25);
+    }
+    html[data-theme="dark"] .owh-locator input {
+      border-color: #4c5d69;
+      color: #e8f0f6;
+      background: #0a1d2d;
+    }
+    html[data-theme="dark"] .owh-locator input::placeholder { color: #8494a2; }
+    html[data-theme="dark"] .owh-locator__icon,
+    html[data-theme="dark"] .owh-locator__status { color: #dfbd78; }
+    html[data-theme="dark"] .owh-locator__clear { color: #d8c8a7; background: #344553; }
+    html[data-theme="dark"] #subject-owh .owh-definition::before {
+      border-color: #5f533a;
+      color: #f0c97d;
+      background: #302c20;
+    }
+    html[data-theme="dark"] #subject-owh .owh-definition { border-left-color: #715d38; }
+    html[data-theme="dark"] #subject-owh .answer-block__title span { color: #f0c97d; background: #302c20; }
+    html[data-theme="dark"] #subject-owh .mark-points strong,
+    html[data-theme="dark"] #subject-owh td strong { color: #82cbff; background: linear-gradient(transparent 64%, rgba(188,140,42,.25) 0); }
+    html[data-theme="dark"] #subject-owh tbody td:first-child { color: #d8e6f2; }
+    html[data-theme="dark"] #subject-owh th { color: #d5e1ec; background: #182d3e; }
+    html[data-theme="dark"] #subject-owh tbody tr:nth-child(even) td { background: rgba(44,48,45,.3); }
     html[data-theme="dark"] footer { color: #73889a; }
     html[data-theme="dark"] .diagram-wrap svg [fill="#f1f6fb"],
     html[data-theme="dark"] .diagram-wrap svg [fill="#eaf4fd"],
@@ -1376,6 +1532,48 @@
       color: #8d5c4b;
       background: transparent;
     }
+    html[data-layout="focus"] .owh-locator {
+      top: 70px;
+      padding: 12px 0;
+      border-width: 1px 0;
+      border-color: #cfc5b3;
+      border-radius: 0;
+      background: rgba(244,240,231,.95);
+      box-shadow: none;
+    }
+    html[data-layout="focus"] .owh-locator input {
+      border-color: #c9c0af;
+      border-radius: 3px;
+      color: #314138;
+      background: rgba(250,248,242,.84);
+      font-family: "Avenir Next", Avenir, "Segoe UI", ui-sans-serif, sans-serif;
+    }
+    html[data-layout="focus"] .owh-locator__icon,
+    html[data-layout="focus"] .owh-locator__status { color: #846452; }
+    html[data-layout="focus"] .owh-locator__clear { color: #5b675e; background: #e2ddd2; }
+    html[data-layout="focus"] #subject-owh .syllabus-wording {
+      color: #304438;
+      font-family: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    html[data-layout="focus"] #subject-owh .owh-definition { color: #687168; font-size: .96rem; }
+    html[data-layout="focus"] #subject-owh .owh-definition::before {
+      padding: 0;
+      border: 0;
+      color: #95634f;
+      background: transparent;
+    }
+    html[data-layout="focus"] #subject-owh .owh-definition { border-left-color: #b7a98e; }
+    html[data-layout="focus"] #subject-owh .answer-block__title span { color: #8d5d4c; background: transparent; }
+    html[data-layout="focus"] #subject-owh .mark-points strong,
+    html[data-layout="focus"] #subject-owh td strong {
+      color: #315a43;
+      background: linear-gradient(transparent 68%, rgba(182,157,92,.24) 0);
+    }
+    html[data-layout="focus"] #subject-owh tbody td:first-child { color: #40584a; }
+    html[data-layout="focus"] #subject-owh th { color: #4c5e53; background: rgba(101,128,109,.08); }
+    html[data-layout="focus"] #subject-owh .syllabus-card.is-search-match { box-shadow: inset 3px 0 0 #a97860; }
 
     html[data-layout="focus"][data-theme="dark"] {
       --ink: #e3e5dc;
@@ -1410,6 +1608,18 @@
       color: #dce9dd;
       background: #2c4032;
     }
+    html[data-layout="focus"][data-theme="dark"] .owh-locator {
+      border-color: #465048;
+      background: rgba(23,28,24,.95);
+    }
+    html[data-layout="focus"][data-theme="dark"] .owh-locator input {
+      border-color: #4d5950;
+      color: #e5e8df;
+      background: #202720;
+    }
+    html[data-layout="focus"][data-theme="dark"] #subject-owh .syllabus-wording { color: #e3e5dc; }
+    html[data-layout="focus"][data-theme="dark"] #subject-owh .owh-definition { color: #a7ada5; }
+    html[data-layout="focus"][data-theme="dark"] #subject-owh tbody td:first-child { color: #dce5dc; }
     html[data-layout="focus"][data-theme="dark"] h1,
     html[data-layout="focus"][data-theme="dark"] .section h2,
     html[data-layout="focus"][data-theme="dark"] .source-panel h2,
@@ -1516,6 +1726,9 @@
       html[data-layout="focus"] .card-toggle { grid-template-columns: 1fr auto; padding-right: 0; }
       html[data-layout="focus"] .answer__inner { padding-right: 10px; padding-left: 24px; }
       html[data-layout="focus"] .source-panel { padding-right: 0; padding-left: 0; }
+      .owh-locator { top: 64px; grid-template-columns: 1fr; padding: 10px; }
+      .owh-locator__status { min-width: 0; text-align: left; }
+      html[data-layout="focus"] .owh-locator { padding: 10px 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -1557,7 +1770,7 @@
         </button>
         <button class="subject-option" type="button" data-subject-option="owh">
           <span class="subject-option__icon" aria-hidden="true">Ψ</span>
-          <span class="subject-option__copy"><span class="subject-option__name">OWH Notes</span><span class="subject-option__meta">AS Psychology · Weeks 1–5</span></span>
+          <span class="subject-option__copy"><span class="subject-option__name">OWH Notes</span><span class="subject-option__meta">AS Psychology · Weeks 1–6</span></span>
           <span class="subject-option__check" aria-hidden="true">✓</span>
         </button>
       </div>
@@ -1623,6 +1836,8 @@
         <a class="chapter-link" href="#section-owh-week-3" data-subject="owh" data-section="section-owh-week-3"><span class="chapter-link__num">W3</span><span class="chapter-link__text">Terminology &amp; Ethics</span></a>
         <a class="chapter-link" href="#section-owh-week-4" data-subject="owh" data-section="section-owh-week-4"><span class="chapter-link__num">W4</span><span class="chapter-link__text">Methods &amp; Data</span></a>
         <a class="chapter-link" href="#section-owh-week-5" data-subject="owh" data-section="section-owh-week-5"><span class="chapter-link__num">W5</span><span class="chapter-link__text">Animals &amp; Correlations</span></a>
+        <a class="chapter-link" href="#section-owh-week-6-data" data-subject="owh" data-section="section-owh-week-6-data"><span class="chapter-link__num">W6A</span><span class="chapter-link__text">Data Analysis</span></a>
+        <a class="chapter-link" href="#section-owh-week-6-design" data-subject="owh" data-section="section-owh-week-6-design"><span class="chapter-link__num">W6B</span><span class="chapter-link__text">Design Questions</span></a>
         <a class="chapter-link" href="#section-owh-checklist" data-subject="owh" data-section="section-owh-checklist"><span class="chapter-link__num">✓</span><span class="chapter-link__text">Checklist &amp; Coverage</span></a>
       </nav>
 
@@ -3226,29 +3441,40 @@ Largest ← Larger(First, Second)</div>
           <div>
             <div class="eyebrow">AS Psychology · Research Methods</div>
             <h1 id="owh-page-title">OWH Notes</h1>
-            <p class="hero-copy">Every definition, concept, comparison and evaluation table from the supplied Week 1–5 teaching materials, organised for revision. Each card shows the teacher-material definition first; open it for explanation, a concrete example and exam distinctions.</p>
+            <p class="hero-copy">Every definition, concept, comparison and evaluation table from the supplied Week 1–6 teaching materials, organised for revision. Each card shows the teacher-material definition first; open it for explanation, a concrete example and exam distinctions.</p>
             <div class="instruction">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
-              <span>Use the week directory on the left to jump through the notes. The blue line below the top bar shows reading progress, while the highlighted directory item shows your current section.</span>
+              <span>Use the week directory or the knowledge locator to jump directly to a term, study, method or exam phrase. Bold highlighting marks wording worth carrying into an exam answer; the line below the top bar and the highlighted directory item track your position.</span>
             </div>
           </div>
-          <div class="chapter-stamp" aria-label="Weeks 1 to 5">
-            <strong>05</strong>
+          <div class="chapter-stamp" aria-label="Weeks 1 to 6">
+            <strong>06</strong>
             <span>Weeks indexed</span>
           </div>
+        </section>
+
+        <section class="owh-locator" aria-label="Find a psychology concept">
+          <div class="owh-locator__field">
+            <svg class="owh-locator__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <label class="sr-only" for="owhSearch">Find a psychology term, study, method or exam keyword</label>
+            <input id="owhSearch" type="search" autocomplete="off" placeholder="Find a term or exam keyword — e.g. validity, SD, demand characteristics">
+            <button class="owh-locator__clear" id="owhSearchClear" type="button" aria-label="Clear psychology search" title="Clear search" hidden>×</button>
+          </div>
+          <div class="owh-locator__status" id="owhSearchStatus" role="status" aria-live="polite">Psychology index ready</div>
         </section>
 
         <div id="owhNotes"></div>
 
         <section class="source-panel" id="owh-sources" aria-labelledby="owh-sources-title">
           <h2 id="owh-sources-title">Teacher materials indexed</h2>
-          <p>The definitions and tables above were cross-checked across all 13 supplied files: five answer sheets, five weekly or topic slide decks, the operationalisation deck, the laboratory-versus-field exercise and the complete research-methods checklist.</p>
+          <p>The definitions and tables above were cross-checked across all 22 supplied files: the original 13 Week 1–5 files plus all nine Week 6 data-analysis and design-question slides, workpacks, answer sheets and model answers.</p>
           <div class="owh-file-list">
             <div class="owh-file">Week 1<span>Foundations, variables and issues &amp; debates</span></div>
             <div class="owh-file">Week 2<span>Experimental method and experimental design</span></div>
             <div class="owh-file">Week 3<span>Research terminology, sampling and human ethics</span></div>
             <div class="owh-file">Week 4<span>Self-reports, case studies, observations, data and reliability</span></div>
             <div class="owh-file">Week 5<span>Animal ethics and correlations</span></div>
+            <div class="owh-file">Week 6<span>Data analysis and Design Question technique with six model answers</span></div>
             <div class="owh-file">Supplementary files<span>Operationalisation, lab/field comparison and full checklist</span></div>
           </div>
         </section>
@@ -3347,7 +3573,7 @@ Largest ← Larger(First, Second)</div>
                   <span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
                 </button>
                 <div class="answer" id="answer-${entry.id}"><div class="answer__clip"><div class="answer__inner">
-                  <div class="answer-label"><span>Detailed explanation</span><span class="answer-label__note">Teacher definition above · concrete explanation below</span></div>
+                  <div class="answer-label"><span>Exam-ready breakdown</span><span class="answer-label__note">Highlighted phrases are the wording to reproduce precisely</span></div>
                   ${renderDetails(entry.details)}
                   ${renderTable(entry.table)}
                   <div class="owh-source">${entry.source}</div>
@@ -3389,7 +3615,42 @@ Largest ← Larger(First, Second)</div>
     const statusPill = document.getElementById('statusPill');
     const readingProgress = document.getElementById('readingProgress');
     const readingProgressTrack = document.getElementById('readingProgressTrack');
+    const owhSearch = document.getElementById('owhSearch');
+    const owhSearchClear = document.getElementById('owhSearchClear');
+    const owhSearchStatus = document.getElementById('owhSearchStatus');
+    const owhCards = [...document.querySelectorAll('#owhNotes .syllabus-card')];
+    const owhSections = [...document.querySelectorAll('#owhNotes .section')];
     let activeSubject = 'cs';
+
+    function normaliseSearch(value) {
+      return value.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    }
+
+    function applyOwhSearch() {
+      const query = normaliseSearch(owhSearch.value);
+      let visibleCount = 0;
+      owhCards.forEach((card) => {
+        const match = !query || normaliseSearch(card.textContent).includes(query);
+        card.hidden = !match;
+        card.classList.toggle('is-search-match', Boolean(query && match));
+        if (match) visibleCount += 1;
+      });
+      owhSections.forEach((section) => {
+        const hasMatch = [...section.querySelectorAll('.syllabus-card')].some((card) => !card.hidden);
+        section.hidden = Boolean(query && !hasMatch);
+      });
+      owhSearchClear.hidden = !query;
+      owhSearchStatus.textContent = query
+        ? `${visibleCount} of ${owhCards.length} concepts match`
+        : `${owhCards.length} concepts indexed · type to locate one`;
+      requestAnimationFrame(updateReadingProgress);
+    }
+
+    function resetOwhSearch() {
+      if (!owhSearch.value) return;
+      owhSearch.value = '';
+      applyOwhSearch();
+    }
 
     function updateThemeColor() {
       const isDark = document.documentElement.dataset.theme === 'dark';
@@ -3425,8 +3686,14 @@ Largest ← Larger(First, Second)</div>
 
     applyTheme(document.documentElement.dataset.theme || 'light');
     applyLayout(document.documentElement.dataset.layout || 'classic');
+    applyOwhSearch();
     themeToggle.addEventListener('change', () => applyTheme(themeToggle.checked ? 'dark' : 'light', true));
     layoutToggle.addEventListener('click', () => applyLayout(document.documentElement.dataset.layout === 'focus' ? 'classic' : 'focus', true));
+    owhSearch.addEventListener('input', applyOwhSearch);
+    owhSearchClear.addEventListener('click', () => {
+      resetOwhSearch();
+      owhSearch.focus();
+    });
     const systemTheme = matchMedia('(prefers-color-scheme: dark)');
     systemTheme.addEventListener?.('change', (event) => {
       try {
@@ -3458,7 +3725,7 @@ Largest ← Larger(First, Second)</div>
       const subjects = {
         cs: { name: 'Computer Science', code: 'AS Level · 9618', icon: '</>', breadcrumb: 'AS Computer Science', label: 'Chapters', footer: 'Syllabus edition · 2027–2029', status: 'Source checked', title: '9618 Revision Atlas — Computer Science' },
         physics: { name: 'Physics', code: 'AS Level · 9702', icon: 'F', breadcrumb: 'AS Physics', label: 'Sections', footer: 'Syllabus edition · 2025–2027', status: '47 points checked', title: '9702 Revision Atlas — Physics Chapters 1–4' },
-        owh: { name: 'OWH Notes', code: 'AS Psychology · Weeks 1–5', icon: 'Ψ', breadcrumb: 'AS Psychology', label: 'Weeks', footer: '13 teacher files · Weeks 1–5', status: '13 files indexed', title: 'OWH Notes — AS Psychology' }
+        owh: { name: 'OWH Notes', code: 'AS Psychology · Weeks 1–6', icon: 'Ψ', breadcrumb: 'AS Psychology', label: 'Weeks', footer: '22 teacher files · Weeks 1–6', status: '22 files indexed', title: 'OWH Notes — AS Psychology' }
       };
       return subjects[subject] || subjects.cs;
     }
@@ -3532,6 +3799,7 @@ Largest ← Larger(First, Second)</div>
     });
 
     navLinks.forEach((link) => link.addEventListener('click', () => {
+      if (link.dataset.subject === 'owh') resetOwhSearch();
       if (link.dataset.subject !== activeSubject) setSubject(link.dataset.subject, true, false);
       closeMobileNav();
       requestAnimationFrame(updateReadingProgress);

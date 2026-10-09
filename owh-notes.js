@@ -1245,6 +1245,692 @@ window.OWH_NOTES = [
     ]
   },
   {
+    id: "section-owh-week-6-data",
+    nav: "W6A",
+    title: "Data Analysis",
+    kicker: "Tables, averages, spread, graphs and correlation interpretation",
+    entries: [
+      {
+        id: "owh-data-tables",
+        code: "W6A.01",
+        term: "Presenting data in a table",
+        definition: "Before analysing data, researchers first organise it into a clear table — this is a required Paper 2 skill.",
+        source: "Week 6 Data Analysis class PPT · Slide 7; Workpack · p.2",
+        table: {
+          headers: ["Participant", "Condition A (No. of words recall)", "Condition B (No. of words recall)"],
+          rows: [
+            ["1", "15", "9"],
+            ["2", "12", "7"],
+            ["3", "14", "10"],
+            ["4", "11", "8"],
+            ["5", "16", "11"]
+          ]
+        },
+        details: [
+          { label: "Required", title: "The three features of a good data table", bullets: [
+            "Give a <strong>clear title</strong> explaining what the data shows.",
+            "Use <strong>labelled columns and rows</strong>, such as participant and each condition score.",
+            "State <strong>units of measurement</strong> where relevant, such as seconds, number of words or a scale score."
+          ]},
+          { label: "Example", title: "The teacher-material model", bullets: [
+            "The example title is <strong>Table 1: Memory recall scores under quiet and noisy conditions</strong>; the two score headings state that the values are numbers of words recalled."
+          ]}
+        ]
+      },
+      {
+        id: "owh-mode",
+        code: "W6A.02",
+        term: "Mode",
+        definition: "The mode is the most frequently occurring score in a data set.",
+        source: "Week 6 Answer Sheet · Guided Notes 1; class PPT · Slides 6 and 8",
+        details: [
+          { label: "Recognise", title: "How to identify it", bullets: [
+            "Find the value that occurs <strong>most often</strong>.",
+            "For 4, 6, 6, 8, 10, the <strong>mode is 6</strong>. For 4, 6, 8, 10, 12, there is <strong>no mode</strong>."
+          ]},
+          { label: "Strength", title: "When the mode is useful", bullets: [
+            "It is <strong>easy to identify</strong> and works for <strong>categorical data</strong>, such as a preferred coping strategy."
+          ]},
+          { label: "Weakness", title: "What the mode leaves out", bullets: [
+            "It <strong>ignores most of the data</strong> and may not be unique; a data set can be <strong>bi-modal</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-median",
+        code: "W6A.03",
+        term: "Median",
+        definition: "The median is the middle score when data is arranged in ascending order.",
+        source: "Week 6 Answer Sheet · Guided Notes 1–2; class PPT · Slides 6 and 8–10",
+        details: [
+          { label: "Recognise", title: "How to identify it", bullets: [
+            "First put the scores <strong>in order</strong>, then locate the <strong>middle score</strong>.",
+            "For 4, 6, 8, 10, 12, the <strong>median is 8</strong>."
+          ]},
+          { label: "Strength", title: "Why it is chosen for skewed data", bullets: [
+            "The median is <strong>not affected by outliers</strong>, so it can be a more representative measure when the data is skewed or contains extreme scores."
+          ]},
+          { label: "Weakness", title: "What the median does not use", bullets: [
+            "It <strong>does not use every score</strong> in the data set."
+          ]},
+          { label: "Exam answer", title: "Median rather than mean", bullets: [
+            "Use the median when the data is <strong>skewed or contains outliers</strong>; unlike the mean, it is not pulled up or down by an extreme score and therefore gives a <strong>more representative typical score</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-mean",
+        code: "W6A.04",
+        term: "Mean",
+        definition: "The mean is the arithmetic average — the sum of all scores divided by the number of scores.",
+        source: "Week 6 Answer Sheet · Guided Notes 1–2; class PPT · Slides 6 and 8–10",
+        details: [
+          { label: "Recognise", title: "What the calculation represents", bullets: [
+            "For 4, 6, 8, 10, 12, the total is 40 and 40 ÷ 5 gives a <strong>mean of 8</strong>."
+          ]},
+          { label: "Strength", title: "Why the mean is precise", bullets: [
+            "It <strong>uses all scores</strong>, making it a precise and sensitive measure when the data is evenly spread with no outliers."
+          ]},
+          { label: "Weakness", title: "Effect of an extreme score", bullets: [
+            "The mean can be <strong>badly distorted by outliers or skewed data</strong>, so it may no longer represent a typical score."
+          ]},
+          { label: "Exam scope", title: "What CIE expects here", bullets: [
+            "The teacher materials state that CIE does <strong>not</strong> require candidates to calculate the mean, median or mode from scratch; the focus is on <strong>understanding, interpreting and choosing</strong> the appropriate measure."
+          ]}
+        ]
+      },
+      {
+        id: "owh-central-tendency-comparison",
+        code: "W6A.05",
+        term: "Choosing a measure of central tendency",
+        definition: "The appropriate average depends on the data type, whether every score should contribute, and whether outliers or skew would distort the result.",
+        source: "Week 6 Answer Sheet · Guided Notes 2 and Quick Check; class PPT · Slides 9–11",
+        table: {
+          headers: ["Measure", "Strength", "Weakness", "Use it when…"],
+          rows: [
+            ["Mean", "Uses all scores; a precise, sensitive measure.", "Badly distorted by outliers or skewed data.", "Scores are evenly spread and there are no outliers."],
+            ["Median", "Not affected by outliers.", "Does not use every score in the data set.", "There is an extreme outlier or the data is skewed."],
+            ["Mode", "Easy to identify; works for categorical data.", "Ignores most data; may not be unique (bi-modal).", "A quick answer is needed for categorical data."]
+          ]
+        },
+        details: [
+          { label: "Scenario", title: "The extreme-memory-score question", bullets: [
+            "If one participant recalls 100 words while everyone else recalls 10–20, report the <strong>median</strong>: it is not affected by the outlier, whereas the mean would be pulled upward and would no longer represent a typical score."
+          ]}
+        ]
+      },
+      {
+        id: "owh-range",
+        code: "W6A.06",
+        term: "Range",
+        definition: "The range is the difference between the highest and lowest scores.",
+        source: "Week 6 Answer Sheet · Guided Notes 3; class PPT · Slide 11",
+        details: [
+          { label: "Calculation", title: "Highest score minus lowest score", bullets: [
+            "For 4, 6, 8, 10, 12: <strong>range = 12 − 4 = 8</strong>.",
+            "For 12, 15, 18, 22, 25, 30: <strong>range = 30 − 12 = 18</strong>."
+          ]},
+          { label: "Strength", title: "Why it is convenient", bullets: [
+            "It is <strong>quick and easy to calculate</strong>."
+          ]},
+          { label: "Weakness", title: "Why it is a limited measure of spread", bullets: [
+            "It uses only the <strong>two most extreme scores</strong> and ignores everything in between.",
+            "Because it depends on the extremes, it is <strong>sensitive to outliers</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-standard-deviation",
+        code: "W6A.07",
+        term: "Standard deviation",
+        definition: "Standard deviation is a measure of spread showing how far scores are, on average, from the mean.",
+        source: "Week 6 Answer Sheet · Guided Notes 4; class PPT · Slide 12",
+        table: {
+          headers: ["Standard deviation", "Pattern of scores", "Interpretation"],
+          rows: [
+            ["Small SD", "Scores are clustered close to the mean.", "Performance is more consistent."],
+            ["Large SD", "Scores are spread widely around the mean.", "Performance is more varied and less consistent."]
+          ]
+        },
+        details: [
+          { label: "Compare", title: "Same mean, different spread", bullets: [
+            "If Group A has mean 65 and SD 4, its scores are <strong>clustered close to the mean</strong> and the group is consistent.",
+            "If Group B has mean 65 and SD 12, its scores are <strong>more spread out</strong> and less consistent, even though the two groups have the same mean."
+          ]},
+          { label: "Exam scope", title: "Interpret rather than calculate", bullets: [
+            "You will be given the standard deviation and asked to <strong>interpret</strong> it; the teacher materials state that you will not be asked to calculate it."
+          ]}
+        ]
+      },
+      {
+        id: "owh-bar-histogram",
+        code: "W6A.08",
+        term: "Bar chart and histogram",
+        definition: "A bar chart displays discrete or categorical data with gaps between bars; a histogram displays continuous data with no gaps between bars.",
+        source: "Week 6 Answer Sheet · Guided Notes 5; class PPT · Slides 6 and 13",
+        table: {
+          headers: ["Graph", "When to use", "Required visual feature", "Teacher example"],
+          rows: [
+            ["Bar chart", "Discrete or categorical data", "Gaps between bars", "Comparing mean scores across conditions"],
+            ["Histogram", "Continuous data", "No gaps between bars", "Distribution of IQ scores"]
+          ]
+        },
+        details: [
+          { label: "Four-mark answer", title: "Definition plus example for each graph", bullets: [
+            "A <strong>bar chart</strong> is used for discrete/categorical data and has gaps between bars; for example, mean aggression scores across different conditions.",
+            "A <strong>histogram</strong> is used for continuous data and has no gaps between bars; for example, displaying the distribution of IQ scores."
+          ]}
+        ]
+      },
+      {
+        id: "owh-week6-scatter",
+        code: "W6A.09",
+        term: "Scatter graph",
+        definition: "A scatter graph is used for correlational data, with points plotted on two axes.",
+        source: "Week 6 Answer Sheet · Guided Notes 5; class PPT · Slides 14 and 17–18",
+        table: {
+          headers: ["Correlation", "What the points look like", "Teacher example"],
+          rows: [
+            ["Positive", "Points rise from left to right.", "Hours of revision and exam score"],
+            ["Negative", "Points fall from left to right.", "Stress level and sleep quality"],
+            ["Zero", "Points are scattered randomly.", "Shoe size and IQ score"]
+          ]
+        },
+        details: [
+          { label: "Drawing", title: "What the completed graph needs", bullets: [
+            "Plot each paired score as one point, <strong>label both axes with units</strong>, add a clear title and draw a <strong>line of best fit</strong> by eye."
+          ]},
+          { label: "Exercise", title: "Exercise hours and self-rated stress", bullets: [
+            "The pairs (1,9), (2,8), (3,7), (4,6), (5,6), (6,4), (7,3), (8,2) form a clear <strong>negative correlation</strong>: as exercise hours rise, stress scores tend to fall."
+          ]}
+        ]
+      },
+      {
+        id: "owh-week6-covariables",
+        code: "W6A.10",
+        term: "Co-variables and operational definitions",
+        definition: "Co-variables are the two variables being measured — never manipulated — in a correlation.",
+        source: "Week 6 Data Analysis workpack word bank; class PPT · Slide 15",
+        details: [
+          { label: "Worked example", title: "Stress and sleep quality", bullets: [
+            "Co-variable 1 is <strong>stress</strong>, operationalised as a score out of 10 on a self-report stress scale.",
+            "Co-variable 2 is <strong>sleep quality</strong>, operationalised as average hours of sleep per night tracked over one week."
+          ]},
+          { label: "Precision", title: "The same rule used for an IV or DV", bullets: [
+            "A co-variable must be defined <strong>precisely enough to measure</strong>; labels such as ‘screen time’ or ‘mood’ alone are too vague."
+          ]}
+        ]
+      },
+      {
+        id: "owh-week6-correlation-evaluation",
+        code: "W6A.11",
+        term: "Evaluating correlations",
+        definition: "Correlations reveal patterns between measured variables, but they cannot establish cause and effect.",
+        source: "Week 6 Data Analysis workpack · Guided Notes 7; class PPT · Slide 16",
+        table: {
+          headers: ["Strengths", "Weaknesses"],
+          rows: [
+            ["Can study variables it would be unethical or impossible to manipulate.", "Cannot show cause and effect because of the third-variable problem."],
+            ["Useful for identifying patterns worth investigating further.", "Does not confirm the direction of any relationship."],
+            ["Can make use of large, already-existing datasets.", "A weak or zero correlation may hide a more complex pattern."]
+          ]
+        },
+        details: [
+          { label: "Third variable", title: "Ice cream does not cause drowning", bullets: [
+            "Ice-cream sales and drowning deaths are correlated, but <strong>hot weather</strong> increases both; it is the third variable that explains the association."
+          ]},
+          { label: "Direction", title: "Which variable influences which?", bullets: [
+            "X may affect Y, Y may affect X, or the relationship may operate in both directions; a correlation alone cannot decide between them."
+          ]}
+        ]
+      },
+      {
+        id: "owh-social-media-self-esteem",
+        code: "W6A.12",
+        term: "Applied correlation: social media use and self-esteem",
+        definition: "The supplied novel scenario measures daily social-media use and self-rated self-esteem without manipulating either co-variable.",
+        source: "Week 6 Data Analysis class PPT · Slides 18–19 and model-answer infographic",
+        table: {
+          headers: ["Design part", "Scenario-specific answer"],
+          rows: [
+            ["Co-variable 1", "Hours of social-media use per day"],
+            ["Operational definition 1", "Total hours from the phone's screen-time tracker"],
+            ["Co-variable 2", "Self-rated self-esteem score"],
+            ["Operational definition 2", "Score on a validated 1–10 self-esteem scale"],
+            ["Prediction", "Negative correlation: more app time is associated with a lower self-esteem score"],
+            ["Why correlation", "The relationship is impractical or unethical to manipulate; teenagers cannot be forced to use less social media"],
+            ["Why not causation", "Poor sleep or poor social support may cause both; direction could also be reversed, with lower self-esteem leading to more use"]
+          ]
+        },
+        details: [
+          { label: "Exam chain", title: "How to explain the conclusion", bullets: [
+            "State the observed <strong>association</strong>, then name a plausible <strong>third variable</strong> and the possible <strong>reverse direction</strong>; therefore the study cannot prove that social-media use causes lower self-esteem."
+          ]}
+        ]
+      },
+      {
+        id: "owh-data-exam-answers",
+        code: "W6A.13",
+        term: "Exam-style data-analysis answers",
+        definition: "The Week 6 task and exit ticket show the exact ideas expected in short statistics and graph questions.",
+        source: "Week 6 Answer Sheet · Task 1 and Exit Ticket Answers; class PPT · Slides 19–22",
+        table: {
+          headers: ["Question", "Creditworthy answer"],
+          rows: [
+            ["What is shown by the mode? (2)", "The most frequently occurring score in a data set; it shows which value was most common."],
+            ["When use median instead of mean? (3)", "When data is skewed or contains outliers; the median is unaffected by extreme scores and is more representative."],
+            ["Range of 12, 15, 18, 22, 25, 30 (2)", "30 − 12 = 18."],
+            ["Bar chart compared with histogram (4)", "Bar: discrete/categorical data with gaps, e.g. condition means. Histogram: continuous data with no gaps, e.g. IQ-score distribution."],
+            ["Mean 65, SD 4 versus mean 65, SD 12 (3)", "Same mean; SD 4 is tightly clustered and consistent, while SD 12 is more spread out and less consistent."],
+            ["Exit-ticket range of 10, 15, 18, 22, 25, 30", "30 − 10 = 20."]
+          ]
+        },
+        details: [
+          { label: "Answer pattern", title: "Turn the number into meaning", bullets: [
+            "For interpretation questions, give the statistic, describe the <strong>pattern of scores</strong>, and state the consequence, such as <strong>greater consistency</strong> or <strong>more spread</strong>."
+          ]}
+        ]
+      }
+    ]
+  },
+  {
+    id: "section-owh-week-6-design",
+    nav: "W6B",
+    title: "Design Question Technique",
+    kicker: "Required features, common errors and scenario-specific model answers",
+    entries: [
+      {
+        id: "owh-design-golden-rule",
+        code: "W6B.01",
+        term: "The design-question Golden Rule",
+        definition: "Your Part (a) answer describes how the study would be run — step by step, using the specific scenario.",
+        source: "Design Question PPT · Slide 2; Workpack · p.1",
+        details: [
+          { label: "Include", title: "What the answer must do", bullets: [
+            "Describe the <strong>procedure</strong> as a sequence of actions that could actually be followed.",
+            "Use <strong>specific scenario detail</strong>, such as a real number, question, task, behavioural category or scoring rule."
+          ]},
+          { label: "Exclude", title: "What must not appear in Part (a)", bullets: [
+            "Do <strong>not</strong> describe the sampling technique.",
+            "Do <strong>not</strong> describe how participants would be re-contacted.",
+            "Do <strong>not</strong> describe ethical guidelines or issues."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-template",
+        code: "W6B.02",
+        term: "The five-step design-question template",
+        definition: "Identify the method, state the aim, name and detail every required feature, explain what happens to the data, then check the exclusions.",
+        source: "Design Question PPT · Slides 3–4; Workpack · Section 3",
+        table: {
+          headers: ["Step", "Action", "What earns clarity"],
+          rows: [
+            ["1", "Identify the method", "Use the checklist for the method named in the question."],
+            ["2", "State the aim", "One sentence stating exactly what the study investigates."],
+            ["3", "For every feature: Name it → Detail it → Link it", "Give a real number, question, task or category rather than vague language."],
+            ["4", "Explain what happens to the data", "State how responses or observations are scored, analysed, compared or displayed."],
+            ["5", "Check the exclusions", "Remove sampling, ethics and re-contact from Part (a)."]
+          ]
+        },
+        details: [
+          { label: "Aim", title: "Teacher-model sentence", bullets: [
+            "<strong>The aim is to investigate the relationship between shyness and happiness.</strong>"
+          ]},
+          { label: "Detail", title: "The difference between vague and developed", bullets: [
+            "Happiness can be measured with a <strong>10-item questionnaire rated 1–7</strong>, including an example item, producing a <strong>score from 10–70</strong> that can be compared with the shyness score."
+          ]},
+          { label: "Link", title: "Why the workpack still trains this step", bullets: [
+            "‘Link’ is <strong>not a separately marked CIE requirement</strong>; marks come from named and detailed features. Linking each detail to the scenario helps produce fuller application."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-experiments",
+        code: "W6B.03",
+        term: "Designing an experiment: required features",
+        definition: "An experimental design answer must operationalise the IV and DV and specify control, design and location.",
+        source: "Design Question Answer Sheet · Experiments; PPT · Slide 5",
+        table: {
+          headers: ["Required feature", "What the answer must state"],
+          rows: [
+            ["Independent variable (operationalised)", "A measurable/manipulable difference between conditions, not a vague label."],
+            ["Dependent variable (operationalised)", "Exactly how the outcome will be measured."],
+            ["Controls / standardisation", "The same procedure for every participant."],
+            ["Choice of experimental design", "Independent measures, repeated measures or matched pairs."],
+            ["Location", "A laboratory or field setting."]
+          ]
+        },
+        details: [
+          { label: "Common error", title: "Ethics is not the missing feature", bullets: [
+            "In the supplied ‘spot the error’ list, replace <strong>ethical considerations</strong> with <strong>controls</strong>; ethics must not be described in Part (a)."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-self-reports",
+        code: "W6B.04",
+        term: "Designing a self-report: required features",
+        definition: "A self-report answer must specify question type, actual questions and scoring, plus the technique or format appropriate to a questionnaire or interview.",
+        source: "Design Question Answer Sheet · Self-Reports; PPT · Slide 6",
+        table: {
+          headers: ["Required feature", "Questionnaire / interview detail"],
+          rows: [
+            ["Question format", "State open or closed, and why."],
+            ["Examples of questions", "Give an actual example question."],
+            ["Question scoring / interpretation", "Explain how responses become data."],
+            ["Technique", "For questionnaires: paper and pencil or online."],
+            ["Format", "For interviews: structured, unstructured or semi-structured."],
+            ["Technique", "For interviews: face-to-face or telephone."]
+          ]
+        },
+        details: [
+          { label: "Precision", title: "A label is not enough", bullets: [
+            "After naming ‘closed questions’, show the scale, its anchors, an <strong>actual item</strong> and the rule that turns answers into a score."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-case-study",
+        code: "W6B.05",
+        term: "Designing a case study: required features",
+        definition: "A case-study answer needs a specific participant or unit, explicit content, at least two detailed collection techniques and a stated method of analysis or triangulation.",
+        source: "Design Question Answer Sheet · Case Studies; PPT · Slide 7",
+        table: {
+          headers: ["Required feature", "Teacher guidance"],
+          rows: [
+            ["Details about the participant / unit", "Invent specific detail; do not simply restate the question stem."],
+            ["Content of information collected", "State it explicitly; do not leave it implied."],
+            ["Two or more data-collection techniques", "Exactly two with full detail is better than three with shallow detail."],
+            ["Analysis / interpretation / triangulation", "The most commonly missed feature; always include it."]
+          ]
+        },
+        details: [
+          { label: "Depth", title: "What makes the techniques developed", bullets: [
+            "For each technique, state <strong>when and where it occurs</strong>, what is recorded or asked, and how the resulting material will be handled."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-triangulation",
+        code: "W6B.06",
+        term: "Methodological, data and investigator triangulation",
+        definition: "Triangulation checks an interpretation by comparing methods, sources or researchers rather than relying on one route to the finding.",
+        source: "Design Question PPT · Slide 8; Answer Sheet · Triangulation Types",
+        table: {
+          headers: ["Type", "Teacher-material definition", "Concrete example"],
+          rows: [
+            ["Methodological triangulation", "Using different methods together.", "Compare interview themes with structured-observation totals."],
+            ["Data triangulation", "Collecting data from different sources, people, times or settings.", "Compare a child's behaviour at home and at school, reported by parents and teachers."],
+            ["Investigator triangulation", "Having more than one researcher analyse the data to reduce bias.", "Two researchers independently code the same interview transcript."]
+          ]
+        },
+        details: [
+          { label: "Level detail", title: "Name the type", bullets: [
+            "Naming the <strong>type of triangulation</strong>, rather than writing only ‘triangulation’, is what the teacher materials identify as separating Level 2 from higher-level detail."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-observations",
+        code: "W6B.07",
+        term: "Designing an observation: required features",
+        definition: "An observation answer must identify the relevant observational choices and make the target behaviour, recording method and setting specific.",
+        source: "Design Question PPT · Slide 9; Answer Sheet · Observations",
+        table: {
+          headers: ["Required feature", "What to specify"],
+          rows: [
+            ["Which dichotomy applies", "Overt/covert, participant/non-participant, structured/unstructured, naturalistic/controlled."],
+            ["Specific behaviour(s)", "Name the behaviour explicitly rather than using a vague category."],
+            ["How behaviour is recorded", "For example, a tally, checklist or free-form notes."],
+            ["Location / setting", "State where the observation takes place."]
+          ]
+        },
+        details: [
+          { label: "Application", title: "Behaviour must be observable", bullets: [
+            "Replace ‘being sociable’ with visible indicators, such as <strong>starting a conversation, sitting with others or speaking turns</strong>, then state exactly how each is recorded."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-correlations",
+        code: "W6B.08",
+        term: "Designing a correlational study: required features",
+        definition: "A correlational design measures two operationalised co-variables, predicts the nature of their relationship and displays paired scores on a scatter graph.",
+        source: "Design Question Answer Sheet · Correlational Studies; PPT · Slides 10 and 14–15",
+        table: {
+          headers: ["Required feature", "What the answer must state"],
+          rows: [
+            ["Two co-variables", "Use co-variables, not independent and dependent variables."],
+            ["Measure of variable 1", "A full operational definition."],
+            ["Measure of variable 2", "The same level of detail as variable 1."],
+            ["Nature of the expected relationship", "Positive, negative or zero, with reasoning."],
+            ["Display", "Name a scatter graph explicitly."]
+          ]
+        },
+        details: [
+          { label: "Trap", title: "Nothing is manipulated", bullets: [
+            "Correlations have <strong>no independent variable</strong>. ‘Measures of independent variable’ must be replaced by <strong>measures of variable 1</strong>.",
+            "‘Hypothesis being valid’ is not a design feature; replace it with <strong>display the data in a scatter graph</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-longitudinal",
+        code: "W6B.09",
+        term: "Designing a longitudinal study: required features",
+        definition: "A longitudinal study repeatedly measures the same development or characteristic over real time at multiple planned testing points.",
+        source: "Design Question Answer Sheet · Longitudinal Studies; PPT · Slide 11; Model Answer Option 6",
+        table: {
+          headers: ["Required feature", "What the answer must state"],
+          rows: [
+            ["Tests / tasks", "Describe the measures, tasks, questions and examples used."],
+            ["Scoring", "Explain how each task or test will be scored or analysed."],
+            ["Frequency / interval", "Give the pattern of testing over time, including frequency and reuse of tasks/tests."],
+            ["Controls / standardisation", "Maintain parity across testing intervals."]
+          ]
+        },
+        details: [
+          { label: "Essential", title: "What makes the design genuinely longitudinal", bullets: [
+            "A single test and retest is not an acceptable substitute: the study must examine <strong>real change over real time at multiple points</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-design-part-b",
+        code: "W6B.10",
+        term: "Part (b): strength and weakness of your own procedure",
+        definition: "Part (b) asks for one practical or methodological strength and one practical or methodological weakness of the procedure described in Part (a).",
+        source: "Design Question PPT · Slide 19; Workpack · Part (b)",
+        table: {
+          headers: ["May relate to", "How to earn the second mark"],
+          rows: [
+            ["Validity or operationalisation", "Name the exact feature in your procedure and explain why it measures what was intended."],
+            ["Situational or participant variables", "Explain how the named variable is controlled or how it could offer an alternative explanation."],
+            ["Controls / standardisation", "Link the same procedure to fair comparison or replicability."],
+            ["Demand characteristics", "Link awareness of the aim to changed or more natural behaviour."],
+            ["Reliability", "Name test–retest, inter-rater/inter-observer or another check and explain how agreement or consistency demonstrates reliability."],
+            ["Inter-rater or intra-rater consistency", "State who repeats the coding and what matching judgements would show."]
+          ]
+        },
+        details: [
+          { label: "Rule", title: "Keep Part (b) tied to your Part (a)", bullets: [
+            "Identify one <strong>specific feature of the procedure you actually described</strong>, then explain its practical or methodological consequence.",
+            "Do <strong>not</strong> refer to sampling or ethics."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-bhaavik",
+        code: "W6B.11",
+        term: "Model answer: Bhaavik's correlational study",
+        definition: "Bhaavik investigates the relationship between shyness and happiness using two summed questionnaire scores.",
+        source: "DesignQuestion Model Answers 1–3 · Option 1",
+        table: {
+          headers: ["Required feature", "Scenario-specific model detail"],
+          rows: [
+            ["Two co-variables", "Shyness and happiness"],
+            ["Measure of shyness", "20-item questionnaire; each item rated 1–5; total 20–100; higher = greater shyness"],
+            ["Example shyness item", "I feel nervous when speaking to people I don't know well."],
+            ["Measure of happiness", "Separate 10-item questionnaire; each item rated 1–7; total 10–70; higher = greater happiness"],
+            ["Example happiness item", "How satisfied do you feel with your life in general?"],
+            ["Expected relationship", "Strong negative correlation"],
+            ["Display", "Scatter graph: shyness on x-axis, happiness on y-axis"]
+          ]
+        },
+        details: [
+          { label: "Procedure", title: "How the study is run", bullets: [
+            "Participants complete both questionnaires in <strong>one sitting in a quiet room</strong> to reduce distraction.",
+            "Both co-variables produce <strong>summed scale scores — continuous data</strong>, which the guidance states is required for Level 5.",
+            "The prediction is negative because higher shyness may reduce opportunities for supportive social interaction and therefore be associated with lower happiness."
+          ]},
+          { label: "Validity", title: "Two-mark applied explanation", bullets: [
+            "Closed items give every participant the <strong>same standardised statements</strong>, so the questionnaires consistently measure shyness and happiness as intended."
+          ]},
+          { label: "Reliability", title: "Two-mark improvement", bullets: [
+            "Repeat both questionnaires with the same participants after two weeks: <strong>similar scores at both times</strong> would demonstrate test–retest reliability."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-chloe",
+        code: "W6B.12",
+        term: "Model answer: Chloë's participant observation",
+        definition: "Chloë joins workers during meals to produce a detailed description of eating and social behaviour in the normal staff canteen.",
+        source: "DesignQuestion Model Answers 1–3 · Option 2",
+        table: {
+          headers: ["Feature", "Scenario-specific model detail"],
+          rows: [
+            ["Participant", "Joins the workplace as a genuine member of staff and eats alongside employees"],
+            ["Covert", "Workers do not know she is observing them for research"],
+            ["Naturalistic", "Normal staff canteen during lunch and break periods across multiple days"],
+            ["Unstructured", "Detailed free-form field notes rather than a fixed checklist"],
+            ["Behaviours", "Eating speed, alone/group, conversation and non-verbal posture or facial expression"],
+            ["Data handling", "Group field-note patterns into social, solitary and rushed eating categories"]
+          ]
+        },
+        details: [
+          { label: "Validity", title: "Natural behaviour and demand characteristics", bullets: [
+            "Participant observation without workers knowing they are studied improves validity because they behave naturally rather than changing behaviour due to <strong>demand characteristics</strong>."
+          ]},
+          { label: "Reliability", title: "Second observer and category agreement", bullets: [
+            "A second observer can independently categorise a sample of field notes; <strong>agreement between observers</strong> demonstrates inter-rater reliability."
+          ]},
+          { label: "Judgement", title: "Structured or unstructured", bullets: [
+            "The supplied model uses unstructured observation because the aim is the full variety of behaviour; the guidance notes that structured/unstructured can be a <strong>legitimate judgement call</strong> in this scenario."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-mary",
+        code: "W6B.13",
+        term: "Model answer: Mary's doodling case study",
+        definition: "Mary conducts an in-depth case study of an 11-year-old boy with autistic spectrum disorder who frequently doodles during quiet, unstructured periods.",
+        source: "DesignQuestion Model Answers 1–3 · Option 3",
+        table: {
+          headers: ["Required feature", "Scenario-specific model detail"],
+          rows: [
+            ["Participant detail", "11-year-old in mainstream school with additional learning support"],
+            ["Technique 1", "Three separate 30-minute structured observations during free time at school"],
+            ["Observation checklist", "Doodle type, episode duration and whether he is alone or around other children"],
+            ["Technique 2", "Semi-structured interview with the boy's parents"],
+            ["Fixed interview question", "When did you first notice him doodling?"],
+            ["Content", "Frequency/type, contexts and parents' views of patterns"],
+            ["Analysis", "Quantitative observation table plus qualitative recurring interview themes"],
+            ["Triangulation", "Compare observation patterns with parents' descriptions: methodological triangulation"]
+          ]
+        },
+        details: [
+          { label: "Validity", title: "Pre-defined categories", bullets: [
+            "A structured checklist records the <strong>same clearly defined categories</strong> each time, rather than relying on Mary's moment-by-moment personal judgement."
+          ]},
+          { label: "Reliability", title: "Independent use of the checklist", bullets: [
+            "A second researcher independently uses the same checklist in one session; <strong>matching records</strong> demonstrate good inter-observer reliability."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-wei",
+        code: "W6B.14",
+        term: "Model answer: Wei's laboratory experiment",
+        definition: "Wei tests whether instrumental music changes concentration compared with studying in silence.",
+        source: "DesignQuestion Model Answers 4–5 · Option 4",
+        table: {
+          headers: ["Required feature", "Scenario-specific model detail"],
+          rows: [
+            ["IV", "Instrumental music through headphones at a fixed moderate volume versus complete silence"],
+            ["DV", "Number of spelling errors correctly found in a proofreading passage within 10 minutes"],
+            ["Controls", "Same passage, time limit, quiet room and headphone volume"],
+            ["Design", "Repeated measures: every participant completes music and silence conditions"],
+            ["Order/practice control", "Two equally difficult passages and counterbalanced condition order"],
+            ["Location", "The same quiet laboratory testing room"]
+          ]
+        },
+        details: [
+          { label: "Validity", title: "Equivalent passages", bullets: [
+            "Two <strong>equally difficult passages</strong> mean a score difference is more likely to reflect music/silence rather than one passage being easier."
+          ]},
+          { label: "Reliability", title: "Standardised marking key", bullets: [
+            "Use one marking key listing every correct error location, so scoring does not depend on personal judgement and is <strong>consistent for every script</strong>."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-amara",
+        code: "W6B.15",
+        term: "Model answer: Amara's exam-stress questionnaire",
+        definition: "Amara uses a closed-question questionnaire to measure how much stress teenagers feel about upcoming exams.",
+        source: "DesignQuestion Model Answers 4–5 · Option 5",
+        table: {
+          headers: ["Required feature", "Scenario-specific model detail"],
+          rows: [
+            ["Question format", "Closed items rated from 1 (strongly disagree) to 5 (strongly agree)"],
+            ["Example item 1", "I feel very stressed when I think about my upcoming exams."],
+            ["Example item 2", "I have trouble sleeping because I am worried about exams."],
+            ["Scoring", "Add all item scores; a higher total means greater exam-related stress"],
+            ["Technique", "Paper-and-pencil questionnaire, completed individually and in silence for 10 minutes"]
+          ]
+        },
+        details: [
+          { label: "Validity", title: "Same fixed scale", bullets: [
+            "Closed questions give everyone the <strong>same fixed response scale</strong>, so answers can be directly compared and are less open to inconsistent interpretation than free text."
+          ]},
+          { label: "Reliability", title: "Test–retest after one week", bullets: [
+            "Give the same questionnaire to the same participants one week later; <strong>similar total stress scores</strong> confirm consistent measurement."
+          ]}
+        ]
+      },
+      {
+        id: "owh-model-osei",
+        code: "W6B.16",
+        term: "Model answer: Dr Osei's longitudinal study",
+        definition: "Dr Osei tracks how teenagers' confidence in speaking a new language changes across one school year.",
+        source: "DesignQuestion Model Answers 4–5 · Option 6",
+        table: {
+          headers: ["Required feature", "Scenario-specific model detail"],
+          rows: [
+            ["Test/task", "10-item confidence scale rated 1 (not at all confident) to 5 (extremely confident)"],
+            ["Example item", "I feel confident starting a conversation in this language."],
+            ["Scoring", "Add 10 items to give 10–50; higher = greater confidence"],
+            ["Frequency/interval", "Beginning of term 1, end of term 2 and end of term 3; roughly every three months"],
+            ["Standardisation", "Same wording, rating instructions and classroom setting at every point"]
+          ]
+        },
+        details: [
+          { label: "Validity", title: "The same measure at each testing point", bullets: [
+            "Using the exact same scale means score changes reflect a <strong>genuine change in confidence</strong>, rather than a different or inconsistent measure."
+          ]},
+          { label: "Reliability", title: "Independent scoring", bullets: [
+            "A second researcher independently scores a sample of completed scales; <strong>matching scores</strong> demonstrate good inter-rater reliability."
+          ]},
+          { label: "Essential", title: "Why this is longitudinal", bullets: [
+            "The same construct is measured at <strong>multiple points across real time</strong>; one test and one immediate retest would not meet the method requirement."
+          ]}
+        ]
+      }
+    ]
+  },
+  {
     id: "section-owh-checklist",
     nav: "✓",
     title: "Teacher Checklist and Coverage",
@@ -1298,6 +1984,30 @@ window.OWH_NOTES = [
         details: [
           { label: "Accuracy", title: "Why these are not filled with invented ‘teacher definitions’", bullets: [
             "This section separates content explicitly taught in the uploaded materials from future checklist content. When the Week 6 data-analysis slides are added, these rows can be replaced by the teacher's exact definitions and examples."
+          ]}
+        ]
+      },
+      {
+        id: "owh-checklist-week6-update",
+        code: "CK.03",
+        term: "Week 6 update: data-analysis coverage now complete",
+        definition: "The later Week 6 materials now provide the formal definitions, comparisons, worked examples and model answers previewed in CK.02.",
+        source: "Week 6 Data Analysis class PPT, workpack and answer sheet",
+        table: {
+          headers: ["Previously previewed item", "Now located at"],
+          rows: [
+            ["Presenting and interpreting tables", "W6A.01"],
+            ["Mode, median and mean", "W6A.02–W6A.05"],
+            ["Range", "W6A.06"],
+            ["Standard deviation", "W6A.07"],
+            ["Bar chart and histogram", "W6A.08"],
+            ["Scatter graph and correlation application", "W6A.09–W6A.12"],
+            ["Exam-style model answers", "W6A.13"]
+          ]
+        },
+        details: [
+          { label: "Status", title: "How to read CK.02 now", bullets: [
+            "CK.02 is retained as the original <strong>Week 1–5 coverage snapshot</strong>; this update records where the teacher's Week 6 material now fills each earlier gap."
           ]}
         ]
       }
