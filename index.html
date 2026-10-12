@@ -6,6 +6,9 @@
   <meta name="description" content="Cambridge International AS Level revision notes for Computer Science 9618, Physics 9702 and Psychology, organised point by point with exam-ready answers.">
   <meta name="theme-color" content="#071f3d">
   <title>Revision Atlas — Cambridge AS Level</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400..700&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071f3d'/%3E%3Cpath d='M17 17h30v8H25v9h18v8H25v5h22' fill='none' stroke='%234fc3f7' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <script>
     (() => {
@@ -886,12 +889,28 @@
     .chapter-hero--owh .eyebrow { color: #8a4f04; }
     .chapter-hero--owh .eyebrow::before { background: #f0a21b; }
     .chapter-hero--owh .chapter-stamp { border-color: #d4b06e; transform: rotate(-2deg); }
+    #subject-owh {
+      --owh-reading-font: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: var(--owh-reading-font);
+      font-optical-sizing: auto;
+      font-synthesis: none;
+    }
+    #subject-owh h1,
+    #subject-owh .section h2,
+    #subject-owh .source-panel h2 {
+      font-family: var(--owh-reading-font);
+      font-weight: 650;
+    }
+    #subject-owh strong { font-weight: 600; }
+    #subject-owh .eyebrow,
+    #subject-owh .section-kicker,
+    #subject-owh .point-id { font-weight: 650; }
     .owh-definition {
       display: block;
       margin-top: 6px;
       color: var(--muted);
       font-size: .89rem;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.55;
     }
     .owh-source {
@@ -927,7 +946,7 @@
       color: #29465f;
       background: rgba(255,255,255,.76);
       font-size: .8rem;
-      font-weight: 700;
+      font-weight: 600;
     }
     .owh-file span { display: block; margin-top: 2px; color: #77889a; font-size: .72rem; font-weight: 500; }
     .owh-locator {
@@ -968,7 +987,7 @@
       border-radius: 10px;
       color: #25374a;
       background: rgba(255,255,255,.9);
-      font: 650 .88rem/1.35 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 500 .92rem/1.35 var(--owh-reading-font);
       outline: 0;
     }
     .owh-locator input::placeholder { color: #8d8a82; font-weight: 500; }
@@ -991,17 +1010,18 @@
       min-width: 165px;
       color: #725d3b;
       font-size: .73rem;
-      font-weight: 750;
+      font-weight: 600;
       text-align: right;
     }
     #subject-owh .section { scroll-margin-top: 132px; }
     #subject-owh .section-heading { margin-bottom: 18px; }
     #subject-owh .section-kicker { color: #87662f; }
     #subject-owh .syllabus-wording {
-      font-family: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-      font-size: 1.14rem;
-      font-weight: 700;
-      letter-spacing: -.012em;
+      font-family: var(--owh-reading-font);
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: -.006em;
+      line-height: 1.48;
     }
     #subject-owh .owh-definition {
       max-width: 76ch;
@@ -1022,28 +1042,39 @@
       color: #86662e;
       background: #fff9ec;
       font-size: .59rem;
-      font-weight: 900;
+      font-weight: 650;
       letter-spacing: .08em;
       text-transform: uppercase;
       vertical-align: .12em;
     }
-    #subject-owh .answer__inner { font-size: .94rem; }
+    #subject-owh .answer__inner {
+      font-family: var(--owh-reading-font);
+      font-size: .98rem;
+      line-height: 1.68;
+    }
+    #subject-owh .answer-label { font-weight: 650; }
+    #subject-owh .answer-label__note { font-weight: 500; }
+    #subject-owh .answer-block__title { font-weight: 600; }
+    #subject-owh .answer-block__title span { font-weight: 650; }
     #subject-owh .answer-block__title span {
       color: #82551f;
       background: #fff5e3;
     }
-    #subject-owh .mark-points li { line-height: 1.68; }
+    #subject-owh .mark-points li {
+      font-weight: 400;
+      line-height: 1.72;
+    }
     #subject-owh .mark-points strong,
     #subject-owh td strong {
       color: #184f7e;
-      font-weight: 850;
-      background: linear-gradient(transparent 64%, rgba(243, 193, 74, .28) 0);
+      font-weight: 600;
+      background: linear-gradient(transparent 76%, rgba(243, 193, 74, .25) 0);
     }
     #subject-owh tbody td:first-child {
       color: #263f57;
-      font-weight: 760;
+      font-weight: 600;
     }
-    #subject-owh th { color: #42546a; background: #f6f1e7; }
+    #subject-owh th { color: #42546a; background: #f6f1e7; font-weight: 600; }
     #subject-owh tbody tr:nth-child(even) td { background: rgba(248,244,235,.58); }
     #subject-owh .syllabus-card.is-search-match {
       border-color: #d2a555;
@@ -1229,7 +1260,7 @@
     html[data-theme="dark"] #subject-owh .owh-definition { border-left-color: #715d38; }
     html[data-theme="dark"] #subject-owh .answer-block__title span { color: #f0c97d; background: #302c20; }
     html[data-theme="dark"] #subject-owh .mark-points strong,
-    html[data-theme="dark"] #subject-owh td strong { color: #82cbff; background: linear-gradient(transparent 64%, rgba(188,140,42,.25) 0); }
+    html[data-theme="dark"] #subject-owh td strong { color: #82cbff; background: linear-gradient(transparent 76%, rgba(188,140,42,.25) 0); }
     html[data-theme="dark"] #subject-owh tbody td:first-child { color: #d8e6f2; }
     html[data-theme="dark"] #subject-owh th { color: #d5e1ec; background: #182d3e; }
     html[data-theme="dark"] #subject-owh tbody tr:nth-child(even) td { background: rgba(44,48,45,.3); }
@@ -1546,16 +1577,23 @@
       border-radius: 3px;
       color: #314138;
       background: rgba(250,248,242,.84);
-      font-family: "Avenir Next", Avenir, "Segoe UI", ui-sans-serif, sans-serif;
+      font-family: var(--owh-reading-font);
     }
     html[data-layout="focus"] .owh-locator__icon,
     html[data-layout="focus"] .owh-locator__status { color: #846452; }
     html[data-layout="focus"] .owh-locator__clear { color: #5b675e; background: #e2ddd2; }
     html[data-layout="focus"] #subject-owh .syllabus-wording {
       color: #304438;
-      font-family: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-family: var(--owh-reading-font);
+      font-size: 1.13rem;
+      font-weight: 600;
+    }
+    html[data-layout="focus"] #subject-owh h1,
+    html[data-layout="focus"] #subject-owh .section h2,
+    html[data-layout="focus"] #subject-owh .source-panel h2 {
+      font-family: var(--owh-reading-font);
+      font-weight: 650;
+      letter-spacing: -.025em;
     }
     html[data-layout="focus"] #subject-owh .owh-definition { color: #687168; font-size: .96rem; }
     html[data-layout="focus"] #subject-owh .owh-definition::before {
@@ -1569,7 +1607,7 @@
     html[data-layout="focus"] #subject-owh .mark-points strong,
     html[data-layout="focus"] #subject-owh td strong {
       color: #315a43;
-      background: linear-gradient(transparent 68%, rgba(182,157,92,.24) 0);
+      background: linear-gradient(transparent 78%, rgba(182,157,92,.24) 0);
     }
     html[data-layout="focus"] #subject-owh tbody td:first-child { color: #40584a; }
     html[data-layout="focus"] #subject-owh th { color: #4c5e53; background: rgba(101,128,109,.08); }
