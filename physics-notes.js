@@ -849,6 +849,226 @@ window.PHYSICS_NOTES = [
         note: "A fully submerged object displaces its full external volume; a partially immersed floating object displaces only the immersed volume."
       }
     ]
+  },
+  {
+    id: "section-physics-5-1",
+    nav: "5.1",
+    title: "Energy conservation",
+    kicker: "Chapter 5 · Work, energy and power",
+    entries: [
+      {
+        id: "physics-5-1-1",
+        code: "5.1.1",
+        wording: "understand the concept of work, and recall and use work done = force × displacement in the direction of the force",
+        table: {
+          headers: ["Force relative to displacement", "Work done by the force"],
+          rows: [
+            ["Same direction (θ = 0°)", "<strong>W = Fs</strong> — positive"],
+            ["At angle θ", "<strong>W = Fs cos θ</strong>"],
+            ["Perpendicular (θ = 90°)", "<strong>W = 0</strong>"],
+            ["Opposite direction (θ = 180°)", "<strong>W = −Fs</strong> — negative"]
+          ]
+        },
+        details: [
+          { label: "Meaning", title: "Work is an energy transfer", bullets: [
+            "Work is done when a force causes a <strong>displacement</strong>; the work done is the energy transferred by that force.",
+            "Use the displacement component parallel to the force: <strong>W = Fs<sub>∥</sub> = Fs cos θ</strong>, where θ is the angle between force and displacement.",
+            "The SI unit is the <strong>joule (J)</strong>; <strong>1 J = 1 N m</strong>."
+          ]},
+          { label: "Example", title: "Resolve before multiplying", bullets: [
+            "A 40 N force acts at 60° to a 5.0 m displacement: W = 40 × 5.0 × cos 60° = <strong>100 J</strong>."
+          ]}
+        ],
+        visual: "work-component",
+        note: "A force can act without doing work: if there is no displacement, or the force is perpendicular to the displacement, W = 0."
+      },
+      {
+        id: "physics-5-1-2",
+        code: "5.1.2",
+        wording: "recall and apply the principle of conservation of energy",
+        details: [
+          { label: "Principle", title: "Full exam statement", bullets: [
+            "Energy cannot be <strong>created or destroyed</strong>; it can only be transferred between stores or transformed from one form to another.",
+            "Therefore, the <strong>total energy of a closed system remains constant</strong>."
+          ]},
+          { label: "Application", title: "Write a complete energy balance", bullets: [
+            "Use <strong>total energy before + energy supplied = total energy after</strong>, including energy dissipated to the surroundings.",
+            "For a falling object with negligible air resistance: <strong>decrease in GPE = increase in KE</strong>.",
+            "With air resistance: <strong>decrease in GPE = increase in KE + thermal/internal energy transferred</strong>."
+          ]}
+        ],
+        visual: "energy-transfer",
+        note: "Do not write that energy is ‘lost’. State where it is transferred, usually to thermal/internal energy of the object and surroundings."
+      },
+      {
+        id: "physics-5-1-3",
+        code: "5.1.3",
+        wording: "recall and understand that the efficiency of a system is the ratio of useful energy output from the system to the total energy input",
+        details: [
+          { label: "Definition", title: "Efficiency as an energy ratio", bullets: [
+            "<strong>efficiency η = useful energy output / total energy input</strong>.",
+            "Efficiency has <strong>no unit</strong>. Give it either as a decimal between 0 and 1 or multiply by 100% for a percentage.",
+            "‘Useful’ means the energy transferred in the form intended for that system; the remainder is dissipated."
+          ]}
+        ],
+        visual: "energy-transfer",
+        note: "Do not divide by only the energy that remains: the denominator is the total input energy."
+      },
+      {
+        id: "physics-5-1-4",
+        code: "5.1.4",
+        wording: "use the concept of efficiency to solve problems",
+        table: {
+          headers: ["Required quantity", "Rearrangement"],
+          rows: [
+            ["Useful output", "<strong>E<sub>useful</sub> = ηE<sub>input</sub></strong>"],
+            ["Total input", "<strong>E<sub>input</sub> = E<sub>useful</sub>/η</strong>"],
+            ["Wasted / dissipated", "<strong>E<sub>wasted</sub> = E<sub>input</sub> − E<sub>useful</sub></strong>"],
+            ["Using power", "<strong>η = P<sub>useful</sub>/P<sub>input</sub></strong>"]
+          ]
+        },
+        details: [
+          { label: "Method", title: "Convert percentages first", bullets: [
+            "Convert a percentage to a decimal before substitution: <strong>75% = 0.75</strong>.",
+            "If 4.0 kJ enters a motor and 3.0 kJ is useful, η = 3.0/4.0 = <strong>0.75 = 75%</strong>.",
+            "For several stages in series, the overall efficiency is <strong>η<sub>overall</sub> = η<sub>1</sub>η<sub>2</sub>…</strong>."
+          ]},
+          { label: "Why power works", title: "Same time interval", bullets: [
+            "Because P = E/t, the time cancels when useful and input powers refer to the <strong>same time interval</strong>."
+          ]}
+        ],
+        note: "A real machine’s calculated useful output should not exceed its input; if it does, the ratio has probably been inverted."
+      },
+      {
+        id: "physics-5-1-5",
+        code: "5.1.5",
+        wording: "define power as work done per unit time",
+        details: [
+          { label: "Definition", title: "Rate of doing work", bullets: [
+            "Power is the <strong>work done per unit time</strong>, equivalently the rate of energy transfer.",
+            "The SI unit is the <strong>watt (W)</strong>; <strong>1 W = 1 J s<sup>−1</sup></strong>.",
+            "Greater power means the same work is done in less time, or more energy is transferred in the same time."
+          ]}
+        ]
+      },
+      {
+        id: "physics-5-1-6",
+        code: "5.1.6",
+        wording: "solve problems using P = W / t",
+        details: [
+          { label: "Equation", title: "Average power", bullets: [
+            "Use <strong>P = W/t = ΔE/t</strong>, with W or ΔE in joules and t in seconds.",
+            "Rearrange to <strong>W = Pt</strong> or <strong>t = W/P</strong> as required.",
+            "A machine doing 6000 J of work in 3.0 s has power P = 6000/3.0 = <strong>2000 W = 2.0 kW</strong>."
+          ]},
+          { label: "Units", title: "Convert before calculating", bullets: [
+            "<strong>1 kW = 10<sup>3</sup> W</strong> and <strong>1 MW = 10<sup>6</sup> W</strong>; convert minutes or hours to seconds when using SI units."
+          ]}
+        ],
+        note: "P = W/t gives average power over the stated interval unless the quantities are instantaneous."
+      },
+      {
+        id: "physics-5-1-7",
+        code: "5.1.7",
+        wording: "derive P = Fv and use it to solve problems",
+        details: [
+          { label: "Derivation", title: "Start from work and power", bullets: [
+            "For a force F parallel to displacement s, <strong>W = Fs</strong>.",
+            "Since <strong>P = W/t</strong> and <strong>v = s/t</strong>, P = Fs/t = F(s/t), giving <strong>P = Fv</strong>.",
+            "If force and velocity make an angle θ, use the parallel component: <strong>P = Fv cos θ</strong>."
+          ]},
+          { label: "Application", title: "Use the force doing the work", bullets: [
+            "At constant speed on level ground, a vehicle’s driving force equals the resistance, so the useful mechanical power is <strong>P = F<sub>drive</sub>v = F<sub>resist</sub>v</strong>.",
+            "Rearrange to <strong>F = P/v</strong> or <strong>v = P/F</strong>; use the instantaneous speed for instantaneous power."
+          ]}
+        ],
+        visual: "power-force-speed",
+        note: "At constant speed the resultant force is zero, but engine power is not zero: the driving force does work at the same rate that resistive forces dissipate energy."
+      }
+    ]
+  },
+  {
+    id: "section-physics-5-2",
+    nav: "5.2",
+    title: "Gravitational potential energy and kinetic energy",
+    kicker: "Chapter 5 · Work, energy and power",
+    entries: [
+      {
+        id: "physics-5-2-1",
+        code: "5.2.1",
+        wording: "derive, using W = Fs, the formula ∆EP = mg∆h for gravitational potential energy changes in a uniform gravitational field",
+        details: [
+          { label: "Derivation", title: "Lift a mass through a vertical height", bullets: [
+            "Raise a mass m slowly or at constant speed through vertical height Δh in a <strong>uniform gravitational field</strong>.",
+            "The lifting force equals the weight: <strong>F = mg</strong>, and the displacement in the force direction is <strong>s = Δh</strong>.",
+            "Using W = Fs: W = mgΔh. This work is transferred to gravitational potential energy, hence <strong>ΔE<sub>P</sub> = mgΔh</strong>."
+          ]},
+          { label: "Signs", title: "Height change carries the sign", bullets: [
+            "For upward motion Δh &gt; 0, so GPE increases; for downward motion Δh &lt; 0, so GPE decreases."
+          ]}
+        ],
+        visual: "gpe-ke-derivation"
+      },
+      {
+        id: "physics-5-2-2",
+        code: "5.2.2",
+        wording: "recall and use the formula ∆EP = mg∆h for gravitational potential energy changes in a uniform gravitational field",
+        details: [
+          { label: "Use", title: "Only the vertical height change matters", bullets: [
+            "Use <strong>ΔE<sub>P</sub> = mgΔh</strong>, where m is mass, g is gravitational field strength and Δh is final height minus initial height.",
+            "The change depends on <strong>vertical height</strong>, not the length or shape of the path; the zero/reference level for E<sub>P</sub> may be chosen freely.",
+            "For m = 2.0 kg raised by 3.0 m with g = 9.81 N kg<sup>−1</sup>, ΔE<sub>P</sub> = <strong>58.9 J</strong>."
+          ]},
+          { label: "Energy link", title: "Apply conservation carefully", bullets: [
+            "With no dissipative forces, a loss of GPE gives an equal gain in KE: <strong>−ΔE<sub>P</sub> = ΔE<sub>K</sub></strong>.",
+            "If resistance acts, include the energy transferred to thermal/internal energy in the balance."
+          ]}
+        ],
+        note: "The formula assumes g is effectively constant over the height change; use Δh, not the distance travelled along a slope."
+      },
+      {
+        id: "physics-5-2-3",
+        code: "5.2.3",
+        wording: "derive, using the equations of motion, the formula for kinetic energy EK = 1/2 mv²",
+        details: [
+          { label: "Derivation", title: "Work done changes kinetic energy", bullets: [
+            "Let a constant resultant force F accelerate mass m from speed u to speed v through displacement s.",
+            "Using <strong>F = ma</strong> and W = Fs: <strong>W = mas</strong>.",
+            "From the equation of motion <strong>v² = u² + 2as</strong>, as = (v² − u²)/2.",
+            "Therefore W = ½m(v² − u²) = <strong>ΔE<sub>K</sub></strong>. If u = 0, <strong>E<sub>K</sub> = ½mv²</strong>."
+          ]},
+          { label: "Meaning", title: "Work–energy result", bullets: [
+            "The <strong>resultant work</strong> done on an object equals its change in kinetic energy."
+          ]}
+        ],
+        visual: "gpe-ke-derivation",
+        note: "The derivation uses the resultant force and an equation of motion for constant acceleration."
+      },
+      {
+        id: "physics-5-2-4",
+        code: "5.2.4",
+        wording: "recall and use EK = 1/2 mv²",
+        table: {
+          headers: ["Change", "Effect on E<sub>K</sub>"],
+          rows: [
+            ["Mass doubled at fixed speed", "E<sub>K</sub> <strong>doubles</strong>"],
+            ["Speed doubled at fixed mass", "E<sub>K</sub> becomes <strong>four times</strong> as large"],
+            ["Direction reversed at same speed", "E<sub>K</sub> is <strong>unchanged</strong>"]
+          ]
+        },
+        details: [
+          { label: "Use", title: "Kinetic energy depends on speed squared", bullets: [
+            "Use <strong>E<sub>K</sub> = ½mv²</strong>, with m in kg and speed v in m s<sup>−1</sup>; the answer is in joules.",
+            "For a change of speed, use <strong>ΔE<sub>K</sub> = ½m(v² − u²)</strong>.",
+            "A 0.50 kg object moving at 8.0 m s<sup>−1</sup> has E<sub>K</sub> = ½ × 0.50 × 8.0² = <strong>16 J</strong>."
+          ]},
+          { label: "Nature", title: "Kinetic energy is a scalar", bullets: [
+            "Use the magnitude of velocity—the <strong>speed</strong>. Kinetic energy is never negative, although its change can be negative."
+          ]}
+        ],
+        note: "Square the speed after converting it to m s⁻¹; do not preserve the sign of velocity inside v²."
+      }
+    ]
   }
 ];
 
@@ -980,6 +1200,54 @@ window.PHYSICS_VISUALS = {
       <line class="accent" x1="340" y1="104" x2="340" y2="145" marker-end="url(#up-red)"/><line class="main" x1="340" y1="330" x2="340" y2="265" marker-end="url(#up-blue)"/>
       <line class="guide" x1="218" y1="165" x2="462" y2="165"/><line class="guide" x1="218" y1="246" x2="462" y2="246"/>
       <text x="370" y="118">smaller downward force</text><text x="361" y="298">larger upward force</text><text x="92" y="168">lower pressure</text><text x="92" y="250">higher pressure</text><text x="265" y="360">resultant = upthrust</text>
+    </svg>`
+  },
+  "work-component": {
+    caption: "Only the component of displacement parallel to the force contributes: W = F(s cos θ).",
+    svg: `<svg class="physics-diagram" viewBox="0 0 700 330" role="img" aria-label="Force at an angle to horizontal displacement showing the parallel displacement component used for work">
+      <defs><marker id="wc-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-main" d="M0,0 L8,4 L0,8 Z"/></marker><marker id="wc-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-accent" d="M0,0 L8,4 L0,8 Z"/></marker></defs>
+      <rect class="object" x="115" y="178" width="120" height="72" rx="10"/><line class="axis" x1="58" y1="250" x2="650" y2="250"/>
+      <line class="accent" x1="175" y1="178" x2="355" y2="74" marker-end="url(#wc-red)"/><line class="main" x1="175" y1="282" x2="560" y2="282" marker-end="url(#wc-blue)"/>
+      <line class="guide" x1="175" y1="178" x2="355" y2="178"/><path class="guide" d="M246 178 A71 71 0 0 0 236 143"/>
+      <text x="278" y="102">force F</text><text x="367" y="310">displacement s</text><text x="245" y="158">θ</text><text x="365" y="168">parallel component: s cos θ</text><text x="241" y="42">W = Fs cos θ</text>
+    </svg>`
+  },
+  "energy-transfer": {
+    caption: "Conservation fixes the whole balance; efficiency compares the useful branch with the total input.",
+    svg: `<svg class="physics-diagram" viewBox="0 0 760 330" role="img" aria-label="Energy transfer diagram showing total input divided into useful output and dissipated energy">
+      <rect class="object" x="54" y="118" width="168" height="88" rx="12"/><text x="91" y="152">total energy</text><text x="114" y="179">input</text>
+      <rect class="object" x="320" y="118" width="150" height="88" rx="12"/><text x="354" y="152">system</text><text x="341" y="179">η &lt; 1</text>
+      <rect class="object" x="574" y="48" width="150" height="74" rx="12"/><text x="603" y="79">useful</text><text x="602" y="103">output</text>
+      <rect class="object" x="574" y="230" width="150" height="74" rx="12"/><text x="593" y="261">dissipated</text><text x="610" y="285">output</text>
+      <line class="main" x1="222" y1="162" x2="320" y2="162"/><polygon points="320,162 305,153 305,171" fill="#10233c"/>
+      <path class="accent" d="M470 150 C515 150 520 85 574 85"/><polygon points="574,85 559,76 559,94" fill="#e34b55"/>
+      <path class="main" d="M470 174 C515 174 520 267 574 267"/><polygon points="574,267 559,258 559,276" fill="#10233c"/>
+      <text x="260" y="146">Eᵢₙ</text><text x="485" y="82">E useful</text><text x="477" y="290">E wasted</text><text x="208" y="252">Eᵢₙ = E useful + E wasted</text>
+    </svg>`
+  },
+  "power-force-speed": {
+    caption: "In time t the vehicle moves vt, so W = Fvt and P = W/t = Fv for a parallel force.",
+    svg: `<svg class="physics-diagram" viewBox="0 0 720 330" role="img" aria-label="Vehicle moving at velocity v under a driving force F used to derive power equals force times velocity">
+      <defs><marker id="pf-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-main" d="M0,0 L8,4 L0,8 Z"/></marker><marker id="pf-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-accent" d="M0,0 L8,4 L0,8 Z"/></marker></defs>
+      <line class="axis" x1="50" y1="242" x2="670" y2="242"/><path class="object" d="M188 202 h205 l45 40 H150 Z"/><circle cx="208" cy="247" r="24" fill="#8aa0b4"/><circle cx="390" cy="247" r="24" fill="#8aa0b4"/>
+      <line class="accent" x1="438" y1="187" x2="596" y2="187" marker-end="url(#pf-red)"/><text x="498" y="171">driving force F</text>
+      <line class="main" x1="274" y1="92" x2="496" y2="92" marker-end="url(#pf-blue)"/><text x="356" y="76">velocity v</text>
+      <line class="guide" x1="150" y1="295" x2="596" y2="295"/><line class="axis" x1="150" y1="284" x2="150" y2="306"/><line class="axis" x1="596" y1="284" x2="596" y2="306"/><text x="329" y="322">s = vt</text><text x="54" y="42">P = W/t = F(vt)/t = Fv</text>
+    </svg>`
+  },
+  "gpe-ke-derivation": {
+    caption: "Two required derivations: lifting gives ΔEₚ = mgΔh; resultant work with v² = u² + 2as gives ΔEₖ = ½m(v² − u²).",
+    svg: `<svg class="physics-diagram" viewBox="0 0 800 390" role="img" aria-label="Side-by-side derivations of gravitational potential energy and kinetic energy">
+      <line class="guide" x1="400" y1="36" x2="400" y2="354"/>
+      <text x="116" y="44">GPE derivation</text><line class="axis" x1="62" y1="318" x2="350" y2="318"/>
+      <rect class="object" x="174" y="94" width="74" height="62" rx="8"/><text x="202" y="132">m</text>
+      <line class="accent" x1="211" y1="92" x2="211" y2="47"/><polygon points="211,47 202,63 220,63" fill="#e34b55"/><text x="230" y="68">F = mg</text>
+      <line class="main" x1="211" y1="157" x2="211" y2="213"/><polygon points="211,213 202,197 220,197" fill="#10233c"/><text x="230" y="201">weight mg</text>
+      <line class="guide" x1="104" y1="318" x2="104" y2="125"/><line class="axis" x1="94" y1="318" x2="114" y2="318"/><line class="axis" x1="94" y1="125" x2="114" y2="125"/><text x="60" y="228">Δh</text><text x="70" y="356">W = Fs = mgΔh</text>
+      <text x="510" y="44">KE derivation</text><rect class="object" x="492" y="145" width="112" height="76" rx="8"/><text x="537" y="188">m</text>
+      <line class="accent" x1="604" y1="165" x2="715" y2="165"/><polygon points="715,165 699,156 699,174" fill="#e34b55"/><text x="644" y="145">F = ma</text>
+      <line class="main" x1="492" y1="260" x2="695" y2="260"/><polygon points="695,260 679,251 679,269" fill="#10233c"/><text x="570" y="287">displacement s</text>
+      <text x="448" y="326">W = mas</text><text x="586" y="326">as = (v² − u²)/2</text><text x="500" y="362">W = ½m(v² − u²) = ΔEₖ</text>
     </svg>`
   }
 };
