@@ -3859,7 +3859,7 @@ Largest ← Larger(First, Second)</div>
     const sectionObserver = new IntersectionObserver((entries) => {
       const visible = entries
         .filter((entry) => entry.isIntersecting && entry.target.closest('[data-subject-view]')?.dataset.subjectView === activeSubject)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        .sort((a, b) => b.target.getBoundingClientRect().top - a.target.getBoundingClientRect().top)[0];
       if (!visible) return;
       const currentLink = navLinks.find((link) => link.dataset.section === visible.target.id);
       if (currentLink) breadcrumbChapter.textContent = currentLink.querySelector('.chapter-link__text')?.textContent || '';
