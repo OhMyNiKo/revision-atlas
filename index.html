@@ -1803,7 +1803,7 @@
         </button>
         <button class="subject-option" type="button" data-subject-option="physics">
           <span class="subject-option__icon" aria-hidden="true">F</span>
-          <span class="subject-option__copy"><span class="subject-option__name">Physics</span><span class="subject-option__meta">AS Level · 9702 · Chapters 1–4</span></span>
+          <span class="subject-option__copy"><span class="subject-option__name">Physics</span><span class="subject-option__meta">AS Level · 9702 · Chapters 1–5</span></span>
           <span class="subject-option__check" aria-hidden="true">✓</span>
         </button>
         <button class="subject-option" type="button" data-subject-option="owh">
@@ -1865,6 +1865,8 @@
         <a class="chapter-link" href="#section-physics-4-1" data-subject="physics" data-section="section-physics-4-1"><span class="chapter-link__num">4.1</span><span class="chapter-link__text">Turning effects</span></a>
         <a class="chapter-link" href="#section-physics-4-2" data-subject="physics" data-section="section-physics-4-2"><span class="chapter-link__num">4.2</span><span class="chapter-link__text">Equilibrium</span></a>
         <a class="chapter-link" href="#section-physics-4-3" data-subject="physics" data-section="section-physics-4-3"><span class="chapter-link__num">4.3</span><span class="chapter-link__text">Density &amp; pressure</span></a>
+        <a class="chapter-link" href="#section-physics-5-1" data-subject="physics" data-section="section-physics-5-1"><span class="chapter-link__num">5.1</span><span class="chapter-link__text">Energy conservation</span></a>
+        <a class="chapter-link" href="#section-physics-5-2" data-subject="physics" data-section="section-physics-5-2"><span class="chapter-link__num">5.2</span><span class="chapter-link__text">GPE &amp; kinetic energy</span></a>
         <a class="chapter-link" href="#physics-sources" data-subject="physics" data-section="physics-sources"><span class="chapter-link__num">S</span><span class="chapter-link__text">Checked sources</span></a>
       </nav>
 
@@ -3435,15 +3437,15 @@ Largest ← Larger(First, Second)</div>
         <section class="chapter-hero chapter-hero--physics" aria-labelledby="physics-page-title">
           <div>
             <div class="eyebrow">9702 · AS Level Physics</div>
-            <h1 id="physics-page-title">Physics · Chapters 1–4</h1>
+            <h1 id="physics-page-title">Physics · Chapters 1–5</h1>
             <p class="hero-copy">Every syllabus statement is reproduced exactly from the supplied Cambridge 9702 syllabus. Open a card for compact, mark-ready definitions, equations, conditions, distinctions and checked diagrams.</p>
             <div class="instruction">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
               <span>Each bullet is written as a separate potential marking point. Formulae include their conditions and common traps; answers are closed by default. The left directory and blue reading line track your current position.</span>
             </div>
           </div>
-          <div class="chapter-stamp" aria-label="Chapters 1 to 4">
-            <strong>04</strong>
+          <div class="chapter-stamp" aria-label="Chapters 1 to 5">
+            <strong>05</strong>
             <span>Chapters indexed</span>
           </div>
         </section>
@@ -3452,7 +3454,7 @@ Largest ← Larger(First, Second)</div>
 
         <section class="source-panel" id="physics-sources" aria-labelledby="physics-sources-title">
           <h2 id="physics-sources-title">Checked sources and scope</h2>
-          <p>The 47 displayed statements are copied from the supplied official 2025–2027 Cambridge 9702 syllabus (pages 16–19). Definitions, conditions and calculation language were checked against Cambridge’s public qualification and past-paper resources; SI unit and prefix notation follows the BIPM SI Brochure. The diagrams are newly drawn, syllabus-scoped schematics—not copied artwork.</p>
+          <p>The 58 displayed statements are copied from the supplied official 2025–2027 Cambridge 9702 syllabus (pages 16–19). Definitions, conditions, derivations and calculation language were checked against Cambridge’s public qualification, specimen-paper and mark-scheme resources; SI unit and prefix notation follows the BIPM SI Brochure. The diagrams are newly drawn, syllabus-scoped schematics—not copied artwork.</p>
           <div class="source-list">
             <a class="source-card" href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-physics-9702/" target="_blank" rel="noreferrer">
               <span class="source-card__tag">Official</span>
@@ -3468,7 +3470,15 @@ Largest ← Larger(First, Second)</div>
             </a>
             <a class="source-card" href="https://www.cambridgeinternational.org/Images/664565-2025-2027-syllabus.pdf" target="_blank" rel="noreferrer">
               <span class="source-card__tag">PDF</span>
-              <span><strong>Supplied Cambridge 9702 syllabus · 2025–2027</strong><span>Exact Chapter 1–4 wording and scope, checked page by page</span></span>
+              <span><strong>Supplied Cambridge 9702 syllabus · 2025–2027</strong><span>Exact Chapter 1–5 wording and scope, checked page by page</span></span>
+            </a>
+            <a class="source-card" href="https://www.cambridgeinternational.org/Images/751263-2022-specimen-paper-2.pdf" target="_blank" rel="noreferrer">
+              <span class="source-card__tag">QP</span>
+              <span><strong>Official 9702/02 specimen paper</strong><span>Chapter 5 work, GPE and kinetic-energy question contexts</span></span>
+            </a>
+            <a class="source-card" href="https://www.cambridgeinternational.org/Images/751273-2022-specimen-mark-scheme-paper-2.pdf" target="_blank" rel="noreferrer">
+              <span class="source-card__tag">MS</span>
+              <span><strong>Official 9702/02 specimen mark scheme</strong><span>Accepted definition wording and calculation marking points</span></span>
             </a>
           </div>
         </section>
@@ -3568,7 +3578,7 @@ Largest ← Larger(First, Second)</div>
                   ${renderTable(entry.table)}
                   ${entry.visual ? renderVisual(entry.visual) : ''}
                   ${entry.note ? `<div class="exam-note"><strong>Exam precision:</strong> ${entry.note}</div>` : ''}
-                  <div class="physics-source">Cambridge 9702 syllabus §${entry.code} · Chapters 1–4 scope</div>
+                  <div class="physics-source">Cambridge 9702 syllabus §${entry.code} · Chapters 1–5 scope</div>
                 </div></div></div>
               </article>`).join('')}
           </div>
@@ -3762,7 +3772,7 @@ Largest ← Larger(First, Second)</div>
     function subjectMeta(subject) {
       const subjects = {
         cs: { name: 'Computer Science', code: 'AS Level · 9618', icon: '</>', breadcrumb: 'AS Computer Science', label: 'Chapters', footer: 'Syllabus edition · 2027–2029', status: 'Source checked', title: '9618 Revision Atlas — Computer Science' },
-        physics: { name: 'Physics', code: 'AS Level · 9702', icon: 'F', breadcrumb: 'AS Physics', label: 'Sections', footer: 'Syllabus edition · 2025–2027', status: '47 points checked', title: '9702 Revision Atlas — Physics Chapters 1–4' },
+        physics: { name: 'Physics', code: 'AS Level · 9702', icon: 'F', breadcrumb: 'AS Physics', label: 'Sections', footer: 'Syllabus edition · 2025–2027', status: '58 points checked', title: '9702 Revision Atlas — Physics Chapters 1–5' },
         owh: { name: 'OWH Notes', code: 'AS Psychology · Weeks 1–6', icon: 'Ψ', breadcrumb: 'AS Psychology', label: 'Weeks', footer: '22 teacher files · Weeks 1–6', status: '22 files indexed', title: 'OWH Notes — AS Psychology' }
       };
       return subjects[subject] || subjects.cs;
