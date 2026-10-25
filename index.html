@@ -1798,7 +1798,7 @@
       <div class="subject-picker" id="subjectPicker" hidden>
         <button class="subject-option is-active" type="button" data-subject-option="cs">
           <span class="subject-option__icon" aria-hidden="true">&lt;/&gt;</span>
-          <span class="subject-option__copy"><span class="subject-option__name">Computer Science</span><span class="subject-option__meta">Cambridge syllabus notes</span></span>
+          <span class="subject-option__copy"><span class="subject-option__name">Computer Science</span><span class="subject-option__meta">AS Level · 9618 · Chapters 9–12</span></span>
           <span class="subject-option__check" aria-hidden="true">✓</span>
         </button>
         <button class="subject-option" type="button" data-subject-option="physics">
@@ -1822,6 +1822,22 @@
         <a class="chapter-link" href="#section-9-2" data-subject="cs" data-section="section-9-2">
           <span class="chapter-link__num">9.2</span>
           <span class="chapter-link__text">Algorithms</span>
+        </a>
+        <a class="chapter-link" href="#section-10-1" data-subject="cs" data-section="section-10-1">
+          <span class="chapter-link__num">10.1</span>
+          <span class="chapter-link__text">Data Types &amp; Records</span>
+        </a>
+        <a class="chapter-link" href="#section-10-2" data-subject="cs" data-section="section-10-2">
+          <span class="chapter-link__num">10.2</span>
+          <span class="chapter-link__text">Arrays</span>
+        </a>
+        <a class="chapter-link" href="#section-10-3" data-subject="cs" data-section="section-10-3">
+          <span class="chapter-link__num">10.3</span>
+          <span class="chapter-link__text">Files</span>
+        </a>
+        <a class="chapter-link" href="#section-10-4" data-subject="cs" data-section="section-10-4">
+          <span class="chapter-link__num">10.4</span>
+          <span class="chapter-link__text">Abstract Data Types</span>
         </a>
         <a class="chapter-link" href="#section-11-1" data-subject="cs" data-section="section-11-1">
           <span class="chapter-link__num">11.1</span>
@@ -2051,7 +2067,7 @@
                   <div class="source-line">
                     <span>Checked against</span>
                     <a href="https://pastpapers.papacambridge.com/viewer/caie/as-and-a-level-computer-science-for-first-examination-in-2021-9618-2025-may-june-9618-s25-ms-21-pdf" target="_blank" rel="noreferrer">9618/21 M/J 2025 · published MS</a>
-                    <a href="https://www.cambridgeinternational.org/Images/503427-2021-specimen-paper-2-mark-scheme.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · modules</a>
+                    <a href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · modules</a>
                   </div>
                 </div>
               </div>
@@ -2144,7 +2160,7 @@
 <span class="code-var">Area</span> ← <span class="code-var">Width</span> * <span class="code-var">Height</span>
 <span class="code-key">OUTPUT</span> <span class="code-string">"Area = "</span>, <span class="code-var">Area</span></div>
                 <div class="exam-note"><strong>Exam trap:</strong> a prompt such as <code>OUTPUT "Enter width"</code> is output, not input. The separate <code>INPUT Width</code> statement performs the input.</div>
-                <div class="source-line"><a href="https://www.cambridgeinternational.org/Images/503427-2021-specimen-paper-2-mark-scheme.pdf#page=4" target="_blank" rel="noreferrer">Official specimen MS · Q1(b)</a></div>
+                <div class="source-line"><a href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf#page=4" target="_blank" rel="noreferrer">Official specimen MS · Q1(b)</a></div>
               </div></div>
             </div>
           </article>
@@ -2385,6 +2401,8 @@
           </article>
         </div>
       </section>
+
+      <div id="csChapter10Notes"></div>
 
       <section class="chapter-hero chapter-hero--secondary" aria-labelledby="chapter-11-title">
         <div>
@@ -2686,7 +2704,7 @@
 <span class="code-key">CALL</span> AddBonus(50.00, WeeklyPay)</div>
               </div>
               <div class="exam-note"><strong>Exam trap:</strong> BYREF is appropriate only when the subroutine must alter the caller’s variable. Do not claim that BYVAL changes the original.</div>
-              <div class="source-line"><span>Definition and syntax checked against</span><a href="https://www.cambridgeinternational.org/Images/503427-2021-specimen-paper-2-mark-scheme.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · Q2(b)</a><a href="https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Past-Papers/CAIE/Spec-2021/Paper-2/MS/November%202022%20(v3)%20MS.pdf" target="_blank" rel="noreferrer">9618/23 O/N 2022 · Q5</a></div>
+              <div class="source-line"><span>Definition and syntax checked against</span><a href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · Q2(b)</a><a href="https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Past-Papers/CAIE/Spec-2021/Paper-2/MS/November%202022%20(v3)%20MS.pdf" target="_blank" rel="noreferrer">9618/23 O/N 2022 · Q5</a></div>
             </div></div></div>
           </article>
 
@@ -2709,7 +2727,7 @@
 Largest ← Larger(First, Second)</div>
               </div>
               <div class="exam-note"><strong>Exam trap:</strong> include the return data type in the header, a value of that type after <code>RETURN</code>, and <code>ENDFUNCTION</code>.</div>
-              <div class="source-line"><span>Syntax checked against</span><a href="https://www.cambridgeinternational.org/Images/503427-2021-specimen-paper-2-mark-scheme.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · functions</a></div>
+              <div class="source-line"><span>Syntax checked against</span><a href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf#page=5" target="_blank" rel="noreferrer">Official specimen MS · functions</a></div>
             </div></div></div>
           </article>
 
@@ -3375,17 +3393,17 @@ Largest ← Larger(First, Second)</div>
       </section>
       <section class="source-panel" id="sources" aria-labelledby="sources-title">
         <h2 id="sources-title">Checked sources</h2>
-        <p>Syllabus statements are reproduced exactly from the screenshots and cross-checked against the official 2027–2029 document. Cambridge’s pseudocode guide, course definitions and published mark schemes supply the required syntax, diagrams and exam-credit language; concise linking notes cover syllabus points that no single question tests in full.</p>
+        <p>Syllabus statements are reproduced exactly from the screenshots and cross-checked against the official 2027–2029 document. The Chapter 10 notes also consolidate the supplied Weeks 6–10 classroom slides, solutions, assessment tasks and linked-list notes. Cambridge’s pseudocode guide, course definitions and published mark schemes supply the required syntax, diagrams and exam-credit language; concise linking notes cover syllabus points that no single question tests in full.</p>
         <div class="source-list">
           <a class="source-card" href="https://www.cambridgeinternational.org/Images/721397-2027-2029-syllabus.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
-            <span><strong>Cambridge 9618 syllabus · 2027–2029</strong><span>Chapter 9, Chapter 11 and Chapter 12 wording and scope</span></span>
+            <span><strong>Cambridge 9618 syllabus · 2027–2029</strong><span>Chapters 9–12 wording and scope</span></span>
           </a>
           <a class="source-card" href="https://www.cambridgeinternational.org/Images/697401-2026-pseudocode-guide-for-teachers.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
             <span><strong>Cambridge 9618 pseudocode guide · 2026</strong><span>Declarations, operators, constructs and subroutines</span></span>
           </a>
-          <a class="source-card" href="https://www.cambridgeinternational.org/Images/503427-2021-specimen-paper-2-mark-scheme.pdf" target="_blank" rel="noreferrer">
+          <a class="source-card" href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
             <span><strong>Cambridge 9618 specimen mark scheme</strong><span>IPO classification and module representation</span></span>
           </a>
@@ -3528,10 +3546,11 @@ Largest ← Larger(First, Second)</div>
         </section>
       </div>
 
-      <footer>Personal revision resource · Source material remains credited to Cambridge International and the supplied OWH teaching notes.</footer>
+      <footer>Personal revision resource · Source material remains credited to Cambridge International and the supplied classroom notes.</footer>
     </main>
   </div>
 
+  <script src="cs-chapter10-notes.js?v=20261025-class-notes"></script>
   <script src="physics-notes.js?v=20261023-ch5"></script>
   <script src="owh-notes.js"></script>
   <script>
