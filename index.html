@@ -1295,6 +1295,182 @@
       letter-spacing: .05em;
       text-transform: uppercase;
     }
+    /* AQA uses a continuous editorial-notes layout rather than disclosure cards. */
+    #subject-aqa .aqa-note-section {
+      margin: 0 0 62px;
+      padding-top: 8px;
+    }
+    #subject-aqa .aqa-note-section .section-heading {
+      padding-bottom: 16px;
+      border-bottom: 1px solid #d9d6e2;
+    }
+    #subject-aqa .aqa-notes {
+      display: block;
+    }
+    #subject-aqa .aqa-note {
+      margin: 0;
+      padding: 28px 0 34px;
+      border: 0;
+      border-bottom: 1px solid #e4e2e8;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+      scroll-margin-top: 118px;
+    }
+    #subject-aqa .aqa-note:last-child { border-bottom: 0; }
+    #subject-aqa .aqa-note__head {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 0 18px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+    #subject-aqa .aqa-note__code {
+      padding-top: 5px;
+      color: #7868a2;
+      font-size: .68rem;
+      font-weight: 650;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+    #subject-aqa .aqa-note__title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.19rem;
+      font-weight: 630;
+      letter-spacing: -.012em;
+      line-height: 1.4;
+    }
+    #subject-aqa .aqa-note__definition {
+      grid-column: 2;
+      max-width: 82ch;
+      margin: 8px 0 0;
+      padding-left: 0;
+      border-left: 0;
+      color: #5f6b78;
+      font-size: .96rem;
+      line-height: 1.67;
+    }
+    #subject-aqa .aqa-note__definition::before { content: none; }
+    #subject-aqa .aqa-note__definition-label {
+      margin-right: 7px;
+      color: #5b4788;
+      font-size: .68rem;
+      font-weight: 650;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+    #subject-aqa .aqa-note__body {
+      margin-left: 82px;
+    }
+    #subject-aqa .aqa-summary-table,
+    #subject-aqa .aqa-reference-table {
+      margin-top: 14px;
+      overflow-x: auto;
+      border-top: 1px solid #d8d4e0;
+      border-bottom: 1px solid #d8d4e0;
+    }
+    #subject-aqa .aqa-summary-table table,
+    #subject-aqa .aqa-reference-table table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+    #subject-aqa .aqa-summary-table th,
+    #subject-aqa .aqa-summary-table td,
+    #subject-aqa .aqa-reference-table th,
+    #subject-aqa .aqa-reference-table td {
+      padding: 11px 12px;
+      border: 0;
+      border-bottom: 1px solid #e7e4eb;
+      vertical-align: top;
+      text-align: left;
+      line-height: 1.58;
+    }
+    #subject-aqa .aqa-summary-table tr:last-child td,
+    #subject-aqa .aqa-reference-table tr:last-child td { border-bottom: 0; }
+    #subject-aqa .aqa-summary-table th,
+    #subject-aqa .aqa-reference-table th {
+      color: #5b526c;
+      background: #f7f6f9;
+      font-size: .68rem;
+      font-weight: 650;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+    #subject-aqa .aqa-summary-table td:first-child {
+      width: 22%;
+      color: #443760;
+      font-weight: 600;
+    }
+    #subject-aqa .aqa-summary-title {
+      display: block;
+      margin-top: 2px;
+      color: #687280;
+      font-size: .83rem;
+      font-weight: 450;
+      line-height: 1.45;
+    }
+    #subject-aqa .aqa-summary-table ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    #subject-aqa .aqa-summary-table li {
+      position: relative;
+      margin: 0 0 7px;
+      padding-left: 17px;
+    }
+    #subject-aqa .aqa-summary-table li:last-child { margin-bottom: 0; }
+    #subject-aqa .aqa-summary-table li::before {
+      content: "·";
+      position: absolute;
+      left: 2px;
+      color: #8c73bf;
+      font-weight: 700;
+    }
+    #subject-aqa .aqa-table-caption {
+      margin: 22px 0 7px;
+      color: #796a91;
+      font-size: .69rem;
+      font-weight: 650;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    #subject-aqa .aqa-note .aqa-source {
+      margin-top: 14px;
+      padding-top: 0;
+      color: #89919c;
+      font-size: .7rem;
+    }
+    #subject-aqa .aqa-note.is-search-match,
+    #subject-aqa .aqa-note.note-search-current {
+      border-color: #9c86d9;
+      background: linear-gradient(90deg, rgba(139,116,207,.07), transparent 42%);
+      box-shadow: inset 3px 0 0 #8b74cf;
+    }
+    html[data-theme="dark"] #subject-aqa .aqa-note-section .section-heading,
+    html[data-theme="dark"] #subject-aqa .aqa-note,
+    html[data-theme="dark"] #subject-aqa .aqa-summary-table,
+    html[data-theme="dark"] #subject-aqa .aqa-reference-table { border-color: #344454; }
+    html[data-theme="dark"] #subject-aqa .aqa-note__definition { color: #a7b3bf; }
+    html[data-theme="dark"] #subject-aqa .aqa-note__definition-label,
+    html[data-theme="dark"] #subject-aqa .aqa-note__code { color: #c1b0ef; }
+    html[data-theme="dark"] #subject-aqa .aqa-summary-table th,
+    html[data-theme="dark"] #subject-aqa .aqa-reference-table th { color: #cfc7df; background: #182432; }
+    html[data-theme="dark"] #subject-aqa .aqa-summary-table td,
+    html[data-theme="dark"] #subject-aqa .aqa-reference-table td { border-color: #2b3a48; background: transparent; }
+    html[data-theme="dark"] #subject-aqa .aqa-summary-table td:first-child { color: #d6caef; }
+    html[data-layout="focus"] #subject-aqa .aqa-note__definition-label,
+    html[data-layout="focus"] #subject-aqa .aqa-note__code,
+    html[data-layout="focus"] #subject-aqa .aqa-table-caption { color: #687f6d; }
+    html[data-layout="focus"] #subject-aqa .aqa-summary-table li::before { color: #78927d; }
+    html[data-layout="focus"] #subject-aqa .aqa-note.is-search-match,
+    html[data-layout="focus"] #subject-aqa .aqa-note.note-search-current {
+      background: linear-gradient(90deg, rgba(120,146,125,.08), transparent 42%);
+      box-shadow: inset 3px 0 0 #78927d;
+    }
     footer {
       margin-top: 26px;
       color: #8a97a7;
@@ -2072,6 +2248,16 @@
       .owh-locator__status { min-width: 0; text-align: left; }
       html[data-layout="focus"] .owh-locator { padding: 10px 0; }
       .syllabus-card.note-search-current { scroll-margin-top: 144px; }
+      #subject-aqa .aqa-note-section { margin-bottom: 46px; padding-top: 28px; }
+      #subject-aqa .aqa-note { padding: 23px 0 28px; }
+      #subject-aqa .aqa-note__head { grid-template-columns: 1fr; gap: 4px; }
+      #subject-aqa .aqa-note__code { display: block; grid-column: 1; padding-top: 0; }
+      #subject-aqa .aqa-note__title,
+      #subject-aqa .aqa-note__definition { grid-column: 1; }
+      #subject-aqa .aqa-note__title { font-size: 1.1rem; }
+      #subject-aqa .aqa-note__body { margin-left: 0; }
+      #subject-aqa .aqa-summary-table table,
+      #subject-aqa .aqa-reference-table table { min-width: 560px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -3884,10 +4070,10 @@ Largest ← Larger(First, Second)</div>
           <div>
             <div class="eyebrow">OxfordAQA International AS · 9670</div>
             <h1 id="aqa-page-title">AQA AS Language</h1>
-            <p class="hero-copy">All substantive knowledge from the supplied 12-week course has been reorganised against the 9670 specification. Each closed card gives the teacher-material definition first; open it for exact terminology, comparison tables, concrete examples and an exam-use explanation.</p>
+            <p class="hero-copy">All substantive knowledge from the supplied 12-week course has been reorganised against the 9670 specification as one continuous, minimal revision notebook. Definitions, terminology, worked examples and comparison tables remain visible together for fast scanning.</p>
             <div class="instruction">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
-              <span>Follow the specification directory on the left, or search the current subject at the top. Press Space or Enter repeatedly to move through ranked matches. The reading line and highlighted directory item track your current position.</span>
+              <span>Follow the specification directory on the left, or search the current subject at the top. Press Space or Enter repeatedly to move through ranked matches. No cards need opening: every note and example is visible in reading order.</span>
             </div>
           </div>
           <div class="chapter-stamp" aria-label="Twelve weeks indexed">
@@ -3912,7 +4098,7 @@ Largest ← Larger(First, Second)</div>
             </div>
             <div class="source-card">
               <span class="source-card__tag">Exact</span>
-              <span><strong>Teacher definitions and tables</strong><span>Definitions are retained where supplied; added explanation is separated inside each expanded card</span></span>
+              <span><strong>Teacher definitions and tables</strong><span>Definitions are retained where supplied; added explanation and examples appear directly beneath each definition</span></span>
             </div>
             <div class="source-card">
               <span class="source-card__tag">Gap</span>
@@ -3929,7 +4115,7 @@ Largest ← Larger(First, Second)</div>
   <script src="cs-chapter10-notes.js?v=20261025-class-notes"></script>
   <script src="physics-notes.js?v=20261023-ch5"></script>
   <script src="owh-notes.js"></script>
-  <script src="aqa-language-notes.js?v=20261103"></script>
+  <script src="aqa-language-notes.js?v=20261104-editorial"></script>
   <script>
     function renderPhysicsNotes() {
       const root = document.getElementById('physicsNotes');
@@ -4030,20 +4216,27 @@ Largest ← Larger(First, Second)</div>
     function renderAqaLanguageNotes() {
       const root = document.getElementById('aqaLanguageNotes');
       const renderTable = (table) => table ? `
-        <div class="mini-table-wrap">
+        <div class="aqa-table-caption">Reference table</div>
+        <div class="aqa-reference-table">
           <table>
             <thead><tr>${table.headers.map((header) => `<th>${header}</th>`).join('')}</tr></thead>
             <tbody>${table.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
           </table>
         </div>` : '';
-      const renderDetails = (details = []) => details.map((detail) => `
-        <div class="answer-block">
-          <div class="answer-block__title"><span>${detail.label}</span>${detail.title}</div>
-          <ul class="mark-points">${detail.bullets.map((bullet) => `<li data-mark="•">${bullet}</li>`).join('')}</ul>
-        </div>`).join('');
+      const renderDetails = (details = []) => details.length ? `
+        <div class="aqa-summary-table">
+          <table>
+            <thead><tr><th>Focus</th><th>Explanation and examples</th></tr></thead>
+            <tbody>${details.map((detail) => `
+              <tr>
+                <td>${detail.label}<span class="aqa-summary-title">${detail.title}</span></td>
+                <td><ul>${detail.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}</ul></td>
+              </tr>`).join('')}</tbody>
+          </table>
+        </div>` : '';
 
       root.innerHTML = window.AQA_LANGUAGE_NOTES.map((section) => `
-        <section class="section" id="${section.id}" aria-labelledby="heading-${section.id}">
+        <section class="section aqa-note-section" id="${section.id}" aria-labelledby="heading-${section.id}">
           <div class="section-heading">
             <div class="section-number">${section.nav}</div>
             <div>
@@ -4051,23 +4244,19 @@ Largest ← Larger(First, Second)</div>
               <h2 id="heading-${section.id}">${section.title}</h2>
             </div>
           </div>
-          <div class="cards">
+          <div class="aqa-notes">
             ${section.entries.map((entry) => `
-              <article class="syllabus-card" id="${entry.id}">
-                <button class="card-toggle" type="button" aria-expanded="false" aria-controls="answer-${entry.id}">
-                  <span class="point-id">${entry.code}</span>
-                  <span>
-                    <span class="syllabus-wording">${entry.term}</span>
-                    <span class="owh-definition">${entry.definition}</span>
-                  </span>
-                  <span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
-                </button>
-                <div class="answer" id="answer-${entry.id}"><div class="answer__clip"><div class="answer__inner">
-                  <div class="answer-label"><span>Specification-ready breakdown</span><span class="answer-label__note">Teacher wording first; highlighted phrases are high-value exam language</span></div>
+              <article class="syllabus-card aqa-note" id="${entry.id}">
+                <header class="aqa-note__head">
+                  <span class="point-id aqa-note__code">${entry.code}</span>
+                  <h3 class="syllabus-wording aqa-note__title">${entry.term}</h3>
+                  <p class="owh-definition aqa-note__definition"><span class="aqa-note__definition-label">Definition</span>${entry.definition}</p>
+                </header>
+                <div class="aqa-note__body">
                   ${renderDetails(entry.details)}
                   ${renderTable(entry.table)}
                   <div class="aqa-source">${entry.source}</div>
-                </div></div></div>
+                </div>
               </article>`).join('')}
           </div>
         </section>`).join('');
@@ -4241,11 +4430,11 @@ Largest ← Larger(First, Second)</div>
       clearNoteSearchFocus(false);
       const toggle = result.card.querySelector('.card-toggle');
       const wasOpen = result.card.classList.contains('is-open');
-      if (!wasOpen) {
+      if (toggle && !wasOpen) {
         result.card.classList.add('is-open');
-        toggle?.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-expanded', 'true');
         autoOpenedSearchCard = result.card;
-      } else if (autoOpenedSearchCard !== result.card) {
+      } else if (toggle && autoOpenedSearchCard !== result.card) {
         autoOpenedSearchCard = null;
       }
       void result.card.offsetWidth;

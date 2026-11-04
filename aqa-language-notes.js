@@ -424,14 +424,14 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Phonetics studies speech sounds; phonology studies how a language or variety organises and uses those sounds. A phoneme is an individual contrastive sound, and an accent is a socially or regionally patterned phonological repertoire.",
         source: "Learning Objectives · Phonetics and Phonology lesson",
         table: {
-          headers: ["Term", "Definition / classroom example"],
+          headers: ["Term", "Definition", "Example in use"],
           rows: [
-            ["Phoneme", "An individual sound, conventionally represented between slashes using a phonemic alphabet."],
-            ["Accent", "A pattern of pronunciation associated with a region, group or identity."],
-            ["RP contrast", "RP may use /ʌ/ in ‘up’, while some Northern English varieties use /ʊ/."],
-            ["Prosody", "The pattern of stress, intonation and rhythm: the ‘melody’ of speech."],
-            ["Phonological approximation", "Ordinary spelling is manipulated to suggest sound when a phonemic alphabet is unsuitable: ‘pleaseeeee’, ‘SSSLLLOOOWWW’."],
-            ["Accent neutralisation", "A deliberate process of suppressing regional or foreign features in favour of a perceived standard accent."]
+            ["Phoneme", "An individual contrastive sound, conventionally represented between slashes.", "The /p/ and /b/ phonemes distinguish ‘pat’ from ‘bat’."],
+            ["Accent", "A pattern of pronunciation associated with a region, group or identity.", "The speaker’s Northern English accent is suggested by /ʊ/ in ‘up’."],
+            ["RP contrast", "RP is a socially recognised accent used as one pronunciation reference.", "RP may use /ʌ/ in ‘up’, while some Northern English varieties use /ʊ/."],
+            ["Prosody", "The pattern of stress, intonation and rhythm: the ‘melody’ of speech.", "Stress on ‘did’ in ‘I DID call’ corrects or challenges the listener."],
+            ["Phonological approximation", "Ordinary spelling is manipulated to suggest sound when phonemic symbols are unsuitable.", "‘Pleaseeeee’ represents an elongated vowel and a pleading tone."],
+            ["Accent neutralisation", "Deliberately suppressing regional or foreign features in favour of a perceived standard accent.", "A presenter reduces regional features during a national broadcast."]
           ]
         },
         details: [
@@ -472,15 +472,15 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Lexis means vocabulary choices; semantics means how meaning is created and interpreted in context.",
         source: "Lexis and Semantics lesson",
         table: {
-          headers: ["Term", "Definition", "Exam use"],
+          headers: ["Term", "Definition", "Example in use", "Exam use"],
           rows: [
-            ["Denotation", "The core or literal referential meaning of a word.", "Establish what is directly named before exploring associations."],
-            ["Connotation", "Meanings or associations suggested beyond denotation.", "Explain which cultural or contextual associations are activated."],
-            ["Semantic field", "A pattern of words connected by a shared area of meaning.", "Use several items to prove a sustained representation."],
-            ["Evaluative lexis", "Vocabulary that expresses or invites judgement.", "Shows approval, criticism, desirability or danger."],
-            ["Prestige lexis", "Vocabulary associated with status, expertise, exclusivity or luxury.", "Positions the product and flatters an aspirational audience."],
-            ["Semantic shift", "A word or expression develops a changed meaning across time or groups.", "The texting meme depends on conflicting interpretations of ‘LOL’."],
-            ["Lexical contrast", "Opposing vocabulary is placed together.", "Makes a choice or conflict appear sharp and memorable."]
+            ["Denotation", "The core or literal referential meaning of a word.", "‘Home’ denotes the place where someone lives.", "Establish what is directly named before exploring associations."],
+            ["Connotation", "Meanings or associations suggested beyond denotation.", "‘Home’ may connote safety, family and belonging.", "Explain which cultural or contextual associations are activated."],
+            ["Semantic field", "A pattern of words connected by a shared area of meaning.", "‘Dew’, ‘rain’, ‘earthy’ and ‘herbaceous’ form a semantic field of nature.", "Use several items to prove a sustained representation."],
+            ["Evaluative lexis", "Vocabulary that expresses or invites judgement.", "Calling a policy ‘reckless’ gives it an explicitly negative evaluation.", "Shows approval, criticism, desirability or danger."],
+            ["Prestige lexis", "Vocabulary associated with status, expertise, exclusivity or luxury.", "‘Bespoke’, ‘artisan’ and ‘exclusive’ construct a premium identity.", "Positions the product and flatters an aspirational audience."],
+            ["Semantic shift", "A word or expression develops a changed meaning across time or groups.", "‘LOL’ can be understood as ‘laughing out loud’ rather than the older ‘lots of love’ reading.", "Explain how a changed meaning creates misunderstanding or group difference."],
+            ["Lexical contrast", "Opposing vocabulary is placed together.", "‘Freedom or imprisonment?’ makes the alternatives appear absolute.", "Makes a choice or conflict appear sharp and memorable."]
           ]
         },
         details: [
@@ -500,17 +500,17 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Morphology concerns the structure of words; syntax concerns how words and phrases are arranged into clauses and sentences.",
         source: "Language Levels scale · genre and assessment-analysis lessons",
         table: {
-          headers: ["Feature", "What to identify", "Possible contextual function"],
+          headers: ["Feature", "What to identify", "Example in use", "Possible contextual function"],
           rows: [
-            ["Pronouns", "I, you, we, they; inclusive or exclusive reference", "Identity, solidarity, distance, responsibility or opposition"],
-            ["Imperatives", "Base-verb directives such as ‘Visit’ or ‘Stop’", "Instruction, urgency, invitation or call to action"],
-            ["Modality", "Can, may, must, should, will and modal adverbs", "Possibility, permission, obligation, certainty or softening"],
-            ["Declaratives", "Statements presented as information or truth", "Authority, certainty or concise product claims"],
-            ["Interrogatives", "Questions, including rhetorical and tag questions", "Elicit response, challenge, involve or seek confirmation"],
-            ["Minor / elliptical sentences", "Grammatically incomplete but contextually recoverable forms", "Speed, informality, emphasis or speech-like voice"],
-            ["Relative clauses", "Clauses modifying a noun", "Add credentials, detail or qualification without starting a new sentence"],
-            ["Fronting / marked word order", "An element is moved to prominent initial position", "Controls focus and gives an idea rhetorical prominence"],
-            ["Coordination and subordination", "Equal clauses versus dependent clause relationships", "Pace, accumulation, logical relations or complexity"]
+            ["Pronouns", "I, you, we, they; inclusive or exclusive reference", "‘Together, we can protect our community.’", "Identity, solidarity, distance, responsibility or opposition"],
+            ["Imperatives", "Base-verb directives", "‘Book your vaccination today.’", "Instruction, urgency, invitation or call to action"],
+            ["Modality", "Can, may, must, should, will and modal adverbs", "‘Visitors must remain behind the barrier.’", "Possibility, permission, obligation, certainty or softening"],
+            ["Declaratives", "Statements presented as information or truth", "‘The service is available every weekday.’", "Authority, certainty or concise product claims"],
+            ["Interrogatives", "Questions, including rhetorical and tag questions", "‘Who would want to miss this opportunity?’", "Elicit response, challenge, involve or seek confirmation"],
+            ["Minor / elliptical sentences", "Grammatically incomplete but contextually recoverable forms", "‘Coming with us?’", "Speed, informality, emphasis or speech-like voice"],
+            ["Relative clauses", "Clauses modifying a noun", "‘The volunteers, who work locally, know the area well.’", "Add credentials, detail or qualification without starting a new sentence"],
+            ["Fronting / marked word order", "An element is moved to prominent initial position", "‘This injustice, we will not tolerate.’", "Controls focus and gives an idea rhetorical prominence"],
+            ["Coordination and subordination", "Equal clauses versus dependent clause relationships", "‘We arrived and we waited’ versus ‘Although we arrived early, we waited.’", "Pace, accumulation, logical relations or complexity"]
           ]
         },
         details: [
@@ -527,14 +527,14 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Pragmatics is meaning inferred from context: what is implied, assumed or intended rather than stated directly.",
         source: "Week 4 GAMP lesson · speech terminology",
         table: {
-          headers: ["Pragmatic resource", "Meaning"],
+          headers: ["Pragmatic resource", "Meaning", "Example in use"],
           rows: [
-            ["Implicature", "The audience infers an unstated meaning from wording and context."],
-            ["Presupposition", "An utterance treats information or a value as already accepted."],
-            ["Common ground", "Shared knowledge, experience or assumptions need not be explained."],
-            ["Framing", "Tone, laughter or other cues signal how an utterance should be interpreted, for example as a joke rather than an insult."],
-            ["Irony / humour", "Intended meaning conflicts with or exceeds the literal wording."],
-            ["Deixis", "Context-dependent references such as here, now, this, I and you require knowledge of the situation."]
+            ["Implicature", "The audience infers an unstated meaning from wording and context.", "‘It’s getting late’ may imply ‘we should leave’."],
+            ["Presupposition", "An utterance treats information or a value as already accepted.", "‘When did you stop wasting time?’ presupposes that time was being wasted."],
+            ["Common ground", "Shared knowledge, experience or assumptions need not be explained.", "‘Same place as usual?’ only works when both speakers know the place."],
+            ["Framing", "Tone, laughter or other cues signal how an utterance should be interpreted.", "Laughter after ‘you’re impossible’ may frame the criticism as playful."],
+            ["Irony / humour", "Intended meaning conflicts with or exceeds the literal wording.", "Saying ‘lovely weather’ during a storm communicates the opposite evaluation."],
+            ["Deixis", "Context-dependent references require knowledge of the situation.", "‘Put that over there now’ cannot be decoded without knowing the speaker, object, place and time."]
           ]
         },
         details: [
@@ -673,19 +673,19 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "These terms appeared in the teacher’s assessment glossary and model analysis; they should be used only when the evidence genuinely fits.",
         source: "Feedback from Assessment 2",
         table: {
-          headers: ["Term", "Concise definition"],
+          headers: ["Term", "Concise definition", "Example in use"],
           rows: [
-            ["Metaphor", "One thing is represented in terms of another to transfer associations."],
-            ["Repetition", "A word, phrase, sound or structure recurs for cohesion, prominence or intensity."],
-            ["Relative clause", "A dependent clause modifies a noun, often beginning with who, which or that."],
-            ["Abstract noun", "A noun naming an idea, quality or state rather than a concrete object."],
-            ["Brand endorsement", "A recognisable brand mark transfers identity or credibility to the message."],
-            ["Celebrity endorsement", "A public figure’s image or reputation supports a product or claim."],
-            ["Declarative", "A clause grammatically structured as a statement."],
-            ["Assonance", "Repetition of vowel sounds in nearby stressed syllables."],
-            ["Alliteration", "Repetition of initial consonant sounds in nearby words."],
-            ["Plosive", "A consonant made by stopping then releasing airflow, such as /p/, /b/, /t/, /d/, /k/ or /g/."],
-            ["Juxtaposition", "Contrasting elements are placed together so their relationship becomes salient."]
+            ["Metaphor", "One thing is represented in terms of another to transfer associations.", "‘The city is a sleeping giant’ transfers ideas of hidden size and power."],
+            ["Repetition", "A word, phrase, sound or structure recurs for cohesion, prominence or intensity.", "‘We will work, we will learn, we will lead’ repeats the opening structure."],
+            ["Relative clause", "A dependent clause modifies a noun, often beginning with who, which or that.", "‘The pupils who volunteered stayed behind.’"],
+            ["Abstract noun", "A noun naming an idea, quality or state rather than a concrete object.", "‘Freedom’, ‘confidence’ and ‘responsibility’ name abstract concepts."],
+            ["Brand endorsement", "A recognisable brand mark transfers identity or credibility to the message.", "A prominent Nike swoosh connects the claim with Nike’s athletic identity."],
+            ["Celebrity endorsement", "A public figure’s image or reputation supports a product or claim.", "Taylor Swift’s image lends familiarity and aspirational status to the Diet Coke advert."],
+            ["Declarative", "A clause grammatically structured as a statement.", "‘Our clinic opens at eight.’"],
+            ["Assonance", "Repetition of vowel sounds in nearby stressed syllables.", "The long /aɪ/ sound links ‘bright’ and ‘sky’."],
+            ["Alliteration", "Repetition of initial consonant sounds in nearby words.", "‘Fresh food for families’ repeats the initial /f/ sound."],
+            ["Plosive", "A consonant made by stopping then releasing airflow, such as /p/, /b/, /t/, /d/, /k/ or /g/.", "‘Build back better’ clusters voiced /b/ plosives."],
+            ["Juxtaposition", "Contrasting elements are placed together so their relationship becomes salient.", "A luxury bottle placed beside rain-soaked leaves juxtaposes refinement with nature."]
           ]
         },
         details: [
@@ -877,18 +877,18 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Conversation is jointly organised through turn-taking, responses, topic management, openings, narratives and closings.",
         source: "Speech Terminology A1 · A1 Speech deck",
         table: {
-          headers: ["Term", "Teacher-material definition"],
+          headers: ["Term", "Teacher-material definition", "Example in use"],
           rows: [
-            ["Turn-taking", "The way speakers alternate between speaking and listening."],
-            ["Overlap / simultaneous speech", "Two or more people speak at the same time."],
-            ["Interruption", "A speaker enters before another finishes and attempts to take or redirect the floor."],
-            ["Adjacency pair", "Two connected turns where the first creates an expected response, such as question–answer or greeting–greeting."],
-            ["Backchannelling / reinforcement", "Short verbal or non-verbal responses show listening without taking over, such as ‘mm-hmm’ or a nod."],
-            ["Monitoring feature", "A word or phrase checks understanding or agreement, such as ‘you know?’, ‘right?’ or ‘innit?’."],
-            ["Pre-closing", "An expression signals that the conversation is approaching its end, such as ‘Anyway, I’d better go’."],
-            ["Closing utterance", "An expression formally ends the interaction, such as ‘See you later’ or ‘Bye’."],
-            ["Narrative", "An account of events or experience organised as a story, often to inform or entertain."],
-            ["Tag question", "A short question appended to a statement to seek confirmation or manage alignment, such as ‘isn’t it?’"]
+            ["Turn-taking", "The way speakers alternate between speaking and listening.", "A finishes a question; B takes the next turn with an answer."],
+            ["Overlap / simultaneous speech", "Two or more people speak at the same time.", "A: ‘I thought—’ / B: ‘Exactly!’ shows brief supportive overlap."],
+            ["Interruption", "A speaker enters before another finishes and attempts to take or redirect the floor.", "B begins ‘No, listen—’ and continues until A stops speaking."],
+            ["Adjacency pair", "Two connected turns where the first creates an expected response.", "A: ‘How are you?’ B: ‘I’m fine, thanks.’"],
+            ["Backchannelling / reinforcement", "Short responses show listening without taking over.", "B says ‘mm-hmm’ while A continues the story."],
+            ["Monitoring feature", "A word or phrase checks understanding or agreement.", "‘You know what I mean, right?’ checks that the listener follows."],
+            ["Pre-closing", "An expression signals that the conversation is approaching its end.", "‘Anyway, I’d better let you go.’"],
+            ["Closing utterance", "An expression formally ends the interaction.", "‘See you tomorrow—bye.’"],
+            ["Narrative", "An account of events or experience organised as a story.", "‘First we missed the bus, then the rain started…’ begins a chronological narrative."],
+            ["Tag question", "A short question appended to a statement to seek confirmation or manage alignment.", "‘That was difficult, wasn’t it?’"]
           ]
         },
         details: [
@@ -985,14 +985,14 @@ window.AQA_LANGUAGE_NOTES = [
         definition: "Identity is the image speakers construct or express; positioning presents self or others in social roles; register is a style associated with a situation; code-switching changes language or variety with context.",
         source: "Speech Terminology A1 · Phonetics and Phonology lesson",
         table: {
-          headers: ["Term", "Teacher-material definition / application"],
+          headers: ["Term", "Teacher-material definition / application", "Example in use"],
           rows: [
-            ["Identity", "The image of themselves that speakers construct or express through language choices."],
-            ["Positioning", "Speakers present themselves or others as knowledgeable, authoritative, inexperienced or in another social role."],
-            ["Register", "A variety or style associated with a particular situation or social context, such as formal or informal language."],
-            ["Code-switching", "Switching between languages or language varieties depending on social context."],
-            ["Colloquial language / slang", "Informal everyday vocabulary and expressions associated with casual interaction or a group."],
-            ["Common ground", "Shared knowledge, experience or assumptions that need not be explained."]
+            ["Identity", "The image of themselves that speakers construct or express through language choices.", "Specialist medical lexis helps a doctor construct an expert professional identity."],
+            ["Positioning", "Speakers present themselves or others in a particular social role.", "‘Let me explain the evidence’ positions the speaker as knowledgeable and the listener as a learner."],
+            ["Register", "A variety or style associated with a particular situation or social context.", "‘I would appreciate your response’ suits a formal email; ‘Text me back’ suits an informal exchange."],
+            ["Code-switching", "Switching between languages or language varieties depending on social context.", "A bilingual pupil uses Mandarin at home and switches to English in class."],
+            ["Colloquial language / slang", "Informal everyday vocabulary and expressions associated with casual interaction or a group.", "‘That film was sick’ uses in-group slang to give a positive evaluation."],
+            ["Common ground", "Shared knowledge, experience or assumptions that need not be explained.", "‘We’ll meet at the usual place’ assumes both speakers know which place is meant."]
           ]
         },
         details: [
