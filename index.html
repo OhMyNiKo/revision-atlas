@@ -1399,6 +1399,48 @@
       letter-spacing: .055em;
       text-transform: uppercase;
     }
+    #subject-aqa .aqa-terminology-table table {
+      min-width: 780px;
+      table-layout: fixed;
+    }
+    #subject-aqa .aqa-terminology-table th:nth-child(1),
+    #subject-aqa .aqa-terminology-table td:nth-child(1) { width: 18%; }
+    #subject-aqa .aqa-terminology-table th:nth-child(2),
+    #subject-aqa .aqa-terminology-table td:nth-child(2) { width: 29%; }
+    #subject-aqa .aqa-terminology-table th:nth-child(3),
+    #subject-aqa .aqa-terminology-table td:nth-child(3) { width: 31%; }
+    #subject-aqa .aqa-terminology-table th:nth-child(4),
+    #subject-aqa .aqa-terminology-table td:nth-child(4) { width: 22%; }
+    #subject-aqa .aqa-terminology-table td {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    #subject-aqa .aqa-bi__en,
+    #subject-aqa .aqa-bi__zh { display: block; }
+    #subject-aqa .aqa-bi__zh {
+      margin-top: 5px;
+      color: #788390;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: .78rem;
+      font-weight: 430;
+      letter-spacing: 0;
+      line-height: 1.48;
+      text-transform: none;
+    }
+    #subject-aqa .aqa-terminology-table td:first-child .aqa-bi__en {
+      color: #342c4c;
+      font-weight: 650;
+    }
+    #subject-aqa .aqa-terminology-table td:first-child .aqa-bi__zh {
+      color: #79689c;
+      font-weight: 520;
+    }
+    #subject-aqa .aqa-terminology-table .aqa-effect {
+      color: #4f426d;
+      font-size: .88rem;
+      font-weight: 540;
+      line-height: 1.55;
+    }
     #subject-aqa .aqa-summary-table td:first-child {
       width: 22%;
       color: #443760;
@@ -1462,6 +1504,10 @@
     html[data-theme="dark"] #subject-aqa .aqa-summary-table td,
     html[data-theme="dark"] #subject-aqa .aqa-reference-table td { border-color: #2b3a48; background: transparent; }
     html[data-theme="dark"] #subject-aqa .aqa-summary-table td:first-child { color: #d6caef; }
+    html[data-theme="dark"] #subject-aqa .aqa-bi__zh { color: #94a2af; }
+    html[data-theme="dark"] #subject-aqa .aqa-terminology-table td:first-child .aqa-bi__en { color: #e7def7; }
+    html[data-theme="dark"] #subject-aqa .aqa-terminology-table td:first-child .aqa-bi__zh { color: #bca9e3; }
+    html[data-theme="dark"] #subject-aqa .aqa-terminology-table .aqa-effect { color: #d0c4e6; }
     html[data-layout="focus"] #subject-aqa .aqa-note__definition-label,
     html[data-layout="focus"] #subject-aqa .aqa-note__code,
     html[data-layout="focus"] #subject-aqa .aqa-table-caption { color: #687f6d; }
@@ -2258,6 +2304,7 @@
       #subject-aqa .aqa-note__body { margin-left: 0; }
       #subject-aqa .aqa-summary-table table,
       #subject-aqa .aqa-reference-table table { min-width: 560px; }
+      #subject-aqa .aqa-terminology-table table { min-width: 820px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -4115,7 +4162,7 @@ Largest ← Larger(First, Second)</div>
   <script src="cs-chapter10-notes.js?v=20261025-class-notes"></script>
   <script src="physics-notes.js?v=20261023-ch5"></script>
   <script src="owh-notes.js"></script>
-  <script src="aqa-language-notes.js?v=20261104-editorial"></script>
+  <script src="aqa-language-notes.js?v=20261104-bilingual-terms"></script>
   <script>
     function renderPhysicsNotes() {
       const root = document.getElementById('physicsNotes');
@@ -4215,11 +4262,11 @@ Largest ← Larger(First, Second)</div>
 
     function renderAqaLanguageNotes() {
       const root = document.getElementById('aqaLanguageNotes');
-      const renderTable = (table) => table ? `
-        <div class="aqa-table-caption">Reference table</div>
-        <div class="aqa-reference-table">
+      const renderTable = (table, terminology = false) => table ? `
+        <div class="aqa-table-caption">${terminology ? 'Terminology · 中英速查' : 'Reference table'}</div>
+        <div class="aqa-reference-table${terminology ? ' aqa-terminology-table' : ''}">
           <table>
-            <thead><tr>${table.headers.map((header) => `<th>${header}</th>`).join('')}</tr></thead>
+            <thead><tr>${table.headers.map((header) => `<th scope="col">${header}</th>`).join('')}</tr></thead>
             <tbody>${table.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
           </table>
         </div>` : '';
@@ -4254,7 +4301,7 @@ Largest ← Larger(First, Second)</div>
                 </header>
                 <div class="aqa-note__body">
                   ${renderDetails(entry.details)}
-                  ${renderTable(entry.table)}
+                  ${renderTable(entry.table, entry.terminology)}
                   <div class="aqa-source">${entry.source}</div>
                 </div>
               </article>`).join('')}

@@ -1141,3 +1141,177 @@ window.AQA_LANGUAGE_NOTES = [
     ]
   }
 ];
+
+// AQA terminology is presented as a bilingual, exam-use table. The English
+// wording remains primary; short Chinese lines support fast understanding.
+(() => {
+  const terminologyEntries = {
+    "aqa-language-level-map": [
+      ["Phonetics and phonology", "语音学与音系学", "The study of speech sounds and the sound patterns used by a language or variety.", "研究语音以及某种语言或变体如何组织这些声音。", "Stress on ‘DID’ in ‘I DID call’ changes the prominent information.", "在‘I DID call’中重读‘DID’，会改变句子的重点。", "Identifies accent, emphasis, stance and spoken identity."],
+      ["Lexis and semantics", "词汇与语义", "The study of vocabulary choices and the meanings they create in context.", "研究词语选择，以及它们在语境中产生的意义。", "Calling a plan ‘reckless’ gives it a negative evaluation.", "把一个计划称为‘reckless’，会赋予它负面评价。", "Reveals evaluation, representation and semantic patterns."],
+      ["Grammar", "语法", "The study of word structure, syntax, clauses and sentence choices.", "研究词的构成、句法、从句和句型选择。", "‘Book today’ uses an imperative rather than a declarative.", "‘Book today’使用祈使句，而不是陈述句。", "Constructs authority, relationships, pace and logical emphasis."],
+      ["Pragmatics", "语用学", "The study of implied, assumed and context-dependent meaning.", "研究暗示、预设以及依赖语境才能理解的意义。", "‘It’s getting late’ may imply that it is time to leave.", "‘It’s getting late’可能暗示现在该离开了。", "Explains inference, politeness, humour and shared knowledge."],
+      ["Discourse", "语篇", "The study of how a whole text or interaction is organised.", "研究整篇文本或整段互动如何被组织起来。", "A leaflet moves from a problem to benefits and then a call to action.", "一张传单从提出问题，转到好处，最后发出行动号召。", "Shows how structure guides attention and develops a message."],
+      ["Graphology", "视觉语言／书写设计", "The study of visual design, orthography, typography and layout.", "研究视觉设计、拼写形式、字体和版面布局。", "A large red heading makes the warning visually dominant.", "醒目的红色大标题让警告成为视觉重点。", "Creates hierarchy, tone, identity and a reading path."]
+    ],
+    "aqa-phonetics-phonology": [
+      ["Phoneme", "音位", "An individual contrastive sound, conventionally represented between slashes.", "能够区分词义的单个语音，通常写在斜线之间。", "The /p/ and /b/ phonemes distinguish ‘pat’ from ‘bat’.", "/p/和/b/这两个音位区分了‘pat’和‘bat’。", "Distinguishes meaning and supports precise accent analysis."],
+      ["Accent", "口音", "A pattern of pronunciation associated with a region, group or identity.", "与某个地区、群体或身份相关的一套发音特征。", "The speaker’s Northern English accent is suggested by /ʊ/ in ‘up’.", "说话者把‘up’中的元音读作/ʊ/，显示出英格兰北部口音。", "Signals regional or social identity and group membership."],
+      ["RP contrast", "RP 标准发音对比", "RP is a socially recognised accent used as one pronunciation reference.", "RP是一种具有社会认可度、常被用作发音参照的口音。", "RP may use /ʌ/ in ‘up’, while some Northern varieties use /ʊ/.", "RP中‘up’可能读/ʌ/，而部分北部口音读/ʊ/。", "Reveals variation and attitudes towards prestige accents."],
+      ["Prosody", "韵律", "The pattern of stress, intonation and rhythm: the ‘melody’ of speech.", "由重音、语调和节奏组成的说话‘旋律’。", "Stress on ‘did’ in ‘I DID call’ corrects or challenges the listener.", "‘I DID call’重读‘did’，是在纠正或反驳听者。", "Creates emphasis, emotion, stance and turn control."],
+      ["Phonological approximation", "语音近似拼写", "Ordinary spelling is manipulated to suggest sound when phonemic symbols are unsuitable.", "在不适合使用音标时，通过改变普通拼写来表现声音。", "‘Pleaseeeee’ represents an elongated vowel and a pleading tone.", "‘Pleaseeeee’表现元音被拉长以及恳求语气。", "Makes pronunciation and vocal performance visible in writing."],
+      ["Accent neutralisation", "口音中和", "Deliberately suppressing regional or foreign features in favour of a perceived standard accent.", "有意弱化地区或外语口音，转向被认为更标准的发音。", "A presenter reduces regional features during a national broadcast.", "主持人在全国播出时弱化自己的地区口音。", "Shows accommodation, institutional pressure or identity management."]
+    ],
+    "aqa-prosody-paralanguage": [
+      ["Prosody", "韵律", "Patterns of stress, pitch, intonation, rhythm and tempo in speech.", "说话中的重音、音高、语调、节奏和语速模式。", "‘I REALLY meant it’ places extra stress on ‘really’.", "‘I REALLY meant it’重读‘really’。", "Creates prominence, contrast, certainty, emotion or control of attention."],
+      ["Paralanguage", "副语言", "Meaningful vocal features beyond the words themselves, such as volume, laughter, sighs and silence.", "词语之外仍能传达意义的声音特征，如音量、笑声、叹气和沉默。", "‘Fine, whatever’ followed by a sigh signals reluctance.", "‘Fine, whatever’后接一声叹气，表现出不情愿。", "Signals attitude, discomfort, humour, authority or reaction."],
+      ["Non-verbal behaviour", "非语言行为", "Visible bodily cues such as gesture, facial expression, eye contact, posture and distance.", "手势、表情、眼神、姿势和人际距离等可见身体信号。", "The speaker avoids eye contact while answering.", "说话者回答时避开眼神接触。", "Constructs relationship, alignment, resistance, confidence or status."]
+    ],
+    "aqa-lexis-semantics": [
+      ["Denotation", "字面意义", "The core or literal referential meaning of a word.", "一个词最基本、最直接的字面含义。", "‘Home’ denotes the place where someone lives.", "‘Home’字面上指某人居住的地方。", "Establishes what is directly named before associations are analysed."],
+      ["Connotation", "联想意义", "Meanings or associations suggested beyond denotation.", "超出字面意思，由词语引发的附加联想。", "‘Home’ may connote safety, family and belonging.", "‘Home’可能让人联想到安全、家庭和归属感。", "Activates cultural or emotional associations."],
+      ["Semantic field", "语义场", "A pattern of words connected by a shared area of meaning.", "一组围绕同一意义领域的相关词语。", "‘Dew’, ‘rain’, ‘earthy’ and ‘herbaceous’ form a semantic field of nature.", "‘Dew’、‘rain’、‘earthy’和‘herbaceous’组成自然语义场。", "Proves a sustained representation across several lexical choices."],
+      ["Evaluative lexis", "评价性词汇", "Vocabulary that expresses or invites judgement.", "表达或引导读者作出评价的词汇。", "Calling a policy ‘reckless’ gives it an explicitly negative evaluation.", "把政策称为‘reckless’，明确赋予它负面评价。", "Shows approval, criticism, desirability or danger."],
+      ["Prestige lexis", "声望／高端词汇", "Vocabulary associated with status, expertise, exclusivity or luxury.", "与地位、专业、稀缺或奢华相关的词汇。", "‘Bespoke’, ‘artisan’ and ‘exclusive’ construct a premium identity.", "‘Bespoke’、‘artisan’和‘exclusive’塑造高端形象。", "Positions a product as elite and flatters an aspirational audience."],
+      ["Semantic shift", "语义变化", "A word or expression develops a changed meaning across time or groups.", "一个词在不同时代或群体中产生了新的含义。", "‘LOL’ may mean ‘laughing out loud’ rather than the older ‘lots of love’.", "‘LOL’现在常指‘laughing out loud’，而非旧用法‘lots of love’。", "Explains misunderstanding, identity or generational difference."],
+      ["Lexical contrast", "词汇对比", "Opposing vocabulary is placed together.", "把意义相反的词放在一起形成对比。", "‘Freedom or imprisonment?’ makes the alternatives appear absolute.", "‘Freedom or imprisonment?’让两个选项显得截然对立。", "Sharpens conflict and makes a choice memorable."]
+    ],
+    "aqa-grammar": [
+      ["Pronouns", "代词", "Words such as I, you, we and they, including inclusive or exclusive reference.", "如I、you、we和they等词，可以表示包容或排斥。", "‘Together, we can protect our community.’", "‘我们一起就能保护我们的社区。’", "Constructs identity, solidarity, distance, responsibility or opposition."],
+      ["Imperatives", "祈使句", "Base-verb directives that tell or invite someone to act.", "以动词原形开头，用来命令、指示或邀请行动。", "‘Book your vaccination today.’", "‘今天就预约疫苗接种。’", "Creates instruction, urgency, invitation or a call to action."],
+      ["Modality", "情态", "Modal verbs or adverbs that express possibility, permission, obligation or certainty.", "用情态动词或副词表达可能、许可、义务或确定程度。", "‘Visitors must remain behind the barrier.’", "‘游客必须留在护栏后。’", "Expresses possibility, permission, obligation, certainty or softening."],
+      ["Declaratives", "陈述句", "Statements presented as information or truth.", "把内容作为信息或事实陈述出来的句子。", "‘The service is available every weekday.’", "‘该服务每个工作日都开放。’", "Constructs authority, certainty or concise product claims."],
+      ["Interrogatives", "疑问句", "Questions, including rhetorical and tag questions.", "用于提问的句子，包括反问句和附加疑问句。", "‘Who would want to miss this opportunity?’", "‘谁会想错过这个机会呢？’", "Elicits response, challenges, involves or seeks confirmation."],
+      ["Minor / elliptical sentences", "省略句／不完整句", "Grammatically incomplete forms whose missing meaning is recoverable from context.", "语法上不完整，但缺失信息可以从语境中补出的句子。", "‘Coming with us?’", "‘跟我们一起去吗？’", "Creates speed, informality, emphasis or a speech-like voice."],
+      ["Relative clauses", "关系从句", "Dependent clauses that modify a noun.", "用来修饰名词的从属从句。", "‘The volunteers, who work locally, know the area well.’", "‘这些在本地工作的志愿者很了解该地区。’", "Adds credentials, detail or qualification compactly."],
+      ["Fronting / marked word order", "前置／特殊语序", "An element is moved to a prominent initial position.", "把某个成分移到句首，使它更突出。", "‘This injustice, we will not tolerate.’", "‘这种不公，我们绝不会容忍。’", "Controls focus and gives an idea rhetorical prominence."],
+      ["Coordination and subordination", "并列与从属", "Coordination links equal clauses; subordination makes one clause dependent on another.", "并列连接同等分句；从属让一个分句依附于另一个。", "‘We arrived and waited’ versus ‘Although we arrived early, we waited.’", "‘我们到了并等待’与‘虽然我们早到，但仍然等待。’", "Controls pace, accumulation, logical relations and complexity."]
+    ],
+    "aqa-pragmatics": [
+      ["Implicature", "会话含义／言外之意", "The audience infers an unstated meaning from wording and context.", "听者根据措辞和语境推断出没有直接说出的意思。", "‘It’s getting late’ may imply ‘we should leave’.", "‘天色不早了’可能暗示‘我们该走了’。", "Creates indirect requests, tact or additional implied meaning."],
+      ["Presupposition", "预设", "An utterance treats information or a value as already accepted.", "一句话把某项信息或价值当作已经成立。", "‘When did you stop wasting time?’ presupposes that time was being wasted.", "‘你什么时候不再浪费时间了？’预设了对方曾在浪费时间。", "Frames assumptions as given and can position the audience."],
+      ["Common ground", "共同知识", "Shared knowledge, experience or assumptions that need not be explained.", "双方共享、因此不必解释的知识、经历或假设。", "‘Same place as usual?’ works only if both speakers know the place.", "‘还是老地方？’只有双方都知道地点时才成立。", "Builds solidarity and marks insiders or outsiders."],
+      ["Framing", "语境框定", "Cues signal how an utterance should be interpreted.", "通过语气、笑声等线索提示一句话应如何理解。", "Laughter after ‘you’re impossible’ may frame the criticism as playful.", "说完‘你真是没救了’后笑出来，可能把批评变成玩笑。", "Guides interpretation towards play, seriousness, irony or conflict."],
+      ["Irony / humour", "反讽／幽默", "The intended meaning conflicts with or exceeds the literal wording.", "真正想表达的意思与字面意思相反或超出字面。", "Saying ‘lovely weather’ during a storm communicates the opposite evaluation.", "暴风雨中说‘天气真好’，表达的是相反评价。", "Creates humour, criticism, bonding or distance."],
+      ["Deixis", "指示语", "Context-dependent references require knowledge of the situation.", "必须知道具体情境才能理解的指称。", "‘Put that over there now’ depends on who, what, where and when.", "‘现在把那个放到那里’必须结合人物、物品、地点和时间理解。", "Anchors meaning to speaker, place, time and shared context."]
+    ]
+  };
+
+  Object.assign(terminologyEntries, {
+    "aqa-graphology": [
+      ["Typography", "字体设计", "The visual choice of font, size, weight and style.", "字体、字号、粗细和样式的视觉选择。", "A bold sans-serif headline appears above smaller body text.", "粗体无衬线标题位于较小的正文上方。", "Creates emphasis, hierarchy, tone and a recognisable voice."],
+      ["Capitalisation", "大小写使用", "The deliberate use of capitals, lower case or mixed case.", "有意识地使用全大写、小写或混合大小写。", "‘STOP NOW’ appears in full capitals.", "‘STOP NOW’全部使用大写字母。", "Can suggest shouting, urgency, informality, mockery or resistance."],
+      ["Punctuation", "标点", "Marks such as exclamation marks, question marks, ellipses and dashes shape written delivery.", "感叹号、问号、省略号和破折号等会塑造书面表达的节奏。", "‘Really?!’ combines a question mark and exclamation mark.", "‘Really?!’同时使用问号和感叹号。", "Creates excitement, uncertainty, pause, interruption or pace."],
+      ["Layout and spacing", "版面与留白", "The arrangement of paragraphs, columns, white space, line breaks and indentation.", "段落、分栏、留白、换行和缩进的排列方式。", "Large white space isolates the product name in the centre.", "大面积留白把产品名称单独放在中央。", "Controls reading order, separates information and creates emphasis."],
+      ["Images and visual elements", "图像与视觉元素", "Photographs, illustrations, emojis, symbols and logos used with words.", "与文字共同使用的照片、插图、表情、符号和标志。", "A medical cross appears beside the clinic’s advice.", "诊所建议旁出现医疗十字符号。", "Communicates meaning, tone or identity and may support or contradict wording."],
+      ["Colour", "颜色", "A palette or contrast used to organise and associate meaning.", "用于组织内容并产生联想的配色或色彩对比。", "Red highlights the warning while blue frames the factual advice.", "红色突出警告，蓝色框住事实建议。", "Creates emphasis, branding, association and mood."],
+      ["Formatting and structure", "格式与结构", "Headings, subheadings, bullets and boxes organise information visually.", "标题、副标题、项目符号和文本框在视觉上组织信息。", "Numbered steps divide the instructions into a clear sequence.", "编号步骤把说明分成清晰的顺序。", "Creates hierarchy, aids navigation and improves accessibility."],
+      ["Orthographic manipulation", "拼写变形", "Conventional spelling is altered to represent voice or attitude.", "改变常规拼写来表现声音或态度。", "‘Soooo good!’ stretches the vowel in writing.", "‘Soooo good!’在书写中拉长元音。", "Represents lengthening, volume, emotion or speech-like delivery."]
+    ],
+    "aqa-analytical-terminology": [
+      ["Metaphor", "隐喻", "One thing is represented in terms of another to transfer associations.", "用另一事物来表现某事物，从而转移联想。", "‘The city is a sleeping giant.’", "‘这座城市是一位沉睡的巨人。’", "Transfers connotations and builds a vivid representation."],
+      ["Repetition", "重复", "A word, phrase, sound or structure recurs.", "一个词、短语、声音或结构反复出现。", "‘We will work, we will learn, we will lead.’", "‘我们会工作，我们会学习，我们会带领。’", "Creates cohesion, prominence, rhythm or intensity."],
+      ["Relative clause", "关系从句", "A dependent clause modifies a noun, often beginning with who, which or that.", "修饰名词的从属从句，常由who、which或that引导。", "‘The pupils who volunteered stayed behind.’", "‘主动报名的学生留了下来。’", "Adds compact detail, qualification or credentials."],
+      ["Abstract noun", "抽象名词", "A noun naming an idea, quality or state rather than a concrete object.", "表示思想、品质或状态，而非具体物体的名词。", "‘Freedom’, ‘confidence’ and ‘responsibility’ are abstract nouns.", "‘Freedom’、‘confidence’和‘responsibility’都是抽象名词。", "Constructs values, ideals and conceptual themes."],
+      ["Brand endorsement", "品牌背书", "A recognisable brand mark transfers identity or credibility to a message.", "知名品牌标志把自身形象或可信度转移给信息。", "A Nike swoosh appears beside the claim.", "宣传语旁出现Nike的勾形标志。", "Builds credibility and connects a claim with brand identity."],
+      ["Celebrity endorsement", "名人代言", "A public figure’s image or reputation supports a product or claim.", "公众人物的形象或声誉用来支持产品或主张。", "Taylor Swift appears in a Diet Coke advert.", "Taylor Swift出现在Diet Coke广告中。", "Transfers familiarity, status and aspirational identity."],
+      ["Declarative", "陈述句", "A clause grammatically structured as a statement.", "在语法上以陈述形式构成的分句。", "‘Our clinic opens at eight.’", "‘我们的诊所八点开门。’", "Presents information as certain, factual or authoritative."],
+      ["Assonance", "元音重复", "Repetition of vowel sounds in nearby stressed syllables.", "相邻重读音节中重复相同或相似元音。", "The long /aɪ/ sound links ‘bright’ and ‘sky’.", "长元音/aɪ/连接了‘bright’和‘sky’。", "Creates sound cohesion, rhythm and memorability."],
+      ["Alliteration", "头韵", "Repetition of initial consonant sounds in nearby words.", "相邻单词开头重复相同辅音。", "‘Fresh food for families’ repeats /f/.", "‘Fresh food for families’重复/f/音。", "Creates rhythm, cohesion, emphasis or memorability."],
+      ["Plosive", "爆破音", "A consonant made by stopping and then releasing airflow.", "先阻断气流再释放形成的辅音。", "‘Build back better’ clusters voiced /b/ plosives.", "‘Build back better’连续使用浊辅音/b/。", "Can create force, impact, rhythm or verbal energy."],
+      ["Juxtaposition", "并置对比", "Contrasting elements are placed together so their relationship becomes salient.", "把对比元素放在一起，使它们的关系更突出。", "A luxury bottle is placed beside rain-soaked leaves.", "奢华香水瓶被放在沾满雨水的叶子旁。", "Highlights contrast and creates a combined representation."]
+    ],
+    "aqa-transcription-key": [
+      ["(.)", "短暂停顿", "A normal short pause in speech.", "说话中的普通短暂停顿。", "‘I thought (.) maybe we should wait.’", "‘我想（短暂停顿）也许我们应该等等。’", "May show planning, hesitation, emphasis or a transition."],
+      ["(3)", "计时停顿", "A timed pause lasting three seconds.", "持续三秒的计时停顿。", "‘The answer is (3) no.’", "‘答案是（三秒停顿）不。’", "Can create suspense, discomfort, emphasis or response time."],
+      ["Marked stress", "标记重音", "A word or syllable is produced with extra prominence.", "某个词或音节被特别重读。", "‘I said TUESDAY, not Thursday.’", "‘我说的是星期二，不是星期四。’", "Corrects, contrasts, emphasises or expresses emotion."],
+      ["Overlap / simultaneous speech", "重叠话语／同时说话", "Two speakers produce speech at the same time.", "两位说话者在同一时间说话。", "A: ‘I thought—’ / B: ‘Exactly!’", "A：‘我觉得——’／B：‘完全正确！’", "May show support, enthusiasm, competition or a struggle for the floor."],
+      ["Non-verbal note", "非语言标记", "A transcript records relevant laughter, sighs, gestures or other behaviour.", "转写文本记录相关的笑声、叹气、动作或其他行为。", "‘Fine.’ [sighs and looks away]", "‘好吧。’［叹气并移开视线］", "Adds evidence of attitude, emotion and relationship."]
+    ],
+    "aqa-spontaneous-features": [
+      ["Fillers", "填充词", "Sounds or words used to fill pauses while a speaker thinks.", "说话者思考时用来填补停顿的声音或词。", "‘Um, I think it was Friday.’", "‘呃，我觉得是星期五。’", "Shows online planning, hesitation or an attempt to hold the floor."],
+      ["False starts", "错误起句／重新开头", "A speaker begins an utterance, stops and starts again.", "说话者开始一句话后停下并重新组织。", "‘I went— we went on Friday.’", "‘我去了——我们星期五去了。’", "Reveals real-time planning or self-monitoring."],
+      ["Self-repair", "自我修正", "A speaker corrects or changes something they have just said.", "说话者纠正或改动自己刚说的内容。", "‘He— I mean she— called.’", "‘他——我是说她——打来了。’", "Improves accuracy and shows monitoring or sensitivity."],
+      ["Hedging", "缓和语／模糊限制", "Uncertain language softens a statement or avoids sounding too direct.", "用不确定表达减弱语气，避免过于直接。", "‘I think it might be slightly late.’", "‘我觉得它可能稍微有点晚。’", "Protects face, reduces certainty and softens disagreement."],
+      ["Clipping", "截短词", "Part of a word is removed to create a shorter form.", "删去一个词的一部分，形成较短形式。", "‘Exam’ is clipped from ‘examination’.", "‘Exam’是‘examination’的截短形式。", "Creates informality, efficiency or group familiarity."],
+      ["Trailing off", "话语中断／渐弱未完", "A sentence is left unfinished.", "一句话没有说完便停下来。", "‘I thought we could…’", "‘我以为我们可以……’", "Can signal hesitation, uncertainty or expected shared understanding."],
+      ["Vague completers", "模糊补足语", "Vague expressions avoid precise information when a listener can infer it.", "当听者可以推断时，用模糊表达代替具体信息。", "‘We bought snacks and stuff.’", "‘我们买了零食什么的。’", "Creates informality and relies on common ground."],
+      ["Stressed syllables", "重读音节", "Extra prominence highlights important words or expresses emotion.", "通过额外重读突出重要词语或表达情绪。", "‘I said TUESDAY.’", "‘我说的是星期二。’", "Creates correction, contrast, urgency or emotion."],
+      ["Strategic pauses", "策略性停顿", "Deliberate silence creates emphasis, suspense or response time.", "有意停顿来制造强调、悬念或回应时间。", "‘The answer is… no.’", "‘答案是……不。’", "Controls pace, attention and dramatic emphasis."],
+      ["Ellipsis", "省略", "Words recoverable from context are omitted.", "省去可以从语境中补出的词。", "‘Coming?’ instead of ‘Are you coming?’", "用‘Coming?’代替完整的‘Are you coming?’。", "Creates efficiency, informality and speech-like interaction."],
+      ["Elision", "语音省略", "A sound or syllable is dropped in connected speech.", "连贯说话时省去某个音或音节。", "‘Gonna’ represents a reduced form of ‘going to’.", "‘Gonna’是‘going to’的缩略发音。", "Signals connected speech, informality or accent."],
+      ["Discourse markers", "话语标记", "Words or phrases manage flow or change topic.", "用来组织话语流程或转换话题的词或短语。", "‘Anyway, let’s move on.’", "‘总之，我们继续吧。’", "Organises turns, topics, sequence and speaker stance."]
+    ],
+    "aqa-conversation-structure": [
+      ["Turn-taking", "话轮转换", "The way speakers alternate between speaking and listening.", "说话者在发言与倾听之间轮流转换的方式。", "A asks a question; B takes the next turn with an answer.", "A提问，B在下一个话轮回答。", "Organises cooperation and access to the conversational floor."],
+      ["Overlap / simultaneous speech", "重叠话语／同时说话", "Two or more people speak at the same time.", "两人或多人同时说话。", "A: ‘I thought—’ / B: ‘Exactly!’", "A：‘我觉得——’／B：‘完全正确！’", "May create support, enthusiasm, competition or conflict."],
+      ["Interruption", "打断", "A speaker enters before another finishes and attempts to take or redirect the floor.", "在别人说完前进入，并试图夺取或改变话轮。", "B says ‘No, listen—’ and continues until A stops.", "B说‘不，你听我说——’，并持续说到A停下。", "Can claim power, challenge status or redirect the topic."],
+      ["Adjacency pair", "相邻对", "Two connected turns where the first creates an expected response.", "两个相关话轮，第一句话会引出预期回应。", "A: ‘How are you?’ B: ‘I’m fine, thanks.’", "A：‘你好吗？’B：‘我很好，谢谢。’", "Creates predictable social organisation and cooperation."],
+      ["Backchannelling / reinforcement", "反馈语／回应强化", "Short responses show listening without taking over.", "用简短回应表示正在听，但不夺取话轮。", "B says ‘mm-hmm’ while A continues the story.", "A继续讲故事时，B说‘嗯哼’。", "Shows attention, support and alignment."],
+      ["Monitoring feature", "理解检查语", "A word or phrase checks understanding or agreement.", "用某个词或短语检查对方是否理解或同意。", "‘You know what I mean, right?’", "‘你明白我的意思，对吧？’", "Secures feedback and manages shared understanding."],
+      ["Pre-closing", "结束前信号", "An expression signals that the conversation is approaching its end.", "提示对话即将结束的表达。", "‘Anyway, I’d better let you go.’", "‘总之，我还是不打扰你了。’", "Makes ending less abrupt and protects politeness."],
+      ["Closing utterance", "结束语", "An expression formally ends the interaction.", "正式结束互动的表达。", "‘See you tomorrow—bye.’", "‘明天见——再见。’", "Completes the interaction and confirms social alignment."],
+      ["Narrative", "叙事", "An account of events or experience organised as a story.", "按故事形式组织的一段事件或经历。", "‘First we missed the bus, then the rain started…’", "‘先是我们错过了公交车，然后开始下雨……’", "Builds identity, entertains and holds the floor."],
+      ["Tag question", "附加疑问句", "A short question appended to a statement.", "附加在陈述句末尾的简短问句。", "‘That was difficult, wasn’t it?’", "‘那很难，对吧？’", "Seeks confirmation, softens a claim or invites alignment."]
+    ],
+    "aqa-planned-speech-techniques": [
+      ["Contrasting phrases", "对比短语", "Opposing ideas are presented through contrasting grammatical structures.", "通过相互对照的语法结构呈现对立观点。", "‘We work to live, not live to work.’", "‘我们工作是为了生活，而不是活着只为工作。’", "Sharpens opposition and makes an argument memorable."],
+      ["Lexical contrasts", "词汇对比", "Words with opposing meanings are placed against each other.", "把意义相反的词放在一起。", "‘Freedom or imprisonment?’", "‘自由还是监禁？’", "Frames a choice as clear, urgent or absolute."],
+      ["Word order for prominence", "突出重点的语序", "An element is moved from its usual position to emphasise it.", "把句子成分移出正常位置以突出它。", "‘This injustice, we will not tolerate.’", "‘这种不公，我们绝不会容忍。’", "Controls focus and gives an idea rhetorical weight."],
+      ["Sound patterning", "声音模式", "Repeated sounds or rhythms make wording cohesive and memorable.", "重复声音或节奏，让表达更连贯、更容易记住。", "‘Stress, struggle and sleepless Sundays.’", "‘压力、挣扎和无眠的星期日。’", "Creates rhythm, emphasis, cohesion and memorability."],
+      ["Terms of address and pronouns", "称呼语与代词", "People are named or addressed to establish relationship or identity.", "通过称呼或代词建立关系与身份。", "‘My friends, this is our future, not theirs.’", "‘朋友们，这是我们的未来，不是他们的。’", "Builds solidarity, divides groups and positions the audience."]
+    ]
+  });
+
+  Object.assign(terminologyEntries, {
+    "aqa-identity-positioning-register": [
+      ["Identity", "身份建构", "The image speakers construct or express through language choices.", "说话者通过语言选择塑造或表达的自我形象。", "Specialist lexis helps a doctor construct an expert identity.", "专业词汇帮助医生塑造专家身份。", "Constructs personal, professional, regional or group identity."],
+      ["Positioning", "定位／角色塑造", "Speakers present themselves or others in a particular social role.", "说话者把自己或他人呈现为某种社会角色。", "‘Let me explain the evidence’ positions the speaker as knowledgeable.", "‘让我解释证据’把说话者定位为知识掌握者。", "Assigns authority, responsibility, expertise or vulnerability."],
+      ["Register", "语域", "A variety or style associated with a particular situation or social context.", "与特定场合或社会语境相关的语言风格。", "‘I would appreciate your response’ suits a formal email.", "‘I would appreciate your response’适合正式邮件。", "Signals formality, relationship, purpose and situational awareness."],
+      ["Code-switching", "语码转换", "Switching between languages or language varieties according to context.", "根据语境在不同语言或语言变体之间切换。", "A bilingual pupil uses Mandarin at home and English in class.", "一名双语学生在家说中文，在课堂上改说英语。", "Shows accommodation, identity, membership or contextual pressure."],
+      ["Colloquial language / slang", "口语／俚语", "Informal everyday vocabulary associated with casual interaction or a group.", "与日常非正式交流或特定群体相关的词汇。", "‘That film was sick’ uses ‘sick’ as positive slang.", "‘That film was sick’中的‘sick’是表示赞赏的俚语。", "Builds informality, solidarity and in-group identity."],
+      ["Common ground", "共同知识", "Shared knowledge or assumptions that need not be explained.", "双方共享、因此无需解释的知识或假设。", "‘We’ll meet at the usual place.’", "‘我们在老地方见。’", "Builds solidarity and distinguishes insiders from outsiders."]
+    ],
+    "aqa-face-politeness": [
+      ["Positive face", "积极面子", "The desire to be approved of, valued and included.", "希望被认可、重视并接纳的需要。", "‘You clearly worked hard, but this section needs revision.’", "‘你显然很努力，但这一部分需要修改。’", "Approval and praise protect positive face; criticism may threaten it."],
+      ["Negative face", "消极面子", "The desire for freedom of action and freedom from imposition.", "希望行动自由、不被他人强迫的需要。", "‘Could you possibly close the window?’", "‘你能不能把窗户关上？’", "Indirectness and choice reduce imposition on the listener."],
+      ["Positive-politeness strategy", "积极礼貌策略", "A strategy that builds approval, closeness or solidarity.", "用来建立认可、亲近感或团结感的策略。", "‘We’ve done this together before—you’re brilliant at it.’", "‘我们以前一起做过——你很擅长这个。’", "Protects positive face and constructs shared identity."],
+      ["Negative-politeness strategy", "消极礼貌策略", "A strategy that reduces imposition and respects autonomy.", "减少强加感、尊重对方自主性的策略。", "‘Sorry to bother you, but could I ask a quick question?’", "‘抱歉打扰你，我能问一个小问题吗？’", "Softens requests and protects the listener’s freedom of action."],
+      ["Face-threatening act (FTA)", "面子威胁行为", "An utterance that may damage public image or autonomy.", "可能损害他人公众形象或行动自由的话语。", "‘You clearly have no idea what you’re doing.’", "‘你显然完全不知道自己在做什么。’", "Can challenge competence, status, approval or autonomy."]
+    ],
+    "aqa-grice": [
+      ["Maxim of Quantity", "数量准则", "Give as much information as needed, but not too much or too little.", "提供所需的信息量，不多也不少。", "A: ‘Where is Sam?’ B: ‘Somewhere in England.’", "A：‘Sam在哪里？’B：‘在英格兰某个地方。’", "Flouting it may imply reluctance, concealment or humour."],
+      ["Maxim of Quality", "质量准则", "Do not say what you believe is false or unsupported by evidence.", "不要说自己认为是假的或没有证据支持的话。", "During a storm, someone says, ‘Lovely weather.’", "暴风雨中，有人说：‘天气真好。’", "Flouting it can create irony, exaggeration or sarcasm."],
+      ["Maxim of Relation", "关联准则", "Make contributions relevant to the current purpose.", "说话内容应与当前话题或目的相关。", "A: ‘Did you finish the work?’ B: ‘The weather is nice.’", "A：‘你完成工作了吗？’B：‘今天天气不错。’", "Flouting it may imply avoidance, discomfort or refusal."],
+      ["Maxim of Manner", "方式准则", "Be clear, orderly and avoid unnecessary ambiguity.", "表达应清楚、有条理，避免不必要的含糊。", "‘The situation produced an outcome of a non-positive nature.’", "‘这个情况产生了一个非正面的结果。’", "Flouting it may protect face, exclude outsiders or create humour."]
+    ]
+  });
+
+  const bilingualCell = (english, chinese) =>
+    `<span class="aqa-bi__en">${english}</span><span class="aqa-bi__zh" lang="zh-Hans">${chinese}</span>`;
+  const headers = [
+    bilingualCell("Terms", "术语"),
+    bilingualCell("Meaning", "含义"),
+    bilingualCell("Example", "例句"),
+    bilingualCell("Effect", "作用")
+  ];
+  const entriesById = new Map(
+    window.AQA_LANGUAGE_NOTES.flatMap((section) => section.entries || []).map((entry) => [entry.id, entry])
+  );
+
+  Object.entries(terminologyEntries).forEach(([id, rows]) => {
+    const entry = entriesById.get(id);
+    if (!entry) return;
+    entry.terminology = true;
+    entry.table = {
+      headers,
+      rows: rows.map(([term, termZh, meaning, meaningZh, example, exampleZh, effect]) => [
+        bilingualCell(term, termZh),
+        bilingualCell(meaning, meaningZh),
+        bilingualCell(example, exampleZh),
+        `<span class="aqa-effect">${effect}</span>`
+      ])
+    };
+    delete entry.details;
+  });
+})();
