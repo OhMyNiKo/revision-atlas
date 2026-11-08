@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AS Level revision notes for Cambridge Computer Science, Physics and Psychology, plus OxfordAQA International AS English Language 9670, organised point by point for exams.">
+  <meta name="description" content="AS Level revision notes for Cambridge Computer Science, Physics and Psychology, OxfordAQA International AS English Language 9670, and STEP mathematics notes organised by topic.">
   <meta name="theme-color" content="#071f3d">
   <title>Revision Atlas — AS Level Study Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400..700&amp;display=swap" rel="stylesheet">
+  <link href="assets/step-math.css?v=20261108" rel="stylesheet">
+  <link href="step-notes.css?v=20261108" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071f3d'/%3E%3Cpath d='M17 17h30v8H25v9h18v8H25v5h22' fill='none' stroke='%234fc3f7' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <script>
     (() => {
@@ -2354,6 +2356,11 @@
           <span class="subject-option__copy"><span class="subject-option__name">AQA AS Language</span><span class="subject-option__meta">OxfordAQA · 9670 · 12 weeks</span></span>
           <span class="subject-option__check" aria-hidden="true">✓</span>
         </button>
+        <button class="subject-option" type="button" data-subject-option="step">
+          <span class="subject-option__icon" aria-hidden="true">∑</span>
+          <span class="subject-option__copy"><span class="subject-option__name">STEP备考</span><span class="subject-option__meta">Pure Mathematics · Mechanics</span></span>
+          <span class="subject-option__check" aria-hidden="true">✓</span>
+        </button>
       </div>
 
       <div class="nav-label" id="sectionNavLabel">Chapters</div>
@@ -2470,6 +2477,8 @@
         <a class="chapter-link" href="#section-aqa-u2-society" data-subject="aqa" data-section="section-aqa-u2-society"><span class="chapter-link__num">SOC</span><span class="chapter-link__text">Language &amp; Social Groups</span></a>
         <a class="chapter-link" href="#section-aqa-coverage" data-subject="aqa" data-section="section-aqa-coverage"><span class="chapter-link__num">✓</span><span class="chapter-link__text">Coverage &amp; Checklist</span></a>
       </nav>
+
+      <nav class="chapter-nav" data-subject-nav="step" aria-label="STEP备考模块目录" hidden></nav>
 
       <div class="sidebar__footer" id="sidebarFooter">Syllabus edition · 2027–2029</div>
     </div>
@@ -4174,6 +4183,17 @@ Largest ← Larger(First, Second)</div>
         </section>
       </div>
 
+      <div class="subject-view" id="subject-step" data-subject-view="step" hidden lang="zh-CN">
+        <section class="step-hero" aria-labelledby="step-page-title">
+          <div class="eyebrow">STEP 2 + STEP 3 · Pure Mathematics &amp; Mechanics</div>
+          <h1 id="step-page-title">STEP备考</h1>
+          <p>按主题积累的数学讲义。保留原始 LaTeX 笔记中的文字、公式、表格与推导顺序，直接展开阅读。</p>
+          <p>17 个纯数学模块 · 8 个力学模块 · 3 个辅助索引。不收录概率与统计；空模块显示「待收录」。</p>
+          <div class="step-actions"><a href="step-sources/STEP_Notes_20261108.tex" download>下载本次原始 .tex</a><a href="https://www.ocr.org.uk/Images/696329-step-specification-2026.pdf" target="_blank" rel="noreferrer">官方 STEP specification</a><span>本次收录：4 节 · 2026-11-08</span></div>
+        </section>
+        <div id="stepNotes"></div>
+      </div>
+
       <footer>Personal revision resource · Source material remains credited to Cambridge International, OxfordAQA and the supplied classroom notes.</footer>
     </main>
   </div>
@@ -4183,6 +4203,8 @@ Largest ← Larger(First, Second)</div>
   <script src="physics-notes-6-11.js?v=20261105-as-complete"></script>
   <script src="owh-notes.js"></script>
   <script src="aqa-language-notes.js?v=20261104-bilingual-terms"></script>
+  <script src="step-notes.js?v=20261108"></script>
+  <script src="step-reader.js?v=20261108"></script>
   <script>
     function renderPhysicsNotes() {
       const root = document.getElementById('physicsNotes');
@@ -4332,6 +4354,7 @@ Largest ← Larger(First, Second)</div>
     renderPhysicsNotes();
     renderOwhNotes();
     renderAqaLanguageNotes();
+    renderSTEPNotes();
 
     const body = document.body;
     const sidebar = document.getElementById('sidebar');
@@ -4414,7 +4437,7 @@ Largest ← Larger(First, Second)</div>
 
     function activeNoteCards() {
       const activeView = subjectViews.find((view) => view.dataset.subjectView === activeSubject);
-      return activeView ? [...activeView.querySelectorAll('.syllabus-card')] : [];
+      return activeView ? [...activeView.querySelectorAll('.syllabus-card, .step-note')] : [];
     }
 
     function termOccurrences(text, term) {
@@ -4432,11 +4455,12 @@ Largest ← Larger(First, Second)</div>
     function rankNoteResults(terms) {
       const phrase = terms.join(' ');
       return activeNoteCards().map((card, order) => {
-        const text = normaliseSearch(card.textContent);
+        const text = normaliseSearch(card.dataset.searchText || card.textContent);
         const title = normaliseSearch([
           card.querySelector('.point-id')?.textContent || '',
           card.querySelector('.syllabus-wording')?.textContent || '',
-          card.querySelector('.owh-definition')?.textContent || ''
+          card.querySelector('.owh-definition')?.textContent || '',
+          card.querySelector('.step-note__title')?.textContent || ''
         ].join(' '));
         const matchedTerms = terms.filter((term) => text.includes(term));
         const titleCoverage = terms.filter((term) => title.includes(term)).length;
@@ -4466,7 +4490,7 @@ Largest ← Larger(First, Second)</div>
     }
 
     function clearNoteSearchFocus(closeAutoOpened = true) {
-      document.querySelectorAll('.syllabus-card.note-search-current').forEach((card) => card.classList.remove('note-search-current'));
+      document.querySelectorAll('.note-search-current').forEach((card) => card.classList.remove('note-search-current'));
       if (closeAutoOpened) closeAutoOpenedSearchCard();
     }
 
@@ -4663,7 +4687,8 @@ Largest ← Larger(First, Second)</div>
         cs: { name: 'Computer Science', code: 'AS Level · 9618', icon: '</>', breadcrumb: 'AS Computer Science', label: 'Chapters', footer: 'Syllabus edition · 2027–2029', status: 'Source checked', title: '9618 Revision Atlas — Computer Science' },
         physics: { name: 'Physics', code: 'AS Level · 9702', icon: 'F', breadcrumb: 'AS Physics', label: 'Sections', footer: 'Syllabus edition · 2025–2027', status: '145 points checked', title: '9702 Revision Atlas — Complete AS Physics' },
         owh: { name: 'OWH Notes', code: 'AS Psychology · Weeks 1–6', icon: 'Ψ', breadcrumb: 'AS Psychology', label: 'Weeks', footer: '22 teacher files · Weeks 1–6', status: '22 files indexed', title: 'OWH Notes — AS Psychology' },
-        aqa: { name: 'AQA AS Language', code: 'OxfordAQA · 9670', icon: 'Aa', breadcrumb: 'AS English Language', label: 'Specification', footer: '22 teacher files · 12 weeks', status: '12 weeks indexed', title: 'AQA AS Language — OxfordAQA 9670' }
+        aqa: { name: 'AQA AS Language', code: 'OxfordAQA · 9670', icon: 'Aa', breadcrumb: 'AS English Language', label: 'Specification', footer: '22 teacher files · 12 weeks', status: '12 weeks indexed', title: 'AQA AS Language — OxfordAQA 9670' },
+        step: { name: 'STEP备考', code: 'Pure Mathematics · Mechanics', icon: '∑', breadcrumb: 'STEP备考', label: 'Modules · 模块', footer: '17 Pure · 8 Mechanics · 3 Reference', status: '4 节原文笔记', title: 'STEP备考 — Revision Atlas' }
       };
       return subjects[subject] || subjects.cs;
     }
@@ -4679,7 +4704,7 @@ Largest ← Larger(First, Second)</div>
     }
 
     function setSubject(subject, persist = true, resetScroll = true) {
-      activeSubject = ['cs', 'physics', 'owh', 'aqa'].includes(subject) ? subject : 'cs';
+      activeSubject = ['cs', 'physics', 'owh', 'aqa', 'step'].includes(subject) ? subject : 'cs';
       const meta = subjectMeta(activeSubject);
       subjectViews.forEach((view) => { view.hidden = view.dataset.subjectView !== activeSubject; });
       subjectNavs.forEach((nav) => { nav.hidden = nav.dataset.subjectNav !== activeSubject; });
@@ -4768,7 +4793,8 @@ Largest ← Larger(First, Second)</div>
       ? 'physics'
       : hashTarget.startsWith('owh-') || hashTarget.startsWith('section-owh')
         ? 'owh'
-        : hashTarget.startsWith('aqa-') || hashTarget.startsWith('section-aqa') ? 'aqa' : '';
+        : hashTarget.startsWith('aqa-') || hashTarget.startsWith('section-aqa') ? 'aqa'
+          : hashTarget.startsWith('step-') || hashTarget.startsWith('section-step') ? 'step' : '';
     if (!initialSubject) {
       try { initialSubject = localStorage.getItem(subjectKey) || 'cs'; } catch { initialSubject = 'cs'; }
     }

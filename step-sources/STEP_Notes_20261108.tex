@@ -1,0 +1,269 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  UTF8]{ctexart}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=2cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{1．分式什么时候等于零}
+
+\[
+\boxed{
+\frac{N(x)}{D(x)}=0
+\iff
+N(x)=0\quad\text{且分母有定义、非零}.
+}
+\]
+
+做题步骤：\textbf{令分子为零 → 检查候选解是否在原式定义域内。}
+
+\begin{itemize}
+\tightlist
+\item
+  分母再大，只要有限，就不能把非零分子除成恰好 \(0\)。
+\item
+  \textbf{趋近于 \(0\)} 与 \textbf{等于 \(0\)} 要区分。
+\end{itemize}
+
+今天的例子： \[
+f'(x)=\frac{a-x}{(x^2-2x+a)^{3/2}}.
+\] 候选零点是 \(x=a\)，但需要满足 \[
+a^2-a>0
+\iff
+\boxed{a<0\text{ 或 }a>1}.
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{2．高次韦达定理}
+
+设 \[
+a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0=0,\qquad a_n\ne0,
+\] 根为 \(r_1,\ldots,r_n\)。定义 \(e_k\) 为：\textbf{选出 \(k\)
+个不同编号的根，相乘后对所有选法求和}，共 \(\binom nk\) 项。
+
+\[
+\boxed{e_k=(-1)^k\frac{a_{n-k}}{a_n}}.
+\]
+
+具体为： \[
+\begin{aligned}
+e_1&=\sum_i r_i=-\frac{a_{n-1}}{a_n},\\
+e_2&=\sum_{i<j}r_ir_j=\frac{a_{n-2}}{a_n},\\
+e_3&=\sum_{i<j<k}r_ir_jr_k=-\frac{a_{n-3}}{a_n},\\
+e_n&=\prod_i r_i=(-1)^n\frac{a_0}{a_n}.
+\end{aligned}
+\]
+
+\textbf{重点：符号交替；都除以最高次项系数；每组选法只算一次。}
+允许复根，重根按重数计入。
+
+常用变形： \[
+\boxed{\sum_i r_i^2=e_1^2-2e_2},
+\] \[
+\boxed{\sum_i r_i^3=e_1^3-3e_1e_2+3e_3}.
+\] 所有根非零时： \[
+\boxed{\sum_i\frac1{r_i}=\frac{e_{n-1}}{e_n}=-\frac{a_1}{a_0}}.
+\]
+
+原理：展开 \(a_n\prod_i(x-r_i)\)，比较系数。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{3．三次方程：等差根、等比根与代入技巧}
+
+对 \[
+f(x)=x^3-px^2+qx-r,\qquad p\ne0,\ r\ne0,
+\] 韦达关系为： \[
+\boxed{\alpha+\beta+\gamma=p,\quad
+\alpha\beta+\beta\gamma+\gamma\alpha=q,\quad
+\alpha\beta\gamma=r}.
+\]
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+根的结构
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+推荐设根
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+中间根
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+系数充要条件
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+等比 & \(a/k,\ a,\ ak\) & \(\displaystyle a=q/p\) &
+\(\boxed{q^3=p^3r}\) \\
+等差 & \(a-d,\ a,\ a+d\) & \(\displaystyle a=p/3\) &
+\(\boxed{2p^3-9pq+27r=0}\) \\
+\end{longtable}
+
+\textbf{正向：把假设的根代入韦达，消掉辅助参数。}
+
+等比： \[
+p=a(k^{-1}+1+k),\quad
+q=a^2(k^{-1}+1+k)=ap,\quad
+r=a^3.
+\]
+
+等差： \[
+p=3a,\qquad q=3a^2-d^2,\qquad r=a(a^2-d^2).
+\]
+
+\textbf{反向：先验证中间根，再利用另外两根的和或积。}
+
+可直接使用： \[
+\boxed{f(q/p)=\frac{q^3}{p^3}-r},
+\qquad
+\boxed{f(p/3)=-\frac{2p^3}{27}+\frac{pq}{3}-r}.
+\]
+
+找到中间根 \(a\) 后，设另外两根为 \(\beta,\gamma\)：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{等比：}证明 \(\beta\gamma=a^2\)，则 \[
+  \frac a\beta=\frac\gamma a.
+  \]
+\item
+  \textbf{等差：}证明 \(\beta+\gamma=2a\)，则另外两根关于 \(a\)
+  对称，可写为 \(a-d,a+d\)。
+\end{itemize}
+
+本题允许复根；若要求三个实根成等差，还需 \(p^2\ge3q\)。
+
+\textbf{本题要补的解题习惯：}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+题目线索 & 第一反应 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+给出根的形式 & \textbf{代入韦达}，或写出因式分解后比较系数 \\
+要证明指定的 \(t\) 是根 & \textbf{直接计算 \(f(t)\)} \\
+三根成等差／等比 & \textbf{围绕中间根对称设根} \\
+前一问推出某个中间根 & 后一问反向证明时，\textbf{优先代入这个候选根} \\
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{4．充分、必要与充要条件}
+
+固定：\(C\) 是``条件''，\(R\) 是``结果''。
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+类型 & 含义 & 要证明的方向 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+充分条件 & \textbf{有它就够了}，能保证结果 & \(C\Rightarrow R\) \\
+必要条件 & \textbf{没有它不行}，结果成立必须满足它 &
+\(R\Rightarrow C\) \\
+充要条件 & 两者互相推出 & \(C\Longleftrightarrow R\) \\
+\end{longtable}
+
+例如，针对``能被 \(6\) 整除''：
+
+\begin{itemize}
+\tightlist
+\item
+  是偶数：\textbf{必要但不充分}，反例为 \(4\)。
+\item
+  能被 \(12\) 整除：\textbf{充分但不必要}，反例为 \(6\)。
+\item
+  同时能被 \(2\) 和 \(3\) 整除：\textbf{充要}。
+\end{itemize}
+
+证明充要条件时：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{必要性：假设结果成立，推出条件。}
+\item
+  \textbf{充分性：假设条件成立，推出结果。}
+\end{enumerate}
+
+\textbf{只从特殊根的形式推出系数关系，只完成了必要性；还必须反向证明。}
+
+英文方向： \[
+\boxed{P\text{ only if }Q\quad\Longleftrightarrow\quad P\Rightarrow Q}.
+\] 因此 ``The derivative is zero only when \(x=a\)''
+只说明：\textbf{导数为零必须有
+\(x=a\)}；是否真的在这里为零，还要检查定义域。
+
+\end{document}

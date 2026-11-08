@@ -1,0 +1,65 @@
+/* A continuous, LaTeX-like reading surface, scoped to STEP only. */
+#subject-step { --step-accent: #855b38; --step-muted: #77736b; }
+#subject-step[hidden] { display: none; }
+.step-hero { padding: 42px 0 34px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+.step-hero .eyebrow { color: var(--step-accent); letter-spacing: .15em; }
+.step-hero h1 { margin: 8px 0 14px; font-size: clamp(32px, 4vw, 46px); font-weight: 600; }
+.step-hero p { max-width: 65ch; margin: 10px 0; color: var(--muted); }
+.step-actions { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; align-items: center; }
+.step-actions a, .step-actions button { color: var(--step-accent); text-underline-offset: 5px; }
+.step-actions button { padding: 5px 0; background: none; border: 0; border-bottom: 1px solid currentColor; cursor: pointer; }
+.step-actions button[aria-pressed="true"] { font-weight: 600; }
+.step-module { margin: 0 0 54px; scroll-margin-top: 112px; }
+.step-module__head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 24px; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+.step-module__code { color: var(--step-accent); font: 500 13px/1.5 ui-monospace, monospace; letter-spacing: .06em; flex-shrink: 0; }
+.step-module__head h2 { font-size: 23px; font-weight: 600; margin: 0; }
+.step-module__count { color: var(--muted); font-size: 12px; margin-left: auto; white-space: nowrap; }
+.step-module--empty { margin-bottom: 0; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.step-module--empty .step-module__head { margin: 0; padding: 0; border: none; }
+.step-module--empty h2 { font-size: 17px; font-weight: 500; }
+.step-group-heading { margin: 48px 0 25px; color: var(--step-accent); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.step-note { border: 0; border-radius: 0; margin: 0; padding: 0 0 38px; background: transparent; scroll-margin-top: 112px; }
+.step-note + .step-note { border-top: 1px solid var(--line); padding-top: 36px; }
+.step-note__meta { display: flex; gap: 8px 16px; flex-wrap: wrap; color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+.step-note__meta a { text-underline-offset: 4px; }
+.step-note__body { max-width: 900px; font-family: "Noto Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; font-size: 17px; line-height: 1.95; overflow-wrap: anywhere; }
+.step-note__title { font-family: inherit; font-weight: 600; font-size: 23px; line-height: 1.55; margin: 0 0 24px; color: var(--ink); }
+.step-note__body p { margin: 16px 0; }
+.step-note__body strong { font-weight: 600; color: inherit; }
+.step-note__body ul, .step-note__body ol { padding-left: 1.65em; margin: 16px 0; }
+.step-note__body li { padding-left: .2em; margin: 9px 0; }
+.step-note__body li p { margin: 0; }
+.step-note__body .katex { font-size: 1.12em; }
+.step-note__body .katex-display { margin: 0; }
+.step-note__body .katex .mord.text { font-family: KaTeX_Main, "Songti SC", "STSong", "Noto Serif CJK SC", serif; }
+.step-equation { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 15px 4px; margin: 10px 0; overscroll-behavior-x: contain; }
+.step-table { width: 100%; max-width: 100%; overflow-x: auto; margin: 26px 0; }
+.step-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.8; background: transparent; }
+.step-table th, .step-table td { padding: 13px 14px; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: transparent; min-width: 110px; }
+.step-table th { font-weight: 600; border-top: 1.5px solid var(--muted); border-bottom: 1px solid var(--muted); color: var(--ink); text-transform: none; letter-spacing: 0; }
+.step-table tr:last-child td { border-bottom: 1.5px solid var(--muted); }
+.step-note.note-search-current { outline: 0; box-shadow: inset 3px 0 0 var(--step-accent); padding-left: 20px; }
+.step-nav-group { color: #9facbc; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; padding: 18px 14px 6px; }
+.step-nav-note-count { color: #93c7df; font-size: 11px; margin-left: 8px; }
+.step-related { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 15px 0 0 61px; color: var(--muted); font-size: 13px; }
+.step-related a { text-underline-offset: 4px; }
+html[data-theme="dark"] #subject-step { --step-accent: #d0b28f; --step-muted: #a8a298; }
+html[data-layout="focus"] #subject-step { --step-accent: #87644b; }
+html[data-layout="focus"][data-theme="dark"] #subject-step { --step-accent: #c4b297; }
+@media (max-width: 640px) {
+  .step-hero { padding-top: 20px; }
+  .step-note__body { font-size: 16px; line-height: 1.95; }
+  .step-note__title { font-size: 21px; }
+  .step-module__head { gap: 11px; }
+  .step-module__head h2 { font-size: 20px; }
+  .step-module--empty h2 { font-size: 16px; }
+  .step-note__body .katex { font-size: 1.05em; }
+  .step-table table { font-size: 14px; }
+  .step-table th, .step-table td { padding: 10px; }
+}
+@media print {
+  .step-actions, .step-note__meta { display: none; }
+  .step-module--empty { display: none; }
+  .step-equation, .step-table { overflow: visible; }
+  .step-note__body { color: black; max-width: none; }
+}
