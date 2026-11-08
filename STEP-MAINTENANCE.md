@@ -27,5 +27,18 @@ The tests compare every source formula and count emphasis, notes, modules and ta
 
 KaTeX is run at build time; its MIT-licensed stylesheet and WOFF2 fonts are bundled in
 `assets/step-math.css`. Visitors do not need a math CDN, a TeX installation or client-side math code.
-Keep `assets/katex-LICENSE.txt` with the bundle. The existing subject search ranks STEP notes using
-their source text, rather than duplicated KaTeX HTML/MathML text. There are no collapsible note cards.
+Keep `assets/katex-LICENSE.txt` with the bundle. Search ranks STEP notes using their source text,
+rather than duplicated KaTeX HTML/MathML text. There are no collapsible note cards.
+
+## Single-module navigation
+
+Every subject displays only the module selected in its left directory. Other modules stay in the
+DOM, hidden with `data-module-hidden`, so source content is retained without being scrollable.
+Search is scoped to that selected module. Cross-module references point out the destination but
+do not switch modules; users choose it from the directory. Direct URLs and browser history restore
+the corresponding module. The per-subject selection is remembered locally.
+
+The sidebar's viewport-height inner container has independent wheel scrolling and contains
+overscroll. Desktop collapse hides the complete sidebar, removes its layout space and makes the
+hidden controls inert; only the expand button remains. On narrow screens the mobile menu uses
+an overlay and closes after a module is selected.

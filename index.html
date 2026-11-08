@@ -46,7 +46,6 @@
       --soft-red: #fff0f1;
       --shadow: 0 16px 42px rgba(16, 35, 60, .08);
       --sidebar-w: 292px;
-      --rail-w: 76px;
     }
 
     * { box-sizing: border-box; }
@@ -94,13 +93,21 @@
       overflow: hidden;
     }
     .sidebar__inner {
-      width: var(--sidebar-w);
-      min-height: 100%;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       padding: 22px 16px 18px;
       overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior-y: contain;
+      scrollbar-width: thin;
+      scrollbar-color: #617a91 transparent;
     }
+    .sidebar__inner > * { flex-shrink: 0; }
+    .sidebar__inner::-webkit-scrollbar { width: 7px; }
+    .sidebar__inner::-webkit-scrollbar-thumb { background: #617a91; border-radius: 8px; }
     .brand {
       display: flex;
       align-items: center;
@@ -2203,22 +2210,28 @@
     html[data-layout="focus"][data-theme="dark"] .owh-source::before,
     html[data-layout="focus"][data-theme="dark"] .aqa-source::before { color: #c49b88; background: transparent; }
 
-    body.sidebar-collapsed .sidebar { width: var(--rail-w); }
-    body.sidebar-collapsed .sidebar-toggle { left: 56px; }
+    body.sidebar-collapsed .sidebar {
+      transform: translateX(-100%);
+      visibility: hidden;
+      pointer-events: none;
+    }
+    body.sidebar-collapsed .sidebar-toggle { left: 14px; }
     body.sidebar-collapsed .sidebar-toggle svg { transform: rotate(180deg); }
-    body.sidebar-collapsed .shell { margin-left: var(--rail-w); }
-    body.sidebar-collapsed .brand__copy,
-    body.sidebar-collapsed .nav-label,
-    body.sidebar-collapsed .subject__copy,
-    body.sidebar-collapsed .subject__chev,
-    body.sidebar-collapsed .chapter-link__text,
-    body.sidebar-collapsed .sidebar__footer { opacity: 0; pointer-events: none; }
-    body.sidebar-collapsed .subject-picker { display: none; }
-    body.sidebar-collapsed .brand { padding-left: 2px; }
-    body.sidebar-collapsed .subject { width: 44px; padding: 4px; border-color: transparent; background: transparent; }
-    body.sidebar-collapsed .chapter-link { width: 44px; grid-template-columns: 1fr; padding: 5px; text-align: center; }
-    body.sidebar-collapsed .chapter-link.active::before { left: -16px; }
-    body.sidebar-collapsed .chapter-link__num { font-size: .78rem; }
+    body.sidebar-collapsed .shell { margin-left: 0; }
+
+    [data-module-hidden="true"] { display: none !important; }
+    body[data-module-reader="single"] .chapter-hero,
+    body[data-module-reader="single"] .step-hero,
+    body[data-module-reader="single"] .step-group-heading,
+    body[data-module-reader="single"] .owh-locator { display: none !important; }
+    body[data-module-reader="single"] .subject-view > .source-panel[data-module-hidden="true"] { display: none !important; }
+    .module-navigation-notice {
+      position: fixed; z-index: 40; bottom: 20px; right: 20px;
+      max-width: min(500px, calc(100vw - 40px)); padding: 14px 20px;
+      color: var(--ink); background: var(--card); border: 1px solid var(--line);
+      border-radius: 12px; box-shadow: var(--shadow); font-size: 14px;
+    }
+    .module-navigation-notice[hidden] { display: none; }
 
     .mobile-menu { display: none; }
     .backdrop { display: none; }
@@ -2233,6 +2246,7 @@
       html { scroll-padding-top: 92px; }
       .sidebar { transform: translateX(-100%); width: min(84vw, var(--sidebar-w)); }
       .sidebar.is-mobile-open { transform: translateX(0); }
+      body.sidebar-collapsed .sidebar.is-mobile-open { transform: translateX(0); visibility: visible; pointer-events: auto; }
       .sidebar-toggle { display: none; }
       .shell, body.sidebar-collapsed .shell { margin-left: 0; }
       .topbar { min-height: 64px; gap: 8px; padding: 10px 18px; }
@@ -2464,6 +2478,7 @@
         <a class="chapter-link" href="#section-owh-week-6-data" data-subject="owh" data-section="section-owh-week-6-data"><span class="chapter-link__num">W6A</span><span class="chapter-link__text">Data Analysis</span></a>
         <a class="chapter-link" href="#section-owh-week-6-design" data-subject="owh" data-section="section-owh-week-6-design"><span class="chapter-link__num">W6B</span><span class="chapter-link__text">Design Questions</span></a>
         <a class="chapter-link" href="#section-owh-checklist" data-subject="owh" data-section="section-owh-checklist"><span class="chapter-link__num">✓</span><span class="chapter-link__text">Checklist &amp; Coverage</span></a>
+        <a class="chapter-link" href="#owh-sources" data-subject="owh" data-section="owh-sources"><span class="chapter-link__num">S</span><span class="chapter-link__text">Teacher materials</span></a>
       </nav>
 
       <nav class="chapter-nav" data-subject-nav="aqa" aria-label="AQA AS Language sections" hidden>
@@ -2476,6 +2491,7 @@
         <a class="chapter-link" href="#section-aqa-u2-spoken" data-subject="aqa" data-section="section-aqa-u2-spoken"><span class="chapter-link__num">SP</span><span class="chapter-link__text">Spoken Language</span></a>
         <a class="chapter-link" href="#section-aqa-u2-society" data-subject="aqa" data-section="section-aqa-u2-society"><span class="chapter-link__num">SOC</span><span class="chapter-link__text">Language &amp; Social Groups</span></a>
         <a class="chapter-link" href="#section-aqa-coverage" data-subject="aqa" data-section="section-aqa-coverage"><span class="chapter-link__num">✓</span><span class="chapter-link__text">Coverage &amp; Checklist</span></a>
+        <a class="chapter-link" href="#aqa-sources" data-subject="aqa" data-section="aqa-sources"><span class="chapter-link__num">S</span><span class="chapter-link__text">Sources &amp; scope</span></a>
       </nav>
 
       <nav class="chapter-nav" data-subject-nav="step" aria-label="STEP备考模块目录" hidden></nav>
@@ -2499,9 +2515,9 @@
         </svg>
       </button>
       <div class="breadcrumb"><span id="breadcrumbSubject">AS Computer Science</span> <span aria-hidden="true">/</span> <strong id="breadcrumbChapter">Chapter 9</strong></div>
-      <div class="note-search" id="noteSearch" role="search" aria-label="Find notes in the current subject">
+      <div class="note-search" id="noteSearch" role="search" aria-label="Find notes in the current module">
         <svg class="note-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-        <label class="sr-only" for="noteSearchInput">Search the current subject</label>
+        <label class="sr-only" for="noteSearchInput">Search the current module</label>
         <input id="noteSearchInput" type="text" autocomplete="off" spellcheck="false" placeholder="Find in Computer Science…" aria-describedby="noteSearchHint noteSearchStatus">
         <span class="note-search__hint" id="noteSearchHint"><kbd>Space</kbd> next</span>
         <span class="note-search__status" id="noteSearchStatus" role="status" aria-live="polite">Ready</span>
@@ -4198,6 +4214,8 @@ Largest ← Larger(First, Second)</div>
     </main>
   </div>
 
+  <div class="module-navigation-notice" id="moduleNavigationNotice" role="status" aria-live="polite" hidden></div>
+
   <script src="cs-chapter10-notes.js?v=20261025-class-notes"></script>
   <script src="physics-notes.js?v=20261023-ch5"></script>
   <script src="physics-notes-6-11.js?v=20261105-as-complete"></script>
@@ -4378,6 +4396,20 @@ Largest ← Larger(First, Second)</div>
     const subjectViews = [...document.querySelectorAll('[data-subject-view]')];
     const subjectNavs = [...document.querySelectorAll('[data-subject-nav]')];
     const navLinks = [...document.querySelectorAll('.chapter-link')];
+    const moduleTargets = navLinks.map(link => document.getElementById(link.dataset.section)).filter(Boolean);
+    const moduleKey = 'revision-atlas-selected-modules';
+    const sidebarStateKey = 'revision-atlas-sidebar-collapsed';
+    const selectedModules = Object.create(null);
+    const sidebarScroller = document.querySelector('.sidebar__inner');
+    const mobileBreakpoint = matchMedia('(max-width: 900px)');
+    const moduleNavigationNotice = document.getElementById('moduleNavigationNotice');
+    let navigationNoticeTimer;
+    try {
+      const saved = JSON.parse(localStorage.getItem(moduleKey) || '{}');
+      if (saved && typeof saved === 'object' && !Array.isArray(saved)) Object.assign(selectedModules, saved);
+      body.classList.toggle('sidebar-collapsed', localStorage.getItem(sidebarStateKey) === 'true');
+    } catch {}
+    body.dataset.moduleReader = 'single';
     const breadcrumbSubject = document.getElementById('breadcrumbSubject');
     const breadcrumbChapter = document.getElementById('breadcrumbChapter');
     const sectionNavLabel = document.getElementById('sectionNavLabel');
@@ -4389,7 +4421,6 @@ Largest ← Larger(First, Second)</div>
     const owhSearchClear = document.getElementById('owhSearchClear');
     const owhSearchStatus = document.getElementById('owhSearchStatus');
     const owhCards = [...document.querySelectorAll('#owhNotes .syllabus-card')];
-    const owhSections = [...document.querySelectorAll('#owhNotes .section')];
     const noteSearch = document.getElementById('noteSearch');
     const noteSearchInput = document.getElementById('noteSearchInput');
     const noteSearchStatus = document.getElementById('noteSearchStatus');
@@ -4401,27 +4432,61 @@ Largest ← Larger(First, Second)</div>
     let noteSearchKey = '';
     let autoOpenedSearchCard = null;
 
+    function currentModule(subject = activeSubject) {
+      return moduleTargets.find(target => target.id === selectedModules[subject]) || null;
+    }
+
+    function moduleForTarget(target) {
+      return target ? moduleTargets.find(module => module === target || module.contains(target)) : null;
+    }
+
+    function selectModule(id, { scroll = false, updateHash = false, remember = true } = {}) {
+      const link = navLinks.find(item => item.dataset.subject === activeSubject && item.dataset.section === id)
+        || navLinks.find(item => item.dataset.subject === activeSubject);
+      if (!link) return;
+      const changed = selectedModules[activeSubject] !== link.dataset.section;
+      selectedModules[activeSubject] = link.dataset.section;
+      moduleTargets.forEach(target => {
+        const subject = target.closest('[data-subject-view]')?.dataset.subjectView;
+        target.dataset.moduleHidden = String(subject !== activeSubject || target.id !== link.dataset.section);
+      });
+      navLinks.forEach(item => {
+        const active = item === link;
+        item.classList.toggle('active', active);
+        if (active) item.setAttribute('aria-current', 'location');
+        else item.removeAttribute('aria-current');
+      });
+      const title = currentModule()?.querySelector('h2')?.textContent || link.querySelector('.chapter-link__text')?.textContent || '';
+      breadcrumbChapter.textContent = title;
+      resetNoteSearch(false, title);
+      if (changed && activeSubject === 'owh') resetOwhSearch();
+      if (remember) {
+        try { localStorage.setItem(moduleKey, JSON.stringify(selectedModules)); } catch {}
+      }
+      if (updateHash && window.location.hash !== `#${link.dataset.section}`) history.pushState(null, '', `#${link.dataset.section}`);
+      moduleNavigationNotice.hidden = true;
+      if (scroll) window.scrollTo({ top: 0, behavior: 'instant' });
+      requestAnimationFrame(updateReadingProgress);
+    }
+
     function normaliseSearch(value) {
       return value.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
     }
 
     function applyOwhSearch() {
       const query = normaliseSearch(owhSearch.value);
+      const scopedCards = currentModule('owh') ? [...currentModule('owh').querySelectorAll('.syllabus-card')] : owhCards;
       let visibleCount = 0;
       owhCards.forEach((card) => {
         const match = !query || normaliseSearch(card.textContent).includes(query);
         card.hidden = !match;
         card.classList.toggle('is-search-match', Boolean(query && match));
-        if (match) visibleCount += 1;
-      });
-      owhSections.forEach((section) => {
-        const hasMatch = [...section.querySelectorAll('.syllabus-card')].some((card) => !card.hidden);
-        section.hidden = Boolean(query && !hasMatch);
+        if (match && scopedCards.includes(card)) visibleCount += 1;
       });
       owhSearchClear.hidden = !query;
       owhSearchStatus.textContent = query
-        ? `${visibleCount} of ${owhCards.length} concepts match`
-        : `${owhCards.length} concepts indexed · type to locate one`;
+        ? `${visibleCount} of ${scopedCards.length} concepts match`
+        : `${scopedCards.length} concepts in this module · type to locate one`;
       requestAnimationFrame(updateReadingProgress);
     }
 
@@ -4436,8 +4501,8 @@ Largest ← Larger(First, Second)</div>
     }
 
     function activeNoteCards() {
-      const activeView = subjectViews.find((view) => view.dataset.subjectView === activeSubject);
-      return activeView ? [...activeView.querySelectorAll('.syllabus-card, .step-note')] : [];
+      const module = currentModule();
+      return module ? [...module.querySelectorAll('.syllabus-card, .step-note')] : [];
     }
 
     function termOccurrences(text, term) {
@@ -4558,7 +4623,7 @@ Largest ← Larger(First, Second)</div>
         noteSearchIndex = -1;
         noteSearchKey = '';
         noteSearchStatus.textContent = 'No match';
-        noteSearchStatus.setAttribute('aria-label', 'No matching notes in the current subject');
+        noteSearchStatus.setAttribute('aria-label', 'No matching notes in the current module');
         noteSearchNext.disabled = true;
         showSearchAttemptFeedback();
         return;
@@ -4582,7 +4647,7 @@ Largest ← Larger(First, Second)</div>
       noteSearchInput.setRangeText(' ', cursor, selectionEnd, 'end');
     }
 
-    function resetNoteSearch(focusInput = false, subjectLabel = subjectMeta(activeSubject).name) {
+    function resetNoteSearch(focusInput = false, subjectLabel = currentModule()?.querySelector('h2')?.textContent || subjectMeta(activeSubject).name) {
       noteSearchInput.value = '';
       noteSearchInput.placeholder = `Find in ${subjectLabel}…`;
       noteSearchResults = [];
@@ -4662,25 +4727,43 @@ Largest ← Larger(First, Second)</div>
       } catch {}
     });
 
-    sidebarToggle.addEventListener('click', () => {
-      const collapsed = body.classList.toggle('sidebar-collapsed');
+    function syncSidebarState() {
+      const collapsed = body.classList.contains('sidebar-collapsed');
+      const hidden = mobileBreakpoint.matches ? !sidebar.classList.contains('is-mobile-open') : collapsed;
+      sidebar.inert = hidden;
+      sidebar.setAttribute('aria-hidden', String(hidden));
       sidebarToggle.setAttribute('aria-expanded', String(!collapsed));
       sidebarToggle.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
+      mobileMenu.setAttribute('aria-expanded', String(sidebar.classList.contains('is-mobile-open')));
+    }
+
+    sidebarToggle.addEventListener('click', () => {
+      const collapsed = body.classList.toggle('sidebar-collapsed');
       subjectPicker.hidden = true;
       subjectSelector.setAttribute('aria-expanded', 'false');
+      try { localStorage.setItem(sidebarStateKey, String(collapsed)); } catch {}
+      syncSidebarState();
     });
 
     function closeMobileNav() {
       sidebar.classList.remove('is-mobile-open');
       backdrop.classList.remove('is-visible');
       mobileMenu.setAttribute('aria-expanded', 'false');
+      if (mobileBreakpoint.matches && sidebar.contains(document.activeElement)) mobileMenu.focus();
+      syncSidebarState();
     }
     mobileMenu.addEventListener('click', () => {
       const open = sidebar.classList.toggle('is-mobile-open');
       backdrop.classList.toggle('is-visible', open);
       mobileMenu.setAttribute('aria-expanded', String(open));
+      syncSidebarState();
     });
     backdrop.addEventListener('click', closeMobileNav);
+    mobileBreakpoint.addEventListener('change', closeMobileNav);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && sidebar.classList.contains('is-mobile-open')) closeMobileNav();
+    });
+    syncSidebarState();
 
     function subjectMeta(subject) {
       const subjects = {
@@ -4694,7 +4777,7 @@ Largest ← Larger(First, Second)</div>
     }
 
     function updateReadingProgress() {
-      const activeView = subjectViews.find((view) => view.dataset.subjectView === activeSubject);
+      const activeView = currentModule();
       if (!activeView) return;
       const start = activeView.getBoundingClientRect().top + window.scrollY - 84;
       const available = Math.max(1, activeView.offsetHeight - window.innerHeight + 84);
@@ -4703,7 +4786,7 @@ Largest ← Larger(First, Second)</div>
       readingProgressTrack.setAttribute('aria-valuenow', String(Math.round(percent)));
     }
 
-    function setSubject(subject, persist = true, resetScroll = true) {
+    function setSubject(subject, persist = true, resetScroll = true, targetModuleId = null) {
       activeSubject = ['cs', 'physics', 'owh', 'aqa', 'step'].includes(subject) ? subject : 'cs';
       const meta = subjectMeta(activeSubject);
       subjectViews.forEach((view) => { view.hidden = view.dataset.subjectView !== activeSubject; });
@@ -4720,20 +4803,11 @@ Largest ← Larger(First, Second)</div>
       subjectSelector.setAttribute('aria-label', `Choose subject. Current subject: ${meta.name}`);
       subjectSelector.setAttribute('aria-expanded', 'false');
       subjectPicker.hidden = true;
-      resetNoteSearch(false, meta.name);
-
-      navLinks.forEach((link) => {
-        const firstForSubject = link.dataset.subject === activeSubject && link === navLinks.find((item) => item.dataset.subject === activeSubject);
-        link.classList.toggle('active', firstForSubject);
-        if (firstForSubject) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
-      const firstLink = navLinks.find((link) => link.dataset.subject === activeSubject);
-      breadcrumbChapter.textContent = firstLink?.querySelector('.chapter-link__text')?.textContent || '';
+      selectModule(targetModuleId || selectedModules[activeSubject], { scroll: resetScroll, updateHash: persist, remember: persist });
+      sidebarScroller.scrollTop = 0;
       if (persist) {
         try { localStorage.setItem(subjectKey, activeSubject); } catch {}
       }
-      if (resetScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
       requestAnimationFrame(updateReadingProgress);
     }
 
@@ -4762,44 +4836,48 @@ Largest ← Larger(First, Second)</div>
       });
     });
 
-    navLinks.forEach((link) => link.addEventListener('click', () => {
+    navLinks.forEach((link) => link.addEventListener('click', event => {
+      event.preventDefault();
       if (link.dataset.subject === 'owh') resetOwhSearch();
-      if (link.dataset.subject !== activeSubject) setSubject(link.dataset.subject, true, false);
+      if (link.dataset.subject !== activeSubject) setSubject(link.dataset.subject, true, true, link.dataset.section);
+      else selectModule(link.dataset.section, { scroll: true, updateHash: true });
       closeMobileNav();
       requestAnimationFrame(updateReadingProgress);
     }));
-    const observed = navLinks
-      .map((link) => document.getElementById(link.dataset.section))
-      .filter(Boolean);
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting && entry.target.closest('[data-subject-view]')?.dataset.subjectView === activeSubject)
-        .sort((a, b) => b.target.getBoundingClientRect().top - a.target.getBoundingClientRect().top)[0];
-      if (!visible) return;
-      const currentLink = navLinks.find((link) => link.dataset.section === visible.target.id);
-      if (currentLink) breadcrumbChapter.textContent = currentLink.querySelector('.chapter-link__text')?.textContent || '';
-      navLinks.forEach((link) => {
-        const active = link.dataset.subject === activeSubject && link.dataset.section === visible.target.id;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
-    }, { rootMargin: '-18% 0px -62% 0px', threshold: [0, .1, .3] });
+    // A cross-reference may point out the destination, but only the directory
+    // changes modules. Scrolling and search can never reveal a neighbour module.
+    document.addEventListener('click', event => {
+      const anchor = event.target.closest('a[href^="#"]');
+      if (!anchor || anchor.classList.contains('chapter-link')) return;
+      const target = document.getElementById(anchor.getAttribute('href').slice(1));
+      const module = moduleForTarget(target);
+      if (!module || module === currentModule()) return;
+      event.preventDefault();
+      const destination = navLinks.find(link => link.dataset.section === module.id);
+      moduleNavigationNotice.textContent = `请从左侧菜单选择「${module.querySelector('h2')?.textContent || destination?.textContent.trim()}」查看这篇笔记。`;
+      moduleNavigationNotice.hidden = false;
+      clearTimeout(navigationNoticeTimer);
+      navigationNoticeTimer = setTimeout(() => { moduleNavigationNotice.hidden = true; }, 5000);
+    });
 
-    observed.forEach((section) => sectionObserver.observe(section));
     const hashTarget = window.location.hash.slice(1);
-    let initialSubject = hashTarget.startsWith('physics-') || hashTarget.startsWith('section-physics')
-      ? 'physics'
-      : hashTarget.startsWith('owh-') || hashTarget.startsWith('section-owh')
-        ? 'owh'
-        : hashTarget.startsWith('aqa-') || hashTarget.startsWith('section-aqa') ? 'aqa'
-          : hashTarget.startsWith('step-') || hashTarget.startsWith('section-step') ? 'step' : '';
+    const initialModule = moduleForTarget(document.getElementById(hashTarget));
+    let initialSubject = initialModule?.closest('[data-subject-view]')?.dataset.subjectView || '';
     if (!initialSubject) {
       try { initialSubject = localStorage.getItem(subjectKey) || 'cs'; } catch { initialSubject = 'cs'; }
     }
-    setSubject(initialSubject, false, false);
+    setSubject(initialSubject, false, false, initialModule?.id);
     if (hashTarget) requestAnimationFrame(() => document.getElementById(hashTarget)?.scrollIntoView());
+    window.addEventListener('hashchange', () => {
+      const target = document.getElementById(window.location.hash.slice(1));
+      const module = moduleForTarget(target);
+      if (!module) return;
+      const subject = module.closest('[data-subject-view]').dataset.subjectView;
+      if (subject !== activeSubject) setSubject(subject, true, false, module.id);
+      else selectModule(module.id);
+      requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    });
     window.addEventListener('scroll', updateReadingProgress, { passive: true });
     window.addEventListener('resize', updateReadingProgress);
     updateReadingProgress();
