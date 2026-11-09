@@ -2220,17 +2220,19 @@
     body.sidebar-collapsed .shell { margin-left: 0; }
 
     /* Test 3 reuses the open Language reference-table layout. */
+    body:has(#section-aqa-test-3[data-module-hidden="false"]) main { width: 100%; }
     #subject-aqa .aqa-test3-document { line-height: 1.75; }
     #subject-aqa .aqa-test3-document > p { max-width: 90ch; margin: 16px 0; }
     #subject-aqa .aqa-test3-document > h3 { margin: 36px 0 16px; font-size: 1.2rem; }
-    #subject-aqa .aqa-test3-table { overscroll-behavior-x: contain; }
-    #subject-aqa .aqa-test3-table table { min-width: 1100px; table-layout: fixed; }
+    #subject-aqa .aqa-reference-table.aqa-test3-table { width: 100%; max-width: 100%; overflow: visible; }
+    #subject-aqa .aqa-reference-table.aqa-test3-table table { width: 100%; min-width: 0; max-width: 100%; table-layout: fixed; }
     #subject-aqa .aqa-test3-table th:nth-child(1) { width: 14%; }
     #subject-aqa .aqa-test3-table th:nth-child(2) { width: 22%; }
     #subject-aqa .aqa-test3-table th:nth-child(3) { width: 16%; }
     #subject-aqa .aqa-test3-table th:nth-child(4) { width: 20%; }
     #subject-aqa .aqa-test3-table th:nth-child(5) { width: 28%; }
-    #subject-aqa .aqa-test3-table td { padding: 20px 16px; font-size: .94rem; line-height: 1.75; overflow-wrap: anywhere; }
+    #subject-aqa .aqa-test3-table td { padding: 20px clamp(6px, 1vw, 14px); font-size: .94rem; line-height: 1.75; overflow-wrap: anywhere; }
+    #subject-aqa .aqa-test3-table th { overflow-wrap: anywhere; }
     #subject-aqa .aqa-test3-table strong { font-weight: 600; }
     html[data-theme="dark"] #subject-aqa .aqa-test3-document strong { color: #d7ccef; background: transparent; }
     html[data-theme="dark"][data-layout="focus"] #subject-aqa .aqa-test3-document strong { color: #dce4d8; }

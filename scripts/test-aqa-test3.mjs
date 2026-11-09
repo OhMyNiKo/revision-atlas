@@ -30,4 +30,5 @@ const languageNav = [...page.matchAll(/class="chapter-link"[^>]*data-subject="aq
 assert.equal(languageNav.at(-1)[1], 'section-aqa-test-3');
 assert(page.indexOf('id="section-aqa-test-3"') > page.indexOf('id="aqa-sources"'));
 assert(page.includes(".syllabus-card, .step-note, .aqa-test3-row"));
+assert(page.includes('.aqa-reference-table.aqa-test3-table table { width: 100%; min-width: 0; max-width: 100%; table-layout: fixed; }'), 'All five columns must fit the available width without a forced minimum');
 console.log('PASS: 33 searchable rows, 23 stars, unchanged note content/order, no language labels, concise teacher exam overview, Test 3 last.');
