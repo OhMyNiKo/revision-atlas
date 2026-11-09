@@ -4242,6 +4242,7 @@ Largest ← Larger(First, Second)</div>
           </div>
           <div id="aqaTest3Notes" class="aqa-test3-document"></div>
           <div id="aqaTest3Quiz" class="aqa-test3-document aqa-test3-quiz"></div>
+          <div id="aqaTest3MorningQuiz" class="aqa-test3-document aqa-test3-quiz"></div>
         </section>
       </div>
 
@@ -4268,7 +4269,8 @@ Largest ← Larger(First, Second)</div>
   <script src="owh-notes.js"></script>
   <script src="aqa-language-notes.js?v=20261104-bilingual-terms"></script>
   <script src="aqa-test3-notes.js?v=20261109-test3-clean"></script>
-  <script src="aqa-test3-quiz.js?v=20261109-mcq23"></script>
+  <script src="aqa-test3-quiz.js?v=20261109-two-sets"></script>
+  <script src="aqa-test3-morning-quiz.js?v=20261109-morning23"></script>
   <script src="step-notes.js?v=20261108"></script>
   <script src="step-reader.js?v=20261108"></script>
   <script>
@@ -4422,6 +4424,12 @@ Largest ← Larger(First, Second)</div>
     renderAqaLanguageNotes();
     document.getElementById('aqaTest3Notes').innerHTML = window.AQA_TEST3_HTML;
     renderAqaTest3Quiz();
+    renderAqaTest3Quiz({
+      rootId: 'aqaTest3MorningQuiz', questions: window.AQA_TEST3_MORNING_MCQ,
+      prefix: 'test3-morning', progressId: 'test3MorningProgress', formId: 'test3MorningForm',
+      heading: '五、Morning Review · 23 terminology questions',
+      intro: '第二套：23 道全新术语辨认四选一，每题 1 分，逐一覆盖老师的 23 项重点。情境为录音设备的操作指南；按标出的范围判断词、短语或从句，不提前显示考点名称。自编练习，非官方原题。'
+    });
     renderSTEPNotes();
 
     const body = document.body;

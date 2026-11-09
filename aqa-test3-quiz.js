@@ -160,26 +160,31 @@ window.AQA_TEST3_MCQ = [
   }
 ];
 
-window.renderAqaTest3Quiz = function () {
-  const root = document.getElementById('aqaTest3Quiz');
+window.renderAqaTest3Quiz = function (config = {}) {
+  const root = document.getElementById(config.rootId || 'aqaTest3Quiz');
   if (!root) return;
-  const questions = window.AQA_TEST3_MCQ;
+  const questions = config.questions || window.AQA_TEST3_MCQ;
+  const prefix = config.prefix || 'test3';
+  const progressId = config.progressId || 'test3QuizProgress';
+  const formId = config.formId || 'test3QuizForm';
+  const total = questions.length;
+  const progressText = (answered, correct) => `已答 ${answered} / ${total} · 答对 ${correct} / ${total}`;
   const letters = ['A', 'B', 'C', 'D'];
   const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   root.innerHTML = `
-    <h3 id="test3-mcq-heading">四、23-term MCQ Practice</h3>
-    <p>23 道四选一，每题 1 分，恰好覆盖全部 23 个星号术语。以下是面向初次操作打印机的读者的说明文本片段；每题独立作答。自编覆盖练习，非官方试卷，题量不代表明天的正式题量。</p>
+    <h3 id="${prefix}-mcq-heading">${escape(config.heading || '四、23-term MCQ Practice')}</h3>
+    <p>${escape(config.intro || '23 道四选一，每题 1 分，恰好覆盖全部 23 个星号术语。以下是面向初次操作打印机的读者的说明文本片段；每题独立作答。自编覆盖练习，非官方试卷，题量不代表明天的正式题量。')}</p>
     <p>选择后显示该题答案与解析；刷新页面后全部清空。</p>
-    <p class="aqa-quiz-progress" id="test3QuizProgress" role="status" aria-live="polite">已答 0 / 23 · 答对 0 / 23</p>
-    <form id="test3QuizForm" autocomplete="off" aria-labelledby="test3-mcq-heading">
+    <p class="aqa-quiz-progress" id="${progressId}" role="status" aria-live="polite">${progressText(0, 0)}</p>
+    <form id="${formId}" autocomplete="off" aria-labelledby="${prefix}-mcq-heading">
       ${questions.map((q, i) => `
-        <fieldset class="aqa-quiz-question" id="test3-mcq-${i + 1}">
-          <legend><span class="aqa-quiz-number">${String(i + 1).padStart(2, '0')}</span> ${escape(q.prompt)}</legend>
+        <fieldset class="aqa-quiz-question" id="${prefix}-mcq-${i + 1}">
+          <legend lang="en"><span class="aqa-quiz-number">${String(i + 1).padStart(2, '0')}</span> ${escape(q.prompt)}</legend>
           ${q.sentence ? `<p class="aqa-quiz-stimulus" lang="en">${q.sentence}</p>` : ''}
           <div class="aqa-quiz-options" lang="en">
-            ${q.options.map((option, j) => `<label><input type="radio" name="test3-question-${i + 1}" value="${j}" autocomplete="off"><span><span class="aqa-quiz-letter">${letters[j]}.</span> ${option}</span></label>`).join('')}
+            ${q.options.map((option, j) => `<label><input type="radio" name="${prefix}-question-${i + 1}" value="${j}" autocomplete="off"><span><span class="aqa-quiz-letter">${letters[j]}.</span> ${option}</span></label>`).join('')}
           </div>
-          <div class="aqa-quiz-feedback" id="test3-feedback-${i + 1}" role="status" aria-live="polite" hidden></div>
+          <div class="aqa-quiz-feedback" id="${prefix}-feedback-${i + 1}" role="status" aria-live="polite" hidden></div>
         </fieldset>`).join('')}
     </form>
     <p class="aqa-quiz-sources">命题依据：老师的 23 项清单与本页术语定义；易混语法核对：<a href="https://dictionary.cambridge.org/grammar/british-grammar/relative" target="_blank" rel="noreferrer">Cambridge · Relative pronouns</a>、<a href="https://dictionary.cambridge.org/us/grammar/british-grammar/clauses-finite-" target="_blank" rel="noreferrer">Finite / non-finite clauses</a>、<a href="https://dictionary.cambridge.org/us/grammar/british-grammar/conjunctions-subordinating" target="_blank" rel="noreferrer">Conjunctions</a>。</p>`;
@@ -189,23 +194,23 @@ window.renderAqaTest3Quiz = function () {
     form.reset();
     responses.clear();
     root.querySelectorAll('.aqa-quiz-feedback').forEach(el => { el.hidden = true; el.textContent = ''; delete el.dataset.correct; });
-    root.querySelector('#test3QuizProgress').textContent = '已答 0 / 23 · 答对 0 / 23';
+    root.querySelector(`#${progressId}`).textContent = progressText(0, 0);
   }
   form.addEventListener('submit', event => event.preventDefault());
   form.addEventListener('change', event => {
     const input = event.target;
     if (!(input instanceof HTMLInputElement) || input.type !== 'radio') return;
-    const i = Number(input.name.replace('test3-question-', '')) - 1;
+    const i = Number(input.name.replace(`${prefix}-question-`, '')) - 1;
     const selected = Number(input.value);
     const q = questions[i];
     if (!q || !Number.isInteger(selected) || selected < 0 || selected > 3) return;
     responses.set(i, selected);
-    const feedback = root.querySelector(`#test3-feedback-${i + 1}`);
+    const feedback = root.querySelector(`#${prefix}-feedback-${i + 1}`);
     feedback.hidden = false;
     feedback.dataset.correct = String(selected === q.answer);
     feedback.innerHTML = `<p><strong>${selected === q.answer ? '答对了' : '本次选择不正确'} · 答案 ${letters[q.answer]} · ${escape(q.term)}</strong></p><p>${escape(q.feedback[selected])}</p>${selected !== q.answer ? `<p>${escape(q.feedback[q.answer])}</p>` : ''}`;
     const correct = [...responses].filter(([index, value]) => questions[index].answer === value).length;
-    root.querySelector('#test3QuizProgress').textContent = `已答 ${responses.size} / 23 · 答对 ${correct} / 23`;
+    root.querySelector(`#${progressId}`).textContent = progressText(responses.size, correct);
     window.dispatchEvent(new Event('resize'));
   });
   // No cookies, localStorage, sessionStorage or server writes. Also clear any
