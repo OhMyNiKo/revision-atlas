@@ -2219,6 +2219,23 @@
     body.sidebar-collapsed .sidebar-toggle svg { transform: rotate(180deg); }
     body.sidebar-collapsed .shell { margin-left: 0; }
 
+    /* Test 3 reuses the open Language reference-table layout. */
+    #subject-aqa .aqa-test3-document { line-height: 1.75; }
+    #subject-aqa .aqa-test3-document > p { max-width: 90ch; margin: 16px 0; }
+    #subject-aqa .aqa-test3-document > h3 { margin: 36px 0 16px; font-size: 1.2rem; }
+    #subject-aqa .aqa-test3-table { overscroll-behavior-x: contain; }
+    #subject-aqa .aqa-test3-table table { min-width: 1100px; table-layout: fixed; }
+    #subject-aqa .aqa-test3-table th:nth-child(1) { width: 14%; }
+    #subject-aqa .aqa-test3-table th:nth-child(2) { width: 22%; }
+    #subject-aqa .aqa-test3-table th:nth-child(3) { width: 16%; }
+    #subject-aqa .aqa-test3-table th:nth-child(4) { width: 20%; }
+    #subject-aqa .aqa-test3-table th:nth-child(5) { width: 28%; }
+    #subject-aqa .aqa-test3-table td { padding: 20px 16px; font-size: .94rem; line-height: 1.75; overflow-wrap: anywhere; }
+    #subject-aqa .aqa-test3-table strong { font-weight: 600; }
+    html[data-theme="dark"] #subject-aqa .aqa-test3-document strong { color: #d7ccef; background: transparent; }
+    html[data-theme="dark"][data-layout="focus"] #subject-aqa .aqa-test3-document strong { color: #dce4d8; }
+    #subject-aqa .aqa-test3-row { scroll-margin-top: 145px; }
+    #subject-aqa .aqa-test3-row.note-search-current { outline: 2px solid #9684b6; outline-offset: -2px; }
     [data-module-hidden="true"] { display: none !important; }
     body[data-module-reader="single"] .chapter-hero,
     body[data-module-reader="single"] .step-hero,
@@ -2492,6 +2509,7 @@
         <a class="chapter-link" href="#section-aqa-u2-society" data-subject="aqa" data-section="section-aqa-u2-society"><span class="chapter-link__num">SOC</span><span class="chapter-link__text">Language &amp; Social Groups</span></a>
         <a class="chapter-link" href="#section-aqa-coverage" data-subject="aqa" data-section="section-aqa-coverage"><span class="chapter-link__num">✓</span><span class="chapter-link__text">Coverage &amp; Checklist</span></a>
         <a class="chapter-link" href="#aqa-sources" data-subject="aqa" data-section="aqa-sources"><span class="chapter-link__num">S</span><span class="chapter-link__text">Sources &amp; scope</span></a>
+        <a class="chapter-link" href="#section-aqa-test-3" data-subject="aqa" data-section="section-aqa-test-3"><span class="chapter-link__num">T3</span><span class="chapter-link__text">Test 3</span></a>
       </nav>
 
       <nav class="chapter-nav" data-subject-nav="step" aria-label="STEP备考模块目录" hidden></nav>
@@ -4197,6 +4215,13 @@ Largest ← Larger(First, Second)</div>
             </div>
           </div>
         </section>
+        <section class="section aqa-note-section" id="section-aqa-test-3" aria-labelledby="heading-aqa-test-3" lang="zh-CN">
+          <div class="section-heading">
+            <div class="section-number">T3</div>
+            <div><span class="section-kicker">AQA AS Language</span><h2 id="heading-aqa-test-3">Test 3</h2></div>
+          </div>
+          <div id="aqaTest3Notes" class="aqa-test3-document"></div>
+        </section>
       </div>
 
       <div class="subject-view" id="subject-step" data-subject-view="step" hidden lang="zh-CN">
@@ -4221,6 +4246,7 @@ Largest ← Larger(First, Second)</div>
   <script src="physics-notes-6-11.js?v=20261105-as-complete"></script>
   <script src="owh-notes.js"></script>
   <script src="aqa-language-notes.js?v=20261104-bilingual-terms"></script>
+  <script src="aqa-test3-notes.js?v=20261109-test3"></script>
   <script src="step-notes.js?v=20261108"></script>
   <script src="step-reader.js?v=20261108"></script>
   <script>
@@ -4372,6 +4398,7 @@ Largest ← Larger(First, Second)</div>
     renderPhysicsNotes();
     renderOwhNotes();
     renderAqaLanguageNotes();
+    document.getElementById('aqaTest3Notes').innerHTML = window.AQA_TEST3_HTML;
     renderSTEPNotes();
 
     const body = document.body;
@@ -4502,7 +4529,7 @@ Largest ← Larger(First, Second)</div>
 
     function activeNoteCards() {
       const module = currentModule();
-      return module ? [...module.querySelectorAll('.syllabus-card, .step-note')] : [];
+      return module ? [...module.querySelectorAll('.syllabus-card, .step-note, .aqa-test3-row')] : [];
     }
 
     function termOccurrences(text, term) {

@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import vm from 'node:vm';
+
+const root = new URL('../', import.meta.url);
+const source = readFileSync(new URL('language-sources/Niko_Instructional_Text_Revision_Table.md', root), 'utf8');
+const expected = execFileSync('pandoc', ['-f', 'gfm', '-t', 'html5', '--wrap=none'], { input: source, encoding: 'utf8' });
+const context = { window: {} };
+vm.runInNewContext(readFileSync(new URL('aqa-test3-notes.js', root), 'utf8'), context);
+const actual = context.window.AQA_TEST3_HTML;
+const text = html => html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+assert.equal(text(actual).replace(/\*\*/g, ''), text(expected).replace(/\*\*/g, ''), 'Every original word and table cell must be preserved in order');
+assert(!actual.includes('**'), 'No raw Markdown emphasis delimiters should appear');
+assert.equal((actual.match(/class="aqa-test3-row"/g) || []).length, 33);
+assert.equal((actual.match(/class="syllabus-wording"><strong>★/g) || []).length, 23);
+assert.equal((actual.match(/<table>/g) || []).length, 2);
+assert.equal((actual.match(/<th scope="col">/g) || []).length, 10);
+const page = readFileSync(new URL('index.html', root), 'utf8');
+const languageNav = [...page.matchAll(/class="chapter-link"[^>]*data-subject="aqa"[^>]*data-section="([^"]+)"/g)];
+assert.equal(languageNav.at(-1)[1], 'section-aqa-test-3');
+assert(page.indexOf('id="section-aqa-test-3"') > page.indexOf('id="aqa-sources"'));
+assert(page.includes(".syllabus-card, .step-note, .aqa-test3-row"));
+console.log('PASS: 33 searchable rows, 23 stars, two five-column tables, exact source text/order, Test 3 last.');
