@@ -2238,6 +2238,24 @@
     html[data-theme="dark"][data-layout="focus"] #subject-aqa .aqa-test3-document strong { color: #dce4d8; }
     #subject-aqa .aqa-test3-row { scroll-margin-top: 145px; }
     #subject-aqa .aqa-test3-row.note-search-current { outline: 2px solid #9684b6; outline-offset: -2px; }
+    #subject-aqa .aqa-test3-quiz { max-width: 1000px; margin-top: 56px; padding-top: 8px; border-top: 1px solid var(--line); }
+    #subject-aqa .aqa-quiz-progress { color: var(--muted); font-size: .92rem; }
+    #subject-aqa .aqa-quiz-question { min-width: 0; margin: 30px 0; padding: 0 0 30px; border: 0; border-bottom: 1px solid var(--line); scroll-margin-top: 120px; }
+    #subject-aqa .aqa-quiz-question legend { width: 100%; padding: 0; color: var(--ink); font-size: 1.05rem; font-weight: 600; line-height: 1.6; }
+    #subject-aqa .aqa-quiz-number { margin-right: 10px; color: var(--muted); font-size: .85rem; }
+    #subject-aqa .aqa-quiz-stimulus { margin: 16px 0; padding-left: 16px; border-left: 2px solid var(--line); line-height: 1.8; }
+    #subject-aqa .aqa-quiz-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; margin: 14px 0; }
+    #subject-aqa .aqa-quiz-options label { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; cursor: pointer; overflow-wrap: anywhere; }
+    #subject-aqa .aqa-quiz-options input { flex: 0 0 auto; accent-color: #7868a2; }
+    #subject-aqa .aqa-quiz-options input:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+    #subject-aqa .aqa-quiz-options input:checked + span { text-decoration: underline; text-underline-offset: 4px; }
+    #subject-aqa .aqa-quiz-letter { margin-right: 4px; color: var(--muted); }
+    #subject-aqa .aqa-quiz-feedback { margin-top: 18px; padding-left: 16px; border-left: 3px solid #9684b6; line-height: 1.8; }
+    #subject-aqa .aqa-quiz-feedback[hidden] { display: none; }
+    #subject-aqa .aqa-quiz-feedback p { margin: 8px 0; }
+    #subject-aqa .aqa-quiz-feedback strong { color: var(--ink); font-weight: 600; }
+    #subject-aqa .aqa-quiz-sources { margin-top: 30px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 650px) { #subject-aqa .aqa-quiz-options { grid-template-columns: minmax(0, 1fr); } }
     [data-module-hidden="true"] { display: none !important; }
     body[data-module-reader="single"] .chapter-hero,
     body[data-module-reader="single"] .step-hero,
@@ -4223,6 +4241,7 @@ Largest ← Larger(First, Second)</div>
             <div><span class="section-kicker">AQA AS Language</span><h2 id="heading-aqa-test-3">Test 3</h2></div>
           </div>
           <div id="aqaTest3Notes" class="aqa-test3-document"></div>
+          <div id="aqaTest3Quiz" class="aqa-test3-document aqa-test3-quiz"></div>
         </section>
       </div>
 
@@ -4249,6 +4268,7 @@ Largest ← Larger(First, Second)</div>
   <script src="owh-notes.js"></script>
   <script src="aqa-language-notes.js?v=20261104-bilingual-terms"></script>
   <script src="aqa-test3-notes.js?v=20261109-test3-clean"></script>
+  <script src="aqa-test3-quiz.js?v=20261109-mcq23"></script>
   <script src="step-notes.js?v=20261108"></script>
   <script src="step-reader.js?v=20261108"></script>
   <script>
@@ -4401,6 +4421,7 @@ Largest ← Larger(First, Second)</div>
     renderOwhNotes();
     renderAqaLanguageNotes();
     document.getElementById('aqaTest3Notes').innerHTML = window.AQA_TEST3_HTML;
+    renderAqaTest3Quiz();
     renderSTEPNotes();
 
     const body = document.body;
