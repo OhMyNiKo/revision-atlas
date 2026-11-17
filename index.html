@@ -2389,7 +2389,7 @@
       <div class="subject-picker" id="subjectPicker" hidden>
         <button class="subject-option is-active" type="button" data-subject-option="cs">
           <span class="subject-option__icon" aria-hidden="true">&lt;/&gt;</span>
-          <span class="subject-option__copy"><span class="subject-option__name">Computer Science</span><span class="subject-option__meta">AS Level · 9618 · Chapters 9–12</span></span>
+          <span class="subject-option__copy"><span class="subject-option__name">Computer Science</span><span class="subject-option__meta">AS Level · 9618 · Chapters 1–3 &amp; 9–12</span></span>
           <span class="subject-option__check" aria-hidden="true">✓</span>
         </button>
         <button class="subject-option" type="button" data-subject-option="physics">
@@ -2416,7 +2416,14 @@
 
       <div class="nav-label" id="sectionNavLabel">Chapters</div>
       <nav class="chapter-nav" data-subject-nav="cs" aria-label="Computer Science syllabus sections">
-        <a class="chapter-link active" href="#section-9-1" data-subject="cs" data-section="section-9-1">
+        <a class="chapter-link active" href="#section-cs-eos" data-subject="cs" data-section="section-cs-eos"><span class="chapter-link__num">EOS</span><span class="chapter-link__text">14 Dec · Revision map</span></a>
+        <a class="chapter-link" href="#section-1-1" data-subject="cs" data-section="section-1-1"><span class="chapter-link__num">1.1</span><span class="chapter-link__text">Data Representation</span></a>
+        <a class="chapter-link" href="#section-1-2" data-subject="cs" data-section="section-1-2"><span class="chapter-link__num">1.2</span><span class="chapter-link__text">Multimedia</span></a>
+        <a class="chapter-link" href="#section-1-3" data-subject="cs" data-section="section-1-3"><span class="chapter-link__num">1.3</span><span class="chapter-link__text">Compression</span></a>
+        <a class="chapter-link" href="#section-2-1" data-subject="cs" data-section="section-2-1"><span class="chapter-link__num">2.1</span><span class="chapter-link__text">Networks and the Internet</span></a>
+        <a class="chapter-link" href="#section-3-1" data-subject="cs" data-section="section-3-1"><span class="chapter-link__num">3.1</span><span class="chapter-link__text">Computers and Components</span></a>
+        <a class="chapter-link" href="#section-3-2" data-subject="cs" data-section="section-3-2"><span class="chapter-link__num">3.2</span><span class="chapter-link__text">Logic Gates and Circuits</span></a>
+        <a class="chapter-link" href="#section-9-1" data-subject="cs" data-section="section-9-1">
           <span class="chapter-link__num">9.1</span>
           <span class="chapter-link__text">Computational Thinking</span>
         </a>
@@ -2552,7 +2559,7 @@
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
       </button>
-      <div class="breadcrumb"><span id="breadcrumbSubject">AS Computer Science</span> <span aria-hidden="true">/</span> <strong id="breadcrumbChapter">Chapter 9</strong></div>
+      <div class="breadcrumb"><span id="breadcrumbSubject">AS Computer Science</span> <span aria-hidden="true">/</span> <strong id="breadcrumbChapter">Revision map</strong></div>
       <div class="note-search" id="noteSearch" role="search" aria-label="Find notes in the current module">
         <svg class="note-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
         <label class="sr-only" for="noteSearchInput">Search the current module</label>
@@ -2605,6 +2612,7 @@
         </div>
       </section>
 
+      <div id="csEosNotes"></div>
       <section class="section" id="section-9-1" aria-labelledby="heading-9-1">
         <div class="section-heading">
           <div class="section-number">9.1</div>
@@ -3125,7 +3133,7 @@
               <div class="answer-label"><span>Cambridge syntax</span><span class="answer-label__note">One required form per heading</span></div>
               <div class="answer-block">
                 <div class="answer-block__title"><span>Constants</span> Declaration and initialisation</div>
-                <ul class="mark-points"><li data-mark="1">Use <code>CONSTANT Name = value</code>; a constant is <strong>given its fixed value when declared</strong>.</li></ul>
+                <ul class="mark-points"><li data-mark="1">Use <code>CONSTANT Name = value</code>; a constant is <strong>given its fixed value when declared</strong>. Cambridge’s pseudocode guide uses a <strong>literal</strong>, not a variable or an expression, as this value.</li></ul>
                 <div class="code-block"><span class="code-key">CONSTANT</span> VATRate = 0.20
 <span class="code-key">CONSTANT</span> MaxItems = 100</div>
               </div>
@@ -3790,7 +3798,7 @@ Largest ← Larger(First, Second)</div>
                   <li data-mark="1">Use planned test cases with known <strong>expected results</strong>, including normal, abnormal and boundary values; compare expected with actual output.</li>
                   <li data-mark="1">Perform a <strong>dry run / walkthrough</strong> and record variable values in a trace table to find the first unexpected value or path.</li>
                   <li data-mark="1">Use a debugger: set a <strong>breakpoint</strong>, <strong>single-step</strong> statements and inspect variables in a <strong>watch window</strong>.</li>
-                  <li data-mark="1">Use <strong>white-box testing</strong> to execute every logic path and black-box testing to check behaviour against the specification.</li>
+                  <li data-mark="1">Use <strong>white-box testing</strong> to exercise internal branches and selected paths, and black-box testing to check behaviour against the specification.</li>
                   <li data-mark="1">Test modules separately, then use <strong>integration testing</strong> to expose interface / parameter-passing faults.</li>
                 </ul>
               </div>
@@ -3881,7 +3889,7 @@ Largest ← Larger(First, Second)</div>
                   <tbody>
                     <tr><td><strong>Dry run</strong></td><td>Manually follow the algorithm <strong>statement by statement</strong>, recording changing variables in a trace table and checking the path / result.</td><td>A small, hand-traceable case that exercises the suspected condition or loop.</td></tr>
                     <tr><td><strong>Walkthrough</strong></td><td>A more formal dry run in which developers / reviewers work through the design or code using <strong>predefined test cases</strong> to find logic faults.</td><td>Cases covering key paths, with expected intermediate and final values.</td></tr>
-                    <tr><td><strong>White-box</strong></td><td>The tester knows the internal code and chooses data to execute <strong>every possible logic path / branch</strong>.</td><td>Values making every IF outcome occur, loops execute zero / once / many times, and compound conditions vary.</td></tr>
+                    <tr><td><strong>White-box</strong></td><td>The tester inspects the internal logic and chooses data to exercise branches or selected execution paths; <strong>branch coverage</strong> is not the same as exhaustive path coverage.</td><td>Values making each IF outcome occur, varying compound conditions and exercising loops zero, once or multiple times where the loop permits it.</td></tr>
                     <tr><td><strong>Black-box</strong></td><td>The internal code is not considered; inputs and outputs are tested against the <strong>requirements specification</strong> and actual output is compared with expected output.</td><td>Normal, abnormal and boundary / extreme values derived from the specification.</td></tr>
                     <tr><td><strong>Integration</strong></td><td>Modules already tested individually are <strong>combined</strong> and tested together, often incrementally, to check interfaces and data passed.</td><td>Parameters, return values and shared data at module interfaces, including invalid / missing values.</td></tr>
                     <tr><td><strong>Alpha</strong></td><td>Testing by the developer’s own staff / testers <strong>in-house</strong> before release to external users.</td><td>Planned functional and non-functional tests in a controlled development environment.</td></tr>
@@ -4041,15 +4049,15 @@ Largest ← Larger(First, Second)</div>
       </section>
       <section class="source-panel" id="sources" aria-labelledby="sources-title">
         <h2 id="sources-title">Checked sources</h2>
-        <p>Syllabus statements are reproduced exactly from the screenshots and cross-checked against the official 2027–2029 document. The Chapter 10 notes also consolidate the supplied Weeks 6–10 classroom slides, solutions, assessment tasks and linked-list notes. Cambridge’s pseudocode guide, course definitions and published mark schemes supply the required syntax, diagrams and exam-credit language; concise linking notes cover syllabus points that no single question tests in full.</p>
+        <p>The EOS map separates the school’s teaching schedule from the Cambridge specification. Chapters 1–3 use syllabus-aligned, original revision notes and worked examples; Chapters 9–12 retain the original syllabus-card structure and classroom material. Marking points are practice guidance, not a school mark scheme.</p>
         <div class="source-list">
           <a class="source-card" href="https://www.cambridgeinternational.org/Images/721397-2027-2029-syllabus.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
-            <span><strong>Cambridge 9618 syllabus · 2027–2029</strong><span>Chapters 9–12 wording and scope</span></span>
+            <span><strong>Cambridge 9618 syllabus · 2027–2029</strong><span>EOS scope cross-check: Chapters 1–3 and 9–12</span></span>
           </a>
-          <a class="source-card" href="https://www.cambridgeinternational.org/Images/697401-2026-pseudocode-guide-for-teachers.pdf" target="_blank" rel="noreferrer">
+          <a class="source-card" href="https://www.cambridgeinternational.org/Images/721401-2027-2029-pseudocode-guide.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
-            <span><strong>Cambridge 9618 pseudocode guide · 2026</strong><span>Declarations, operators, constructs and subroutines</span></span>
+            <span><strong>Cambridge 9618 pseudocode guide · 2027–2029</strong><span>Declarations, operators, constructs and subroutines</span></span>
           </a>
           <a class="source-card" href="https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf" target="_blank" rel="noreferrer">
             <span class="source-card__tag">Official</span>
@@ -4263,7 +4271,8 @@ Largest ← Larger(First, Second)</div>
 
   <div class="module-navigation-notice" id="moduleNavigationNotice" role="status" aria-live="polite" hidden></div>
 
-  <script src="cs-chapter10-notes.js?v=20261025-class-notes"></script>
+  <script src="cs-eos-notes.js?v=20261117"></script>
+  <script src="cs-chapter10-notes.js?v=20261117-eos"></script>
   <script src="physics-notes.js?v=20261023-ch5"></script>
   <script src="physics-notes-6-11.js?v=20261105-as-complete"></script>
   <script src="owh-notes.js"></script>

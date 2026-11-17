@@ -3,7 +3,7 @@
   if (!root) return;
 
   const syllabusUrl = 'https://www.cambridgeinternational.org/Images/721397-2027-2029-syllabus.pdf#page=28';
-  const guideUrl = 'https://www.cambridgeinternational.org/Images/697401-2026-pseudocode-guide-for-teachers.pdf';
+  const guideUrl = 'https://www.cambridgeinternational.org/Images/721401-2027-2029-pseudocode-guide.pdf';
   const specimenUrl = 'https://www.cambridgeinternational.org/Images/751339-2021-specimen-mark-scheme-paper-2.pdf';
 
   const escapeHtml = (value) => value
@@ -420,11 +420,13 @@ ENDPROCEDURE`))}
       ${block('Stack', 'Trace PUSH and POP', points([
         '<strong>PUSH:</strong> first check the stack is not full, adjust the top pointer according to the convention given, then store the new item.',
         '<strong>POP:</strong> first check the stack is not empty, retrieve the top item, then adjust the top pointer.',
+        '<strong>Edit:</strong> if the task allows access to the top, replace its value without changing the top pointer or item count. For a strict stack interface, POP then PUSH the revised value.',
         '<strong>Overflow</strong> means attempting to PUSH to a full stack; <strong>underflow</strong> means attempting to POP an empty stack.'
       ]))}
       ${block('Circular queue', 'Trace ENQUEUE and DEQUEUE', points([
         '<strong>ENQUEUE:</strong> check the queue is not full, move / wrap the rear pointer as defined, store the item and increase the queue length.',
         '<strong>DEQUEUE:</strong> check the queue is not empty, retrieve the item at the front, move / wrap the front pointer and decrease the queue length.',
+        '<strong>Edit:</strong> if asked to edit an existing array-backed queue item, locate its occupied index (account for wrap-around), then replace its data without moving front/rear or changing the count. Under a strict queue interface use only the operations the question defines.',
         'When a pointer reaches the upper bound, its next position wraps to the <strong>lower bound</strong>.',
         'A queue length / item count can distinguish <strong>empty from full</strong> when pointer positions alone are ambiguous.'
       ]))}
@@ -434,7 +436,7 @@ ENDPROCEDURE`))}
         '<strong>Insert between nodes:</strong> new node first takes the predecessor\'s old next pointer; predecessor then points to the new node.',
         '<strong>Delete between nodes:</strong> predecessor takes the deleted node\'s next pointer.',
         '<strong>Insert at end:</strong> old last node points to the new node; new node points to null.',
-        '<strong>Delete at end:</strong> the predecessor\'s pointer becomes null.',
+        '<strong>Delete at end:</strong> the predecessor\'s pointer becomes null. If the list held just that node, set the start pointer to null instead.',
         '<strong>Edit:</strong> change the node\'s data field without altering its pointer unless its sorted position must change.'
       ]))}
       ${table(
